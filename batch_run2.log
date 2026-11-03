@@ -1,0 +1,1104 @@
+2026-07-24 15:38:05.367771: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-07-24 15:38:05.382394: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1784878685.397726   93394 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1784878685.402590   93394 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-07-24 15:38:05.420221: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+[15:38:07] ========== CrossGene Batch Run: 8 Datasets ==========
+Resuming: 4 datasets already completed
+
+============================================================
+[CPDB] Already done, skipping
+============================================================
+
+============================================================
+[LTG] Already done, skipping
+============================================================
+
+============================================================
+[STRINGdb] Already done, skipping
+============================================================
+
+============================================================
+[PCNET] Already done, skipping
+============================================================
+
+============================================================
+[15:38:07] DATASET: MTG
+============================================================
+  [15:38:07] Loading MTG...
+    Genes=26363, Train=3717, Val=414, Test=1378
+Walk iteration:
+1 / 6
+[[    1 23022 14570 ... 21582 16025 23839]
+ [    2 14823 26145 ... 15718  2686 16675]
+ [    3 11899 11452 ...  1993 15015  8858]
+ ...
+ [26360  8416  5612 ...  5738 19338   341]
+ [26361  7943 19777 ...  5595 14713 18913]
+ [26362  7736  4391 ... 19283 21370 14233]]
+2 / 6
+[[    1 22446    36 ... 19664 13455 12496]
+ [    2 13794 20852 ...  3129 21560 17061]
+ [    3  7537 13974 ... 14315 13026 20574]
+ ...
+ [26360 23018 16878 ...  9947 10236  6207]
+ [26361 12041 25667 ... 22661 24914 10993]
+ [26362 11066 21931 ... 21589 25451  1646]]
+3 / 6
+[[    1 21469 24737 ...  4835 18254 11416]
+ [    2 14476 18182 ...  8089 22217 12440]
+ [    3 20036 10557 ...  9379 20998 16130]
+ ...
+ [26360 12423 13225 ... 13086 14474 25045]
+ [26361 24088 24261 ...   947 21930  7736]
+ [26362 24435  1923 ...   997    94 26289]]
+4 / 6
+[[    1 23207 15282 ... 10183 17764  1600]
+ [    2  3017  8634 ...  2035  7873  1397]
+ [    3 23035 25591 ...  3503 25148 15271]
+ ...
+ [26360 19762   378 ... 20495 20620  5206]
+ [26361 11898 12545 ... 12520 18237 16514]
+ [26362  7736 23319 ...  3566 26235   314]]
+5 / 6
+[[    1 14193 22446 ...  7576  3414 18038]
+ [    2 10907 23937 ... 15489 26220 10517]
+ [    3  9200 21139 ...  1170 11405 13717]
+ ...
+ [26360  5748 25715 ...  2773 20794 13244]
+ [26361 25829 10832 ... 21846 18822  2187]
+ [26362 24435 12472 ... 17305 17523 24244]]
+6 / 6
+[[    1  2426  4283 ...  8104  2097  1697]
+ [    2 23053 22066 ...  8138 18034  7730]
+ [    3 12913 22173 ...  6758 24999 14040]
+ ...
+ [26360 12337 14059 ... 23349 21460   524]
+ [26361  2470 10157 ... 10636  9969 13427]
+ [26362  7736 20498 ...  3665 24580 26176]]
+I0000 00:00:1784878728.651747   93394 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 95231 MB memory:  -> device: 0, name: NVIDIA H20, pci bus id: 0000:34:00.0, compute capability: 9.0
+    [15:38:49] Training GPS on MTG...
+  GPS | 标签平滑=0.05 | 对比权重=0.1 | 流匹配权重=0.05
+/root/miniconda3/lib/python3.12/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+Epoch 1/30
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:431: UserWarning: `build()` was called on layer 'flow', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:431: UserWarning: `build()` was called on layer 'GPS', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/optimizers/base_optimizer.py:862: UserWarning: Gradients do not exist for variables ['ms_fusion/ms_fusion_weights'] when minimizing the loss. If using `model.compile()`, did you forget to provide a `loss` argument?
+  warnings.warn(
+  [15:39:16] epoch   1 ★ │ auc=0.7989  aupr=0.3486  acc=0.7124  f1=0.4121  contrast_loss=0.3338  flow_loss=0.2440
+
+Epoch 1: val_auc improved from None to 0.79893, saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+
+Epoch 1: finished saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+24/24 - 26s - 1s/step - acc: 0.7255 - contrast_loss: 0.3338 - contrast_temp: 0.2381 - flow_loss: 0.2440 - loss: 0.7120 - val_acc: 0.7124 - val_contrast_loss: 0.2711 - val_contrast_temp: 0.2711 - val_flow_loss: 0.2711 - val_loss: 0.2027 - val_auc: 0.7989 - val_aupr: 0.3486 - val_f1: 0.4121 - learning_rate: 0.0010
+Epoch 2/30
+  [15:39:17] epoch   2 │ auc=0.7955  aupr=0.3655  acc=0.8414  f1=0.3140  contrast_loss=0.3589  flow_loss=0.2701
+
+Epoch 2: val_auc did not improve from 0.79893
+24/24 - 1s - 45ms/step - acc: 0.7454 - contrast_loss: 0.3589 - contrast_temp: 0.2700 - flow_loss: 0.2701 - loss: 0.6409 - val_acc: 0.8414 - val_contrast_loss: 0.2415 - val_contrast_temp: 0.2415 - val_flow_loss: 0.2415 - val_loss: 0.1861 - val_auc: 0.7955 - val_aupr: 0.3655 - val_f1: 0.3140 - learning_rate: 0.0010
+Epoch 3/30
+  [15:39:18] epoch   3 ★ │ auc=0.8118  aupr=0.4160  acc=0.7392  f1=0.4294  contrast_loss=0.3672  flow_loss=0.2689
+
+Epoch 3: val_auc improved from 0.79893 to 0.81177, saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+
+Epoch 3: finished saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+24/24 - 1s - 56ms/step - acc: 0.7911 - contrast_loss: 0.3672 - contrast_temp: 0.2706 - flow_loss: 0.2689 - loss: 0.6253 - val_acc: 0.7392 - val_contrast_loss: 0.2404 - val_contrast_temp: 0.2404 - val_flow_loss: 0.2404 - val_loss: 0.1817 - val_auc: 0.8118 - val_aupr: 0.4160 - val_f1: 0.4294 - learning_rate: 0.0010
+Epoch 4/30
+  [15:39:20] epoch   4 │ auc=0.8035  aupr=0.3950  acc=0.7648  f1=0.4224  contrast_loss=0.3636  flow_loss=0.2767
+
+Epoch 4: val_auc did not improve from 0.81177
+24/24 - 1s - 45ms/step - acc: 0.7871 - contrast_loss: 0.3636 - contrast_temp: 0.2790 - flow_loss: 0.2767 - loss: 0.6016 - val_acc: 0.7648 - val_contrast_loss: 0.2408 - val_contrast_temp: 0.2408 - val_flow_loss: 0.2408 - val_loss: 0.1912 - val_auc: 0.8035 - val_aupr: 0.3950 - val_f1: 0.4224 - learning_rate: 0.0010
+Epoch 5/30
+  [15:39:21] epoch   5 ★ │ auc=0.8179  aupr=0.4166  acc=0.7769  f1=0.4610  contrast_loss=0.3762  flow_loss=0.2874
+
+Epoch 5: val_auc improved from 0.81177 to 0.81792, saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+
+Epoch 5: finished saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+24/24 - 1s - 57ms/step - acc: 0.8211 - contrast_loss: 0.3762 - contrast_temp: 0.2896 - flow_loss: 0.2874 - loss: 0.5858 - val_acc: 0.7769 - val_contrast_loss: 0.2622 - val_contrast_temp: 0.2622 - val_flow_loss: 0.2622 - val_loss: 0.1828 - val_auc: 0.8179 - val_aupr: 0.4166 - val_f1: 0.4610 - learning_rate: 0.0010
+Epoch 6/30
+  [15:39:22] epoch   6 │ auc=0.8131  aupr=0.4116  acc=0.8481  f1=0.3757  contrast_loss=0.3882  flow_loss=0.2981
+
+Epoch 6: val_auc did not improve from 0.81792
+24/24 - 1s - 46ms/step - acc: 0.8170 - contrast_loss: 0.3882 - contrast_temp: 0.3002 - flow_loss: 0.2981 - loss: 0.5781 - val_acc: 0.8481 - val_contrast_loss: 0.2444 - val_contrast_temp: 0.2444 - val_flow_loss: 0.2444 - val_loss: 0.1858 - val_auc: 0.8131 - val_aupr: 0.4116 - val_f1: 0.3757 - learning_rate: 0.0010
+Epoch 7/30
+  [15:39:23] epoch   7 ★ │ auc=0.8281  aupr=0.4342  acc=0.7648  f1=0.4582  contrast_loss=0.3886  flow_loss=0.2994
+
+Epoch 7: val_auc improved from 0.81792 to 0.82814, saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+
+Epoch 7: finished saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+24/24 - 1s - 57ms/step - acc: 0.8180 - contrast_loss: 0.3886 - contrast_temp: 0.3011 - flow_loss: 0.2994 - loss: 0.5681 - val_acc: 0.7648 - val_contrast_loss: 0.2579 - val_contrast_temp: 0.2579 - val_flow_loss: 0.2579 - val_loss: 0.1827 - val_auc: 0.8281 - val_aupr: 0.4342 - val_f1: 0.4582 - learning_rate: 0.0010
+Epoch 8/30
+  [15:39:25] epoch   8 │ auc=0.8258  aupr=0.4410  acc=0.8038  f1=0.4552  contrast_loss=0.3737  flow_loss=0.2891
+
+Epoch 8: val_auc did not improve from 0.82814
+24/24 - 1s - 46ms/step - acc: 0.8244 - contrast_loss: 0.3737 - contrast_temp: 0.2901 - flow_loss: 0.2891 - loss: 0.5615 - val_acc: 0.8038 - val_contrast_loss: 0.2635 - val_contrast_temp: 0.2635 - val_flow_loss: 0.2635 - val_loss: 0.1792 - val_auc: 0.8258 - val_aupr: 0.4410 - val_f1: 0.4552 - learning_rate: 0.0010
+Epoch 9/30
+  [15:39:26] epoch   9 │ auc=0.8206  aupr=0.4187  acc=0.8159  f1=0.3857  contrast_loss=0.3978  flow_loss=0.3112
+
+Epoch 9: val_auc did not improve from 0.82814
+24/24 - 1s - 46ms/step - acc: 0.8422 - contrast_loss: 0.3978 - contrast_temp: 0.3116 - flow_loss: 0.3112 - loss: 0.5498 - val_acc: 0.8159 - val_contrast_loss: 0.2564 - val_contrast_temp: 0.2564 - val_flow_loss: 0.2564 - val_loss: 0.1816 - val_auc: 0.8206 - val_aupr: 0.4187 - val_f1: 0.3857 - learning_rate: 0.0010
+Epoch 10/30
+  [15:39:27] epoch  10 │ auc=0.8265  aupr=0.4428  acc=0.8011  f1=0.4394  contrast_loss=0.3847  flow_loss=0.3015
+
+Epoch 10: val_auc did not improve from 0.82814
+24/24 - 1s - 45ms/step - acc: 0.8281 - contrast_loss: 0.3847 - contrast_temp: 0.3014 - flow_loss: 0.3015 - loss: 0.5454 - val_acc: 0.8011 - val_contrast_loss: 0.2699 - val_contrast_temp: 0.2699 - val_flow_loss: 0.2699 - val_loss: 0.1804 - val_auc: 0.8265 - val_aupr: 0.4428 - val_f1: 0.4394 - learning_rate: 0.0010
+Epoch 11/30
+  [15:39:28] epoch  11 ★ │ auc=0.8300  aupr=0.4606  acc=0.8199  f1=0.4683  contrast_loss=0.3918  flow_loss=0.3074
+
+Epoch 11: val_auc improved from 0.82814 to 0.83000, saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+
+Epoch 11: finished saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+24/24 - 1s - 56ms/step - acc: 0.8301 - contrast_loss: 0.3918 - contrast_temp: 0.3067 - flow_loss: 0.3074 - loss: 0.5382 - val_acc: 0.8199 - val_contrast_loss: 0.2578 - val_contrast_temp: 0.2578 - val_flow_loss: 0.2578 - val_loss: 0.1785 - val_auc: 0.8300 - val_aupr: 0.4606 - val_f1: 0.4683 - learning_rate: 0.0010
+Epoch 12/30
+  [15:39:29] epoch  12 ★ │ auc=0.8337  aupr=0.4542  acc=0.7621  f1=0.4779  contrast_loss=0.3815  flow_loss=0.3017
+
+Epoch 12: val_auc improved from 0.83000 to 0.83372, saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+
+Epoch 12: finished saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+24/24 - 1s - 60ms/step - acc: 0.8224 - contrast_loss: 0.3815 - contrast_temp: 0.3006 - flow_loss: 0.3017 - loss: 0.5341 - val_acc: 0.7621 - val_contrast_loss: 0.2623 - val_contrast_temp: 0.2623 - val_flow_loss: 0.2623 - val_loss: 0.1808 - val_auc: 0.8337 - val_aupr: 0.4542 - val_f1: 0.4779 - learning_rate: 0.0010
+Epoch 13/30
+  [15:39:31] epoch  13 ★ │ auc=0.8352  aupr=0.4753  acc=0.8065  f1=0.4586  contrast_loss=0.3867  flow_loss=0.3038
+
+Epoch 13: val_auc improved from 0.83372 to 0.83524, saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+
+Epoch 13: finished saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+24/24 - 1s - 59ms/step - acc: 0.8382 - contrast_loss: 0.3867 - contrast_temp: 0.3022 - flow_loss: 0.3038 - loss: 0.5283 - val_acc: 0.8065 - val_contrast_loss: 0.2648 - val_contrast_temp: 0.2648 - val_flow_loss: 0.2648 - val_loss: 0.1767 - val_auc: 0.8352 - val_aupr: 0.4753 - val_f1: 0.4586 - learning_rate: 0.0010
+Epoch 14/30
+  [15:39:32] epoch  14 │ auc=0.8290  aupr=0.4502  acc=0.8347  f1=0.4434  contrast_loss=0.3793  flow_loss=0.3015
+
+Epoch 14: val_auc did not improve from 0.83524
+24/24 - 1s - 46ms/step - acc: 0.8237 - contrast_loss: 0.3793 - contrast_temp: 0.2998 - flow_loss: 0.3015 - loss: 0.5245 - val_acc: 0.8347 - val_contrast_loss: 0.2583 - val_contrast_temp: 0.2583 - val_flow_loss: 0.2583 - val_loss: 0.1777 - val_auc: 0.8290 - val_aupr: 0.4502 - val_f1: 0.4434 - learning_rate: 0.0010
+Epoch 15/30
+  [15:39:33] epoch  15 │ auc=0.8332  aupr=0.4628  acc=0.8078  f1=0.4644  contrast_loss=0.3910  flow_loss=0.3102
+
+Epoch 15: val_auc did not improve from 0.83524
+24/24 - 1s - 46ms/step - acc: 0.8426 - contrast_loss: 0.3910 - contrast_temp: 0.3082 - flow_loss: 0.3102 - loss: 0.5172 - val_acc: 0.8078 - val_contrast_loss: 0.2547 - val_contrast_temp: 0.2547 - val_flow_loss: 0.2547 - val_loss: 0.1760 - val_auc: 0.8332 - val_aupr: 0.4628 - val_f1: 0.4644 - learning_rate: 0.0010
+Epoch 16/30
+  [15:39:34] epoch  16 │ auc=0.8251  aupr=0.4574  acc=0.8105  f1=0.4337  contrast_loss=0.3969  flow_loss=0.3179
+
+Epoch 16: val_auc did not improve from 0.83524
+24/24 - 1s - 45ms/step - acc: 0.8409 - contrast_loss: 0.3969 - contrast_temp: 0.3159 - flow_loss: 0.3179 - loss: 0.5103 - val_acc: 0.8105 - val_contrast_loss: 0.2457 - val_contrast_temp: 0.2457 - val_flow_loss: 0.2457 - val_loss: 0.1786 - val_auc: 0.8251 - val_aupr: 0.4574 - val_f1: 0.4337 - learning_rate: 0.0010
+Epoch 17/30
+  [15:39:35] epoch  17 │ auc=0.8352  aupr=0.4701  acc=0.8212  f1=0.4242  contrast_loss=0.3892  flow_loss=0.3120
+
+Epoch 17: val_auc did not improve from 0.83524
+24/24 - 1s - 45ms/step - acc: 0.8409 - contrast_loss: 0.3892 - contrast_temp: 0.3101 - flow_loss: 0.3120 - loss: 0.5084 - val_acc: 0.8212 - val_contrast_loss: 0.2711 - val_contrast_temp: 0.2711 - val_flow_loss: 0.2711 - val_loss: 0.1763 - val_auc: 0.8352 - val_aupr: 0.4701 - val_f1: 0.4242 - learning_rate: 0.0010
+Epoch 18/30
+  [15:39:36] epoch  18 ★ │ auc=0.8369  aupr=0.4891  acc=0.8172  f1=0.4516  contrast_loss=0.4049  flow_loss=0.3244
+
+Epoch 18: val_auc improved from 0.83524 to 0.83686, saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+
+Epoch 18: finished saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+24/24 - 1s - 56ms/step - acc: 0.8456 - contrast_loss: 0.4049 - contrast_temp: 0.3222 - flow_loss: 0.3244 - loss: 0.5050 - val_acc: 0.8172 - val_contrast_loss: 0.2708 - val_contrast_temp: 0.2708 - val_flow_loss: 0.2708 - val_loss: 0.1751 - val_auc: 0.8369 - val_aupr: 0.4891 - val_f1: 0.4516 - learning_rate: 0.0010
+Epoch 19/30
+  [15:39:38] epoch  19 ★ │ auc=0.8389  aupr=0.4780  acc=0.8306  f1=0.4273  contrast_loss=0.3956  flow_loss=0.3190
+
+Epoch 19: val_auc improved from 0.83686 to 0.83888, saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+
+Epoch 19: finished saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+24/24 - 1s - 58ms/step - acc: 0.8416 - contrast_loss: 0.3956 - contrast_temp: 0.3169 - flow_loss: 0.3190 - loss: 0.5049 - val_acc: 0.8306 - val_contrast_loss: 0.2686 - val_contrast_temp: 0.2686 - val_flow_loss: 0.2686 - val_loss: 0.1754 - val_auc: 0.8389 - val_aupr: 0.4780 - val_f1: 0.4273 - learning_rate: 0.0010
+Epoch 20/30
+  [15:39:39] epoch  20 │ auc=0.8367  aupr=0.4765  acc=0.8293  f1=0.4596  contrast_loss=0.4053  flow_loss=0.3263
+
+Epoch 20: val_auc did not improve from 0.83888
+24/24 - 1s - 46ms/step - acc: 0.8493 - contrast_loss: 0.4053 - contrast_temp: 0.3242 - flow_loss: 0.3263 - loss: 0.4994 - val_acc: 0.8293 - val_contrast_loss: 0.2684 - val_contrast_temp: 0.2684 - val_flow_loss: 0.2684 - val_loss: 0.1764 - val_auc: 0.8367 - val_aupr: 0.4765 - val_f1: 0.4596 - learning_rate: 0.0010
+Epoch 21/30
+  [15:39:40] epoch  21 │ auc=0.8273  aupr=0.4508  acc=0.8145  f1=0.3894  contrast_loss=0.4095  flow_loss=0.3303
+
+Epoch 21: val_auc did not improve from 0.83888
+24/24 - 1s - 46ms/step - acc: 0.8581 - contrast_loss: 0.4095 - contrast_temp: 0.3282 - flow_loss: 0.3303 - loss: 0.4950 - val_acc: 0.8145 - val_contrast_loss: 0.2609 - val_contrast_temp: 0.2609 - val_flow_loss: 0.2609 - val_loss: 0.1801 - val_auc: 0.8273 - val_aupr: 0.4508 - val_f1: 0.3894 - learning_rate: 0.0010
+Epoch 22/30
+  [15:39:41] epoch  22 ★ │ auc=0.8399  aupr=0.4874  acc=0.7930  f1=0.4577  contrast_loss=0.4143  flow_loss=0.3340
+
+Epoch 22: val_auc improved from 0.83888 to 0.83988, saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+
+Epoch 22: finished saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+24/24 - 1s - 57ms/step - acc: 0.8483 - contrast_loss: 0.4143 - contrast_temp: 0.3318 - flow_loss: 0.3340 - loss: 0.4960 - val_acc: 0.7930 - val_contrast_loss: 0.2655 - val_contrast_temp: 0.2655 - val_flow_loss: 0.2655 - val_loss: 0.1777 - val_auc: 0.8399 - val_aupr: 0.4874 - val_f1: 0.4577 - learning_rate: 0.0010
+Epoch 23/30
+  [15:39:43] epoch  23 │ auc=0.8177  aupr=0.4361  acc=0.8266  f1=0.4055  contrast_loss=0.3937  flow_loss=0.3188
+
+Epoch 23: val_auc did not improve from 0.83988
+24/24 - 1s - 47ms/step - acc: 0.8352 - contrast_loss: 0.3937 - contrast_temp: 0.3167 - flow_loss: 0.3188 - loss: 0.4942 - val_acc: 0.8266 - val_contrast_loss: 0.2545 - val_contrast_temp: 0.2545 - val_flow_loss: 0.2545 - val_loss: 0.1829 - val_auc: 0.8177 - val_aupr: 0.4361 - val_f1: 0.4055 - learning_rate: 0.0010
+Epoch 24/30
+  [15:39:44] epoch  24 │ auc=0.8326  aupr=0.4683  acc=0.7849  f1=0.4595  contrast_loss=0.4116  flow_loss=0.3326
+
+Epoch 24: val_auc did not improve from 0.83988
+24/24 - 1s - 47ms/step - acc: 0.8557 - contrast_loss: 0.4116 - contrast_temp: 0.3304 - flow_loss: 0.3326 - loss: 0.4893 - val_acc: 0.7849 - val_contrast_loss: 0.2424 - val_contrast_temp: 0.2424 - val_flow_loss: 0.2424 - val_loss: 0.1810 - val_auc: 0.8326 - val_aupr: 0.4683 - val_f1: 0.4595 - learning_rate: 0.0010
+Epoch 25/30
+  [15:39:45] epoch  25 │ auc=0.8323  aupr=0.4494  acc=0.8159  f1=0.4408  contrast_loss=0.4125  flow_loss=0.3341
+
+Epoch 25: val_auc did not improve from 0.83988
+24/24 - 1s - 48ms/step - acc: 0.8500 - contrast_loss: 0.4125 - contrast_temp: 0.3320 - flow_loss: 0.3341 - loss: 0.4896 - val_acc: 0.8159 - val_contrast_loss: 0.2550 - val_contrast_temp: 0.2550 - val_flow_loss: 0.2550 - val_loss: 0.1803 - val_auc: 0.8323 - val_aupr: 0.4494 - val_f1: 0.4408 - learning_rate: 0.0010
+Epoch 26/30
+  [15:39:46] epoch  26 │ auc=0.8321  aupr=0.4484  acc=0.8212  f1=0.3871  contrast_loss=0.4032  flow_loss=0.3278
+
+Epoch 26: val_auc did not improve from 0.83988
+24/24 - 1s - 47ms/step - acc: 0.8554 - contrast_loss: 0.4032 - contrast_temp: 0.3258 - flow_loss: 0.3278 - loss: 0.4878 - val_acc: 0.8212 - val_contrast_loss: 0.2755 - val_contrast_temp: 0.2755 - val_flow_loss: 0.2755 - val_loss: 0.1852 - val_auc: 0.8321 - val_aupr: 0.4484 - val_f1: 0.3871 - learning_rate: 0.0010
+Epoch 27/30
+  [15:39:47] epoch  27 │ auc=0.8376  aupr=0.4638  acc=0.8239  f1=0.4072  contrast_loss=0.4217  flow_loss=0.3421
+
+Epoch 27: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 27: val_auc did not improve from 0.83988
+24/24 - 1s - 46ms/step - acc: 0.8544 - contrast_loss: 0.4217 - contrast_temp: 0.3400 - flow_loss: 0.3421 - loss: 0.4894 - val_acc: 0.8239 - val_contrast_loss: 0.2560 - val_contrast_temp: 0.2560 - val_flow_loss: 0.2560 - val_loss: 0.1792 - val_auc: 0.8376 - val_aupr: 0.4638 - val_f1: 0.4072 - learning_rate: 0.0010
+Epoch 28/30
+  [15:39:48] epoch  28 │ auc=0.8395  aupr=0.4644  acc=0.8172  f1=0.4286  contrast_loss=0.4232  flow_loss=0.3441
+
+Epoch 28: val_auc did not improve from 0.83988
+24/24 - 1s - 48ms/step - acc: 0.8658 - contrast_loss: 0.4232 - contrast_temp: 0.3422 - flow_loss: 0.3441 - loss: 0.4836 - val_acc: 0.8172 - val_contrast_loss: 0.2688 - val_contrast_temp: 0.2688 - val_flow_loss: 0.2688 - val_loss: 0.1812 - val_auc: 0.8395 - val_aupr: 0.4644 - val_f1: 0.4286 - learning_rate: 5.0000e-04
+Epoch 29/30
+  [15:39:50] epoch  29 ★ │ auc=0.8401  aupr=0.4670  acc=0.8132  f1=0.4184  contrast_loss=0.4131  flow_loss=0.3370
+
+Epoch 29: val_auc improved from 0.83988 to 0.84008, saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+
+Epoch 29: finished saving model to /root/crossgene/gps/ckpt/GPS_MTG.weights.h5
+24/24 - 1s - 58ms/step - acc: 0.8530 - contrast_loss: 0.4131 - contrast_temp: 0.3349 - flow_loss: 0.3370 - loss: 0.4816 - val_acc: 0.8132 - val_contrast_loss: 0.2674 - val_contrast_temp: 0.2674 - val_flow_loss: 0.2674 - val_loss: 0.1801 - val_auc: 0.8401 - val_aupr: 0.4670 - val_f1: 0.4184 - learning_rate: 5.0000e-04
+Epoch 30/30
+  [15:39:51] epoch  30 │ auc=0.8277  aupr=0.4643  acc=0.8212  f1=0.4192  contrast_loss=0.4198  flow_loss=0.3412
+
+Epoch 30: val_auc did not improve from 0.84008
+24/24 - 1s - 45ms/step - acc: 0.8564 - contrast_loss: 0.4198 - contrast_temp: 0.3392 - flow_loss: 0.3412 - loss: 0.4847 - val_acc: 0.8212 - val_contrast_loss: 0.2578 - val_contrast_temp: 0.2578 - val_flow_loss: 0.2578 - val_loss: 0.1817 - val_auc: 0.8277 - val_aupr: 0.4643 - val_f1: 0.4192 - learning_rate: 5.0000e-04
+[1m 1/44[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m1s[0m 26ms/step[1m17/44[0m [32m━━━━━━━[0m[37m━━━━━━━━━━━━━[0m [1m0s[0m 3ms/step [1m35/44[0m [32m━━━━━━━━━━━━━━━[0m[37m━━━━━[0m [1m0s[0m 3ms/step[1m44/44[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step
+    [15:39:51] GPS Test: AUC=0.8561, AUPR=0.5920, F1=0.5349 (62s)
+    [15:39:51] Inference on 26363 genes...
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m9s[0m 645ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 4ms/step  
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 26ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 26ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 27ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m1/8[0m [32m━━[0m[37m━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m8/8[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 142ms/step[1m8/8[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 146ms/step
+  [15:40:03] Running CrossGene Agent on MTG...
+Connecting GeneAgent agents...
+GeneAgent workflow ready (iterative mode).
+
+============================================================
+GeneAgent Workflow (iterative, max 1 rounds)
+Goal: Identify disease-associated genes
+Dataset (forced): MTG
+============================================================
+
+🧠 [MetaAgent] Planning: Identify disease-associated genes
+   🔒 Dataset forced to: MTG
+   Mode: network_enhanced | Dataset: MTG
+
+============================================================
+📚 [GeneDataAgent] Multi-Omics Data Analysis (direct)
+============================================================
+
+   📋 MetaAgent selected dataset: MTG
+
+   📂 Checking datasets...
+   8/8 datasets ready
+
+   🧬 Selecting candidate genes from MTG...
+   Network: 26363 genes, 6601564 edges
+   Selected: 1398 candidates (1378 test + 20 hub)
+
+────────────────────────────────────────────────────────────
+✅ [GeneDataAgent] Done — 1398 genes selected
+   Attached GPS scores to 1398/1398 genes
+
+============================================================
+🤖 [LLMFabAgent] Gene-Disease Prediction
+   R1: LLM knowledge only
+============================================================
+
+   📋 1398 genes (1378 with ground truth, 20 discovery)
+
+   ── R1: LLM knowledge only ──
+   LLM batch 1/47: 30 genes
+   LLM batch 2/47: 30 genes
+   LLM batch 3/47: 30 genes
+   LLM batch 4/47: 30 genes
+   LLM batch 5/47: 30 genes
+   LLM batch 6/47: 30 genes
+   LLM batch 7/47: 30 genes
+   ⚠️ [LLM batch 8] JSON parse error: Expecting ',' delimiter: line 242 column 2 (char 9965) | preview: ```json\n{"predictions": {\n  "TNFRSF21": {\n    "probability": 0.65,\n    "confidence": "MEDIUM",\n    "evidence_type": "some evidence",\n    "associated_diseases": ["cancer", "immune system diseases"],\n    "is_cancer_gene": true,\n    "rationale": "TNFRSF21 (DR6) is a death receptor involved in apoptosis
+   ⚠️ [LLM batch 8] No JSON found | preview: ```json\n{"predictions": {\n  "TNFRSF21": {\n    "probability": 0.65,\n    "confidence": "MEDIUM",\n    "evidence_type": "some evidence",\n    "associated_diseases": ["cancer", "immune system diseases"],\n  
+   LLM batch 8/47: 30 genes (retry)
+   LLM batch 9/47: 30 genes
+   LLM batch 10/47: 30 genes
+   LLM batch 11/47: 30 genes
+   LLM batch 12/47: 30 genes
+   ⚠️ [LLM batch 13] JSON parse error: Expecting ',' delimiter: line 1 column 7800 (char 7799) | preview: ```json\n{"predictions": {"ZNF716": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease association in training data."}, "ALK": {"probability": 0.98, "confidence": "HIGH", "evidence_type": "well-esta
+   ⚠️ [LLM batch 13] No JSON found | preview: ```json\n{"predictions": {"ZNF716": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease association
+   LLM batch 13/47: 30 genes (retry)
+   LLM batch 14/47: 30 genes
+   LLM batch 15/47: 30 genes
+   LLM batch 16/47: 30 genes
+   LLM batch 17/47: 30 genes
+   LLM batch 18/47: 30 genes
+   LLM batch 19/47: 30 genes
+   LLM batch 20/47: 30 genes
+   LLM batch 21/47: 30 genes
+   ⚠️ [LLM batch 22] JSON parse error: Expecting ',' delimiter: line 1 column 8944 (char 8943) | preview: ```json\n{"predictions": {"GPR124": {"probability": 0.65, "confidence": "MEDIUM", "evidence_type": "some evidence", "associated_diseases": ["colorectal cancer", "glioblastoma"], "is_cancer_gene": true, "rationale": "GPR124 is an adhesion GPCR involved in Wnt signaling and angiogenesis; implicated in 
+   ⚠️ [LLM batch 22] No JSON found | preview: ```json\n{"predictions": {"GPR124": {"probability": 0.65, "confidence": "MEDIUM", "evidence_type": "some evidence", "associated_diseases": ["colorectal cancer", "glioblastoma"], "is_cancer_gene": true,
+   LLM batch 22/47: 30 genes (retry)
+   LLM batch 23/47: 30 genes
+   LLM batch 24/47: 30 genes
+   LLM batch 25/47: 30 genes
+   ⚠️ [LLM batch 26] JSON parse error: Expecting ',' delimiter: line 1 column 10047 (char 10046) | preview: ```json\n{"predictions": {"DGCR8": {"probability": 0.75, "confidence": "MEDIUM", "evidence_type": "some evidence", "associated_diseases": ["DiGeorge syndrome", "schizophrenia"], "is_cancer_gene": false, "rationale": "DGCR8 is a component of the microprocessor complex involved in miRNA biogenesis. It 
+   ⚠️ [LLM batch 26] No JSON found | preview: ```json\n{"predictions": {"DGCR8": {"probability": 0.75, "confidence": "MEDIUM", "evidence_type": "some evidence", "associated_diseases": ["DiGeorge syndrome", "schizophrenia"], "is_cancer_gene": false
+   LLM batch 26/47: 30 genes (retry)
+   ⚠️ [LLM batch 27] JSON parse error: Expecting ',' delimiter: line 32 column 2 (char 7372) | preview: ```json\n{"predictions": {\n  "RMND5A": {"probability": 0.25, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease association in training data."},\n  "ZNF354A": {"probability": 0.25, "confidence": "LOW", "evidence_type": "u
+   ⚠️ [LLM batch 27] No JSON found | preview: ```json\n{"predictions": {\n  "RMND5A": {"probability": 0.25, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease associat
+   LLM batch 27/47: 30 genes (retry)
+   ⚠️ [LLM batch 28] JSON parse error: Expecting ',' delimiter: line 1 column 8364 (char 8363) | preview: ```json\n{"predictions": {"OR1L3": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "Olfactory receptor family member; no known disease association."}, "CYP1A2": {"probability": 0.75, "confidence": "MEDIUM", "evide
+   ⚠️ [LLM batch 28] No JSON found | preview: ```json\n{"predictions": {"OR1L3": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "Olfactory receptor family mem
+   LLM batch 28/47: 30 genes (retry)
+   LLM batch 29/47: 30 genes
+   ⚠️ [LLM batch 30] JSON parse error: Expecting ',' delimiter: line 242 column 2 (char 9418) | preview: ```json\n{"predictions": {\n  "TMX1": {\n    "probability": 0.30,\n    "confidence": "LOW",\n    "evidence_type": "limited evidence",\n    "associated_diseases": [],\n    "is_cancer_gene": false,\n    "rationale": "TMX1 is a thioredoxin-related transmembrane protein involved in redox regulation. Limited evi
+   ⚠️ [LLM batch 30] No JSON found | preview: ```json\n{"predictions": {\n  "TMX1": {\n    "probability": 0.30,\n    "confidence": "LOW",\n    "evidence_type": "limited evidence",\n    "associated_diseases": [],\n    "is_cancer_gene": false,\n    "ration
+   LLM batch 30/47: 30 genes (retry)
+   ⚠️ [LLM batch 31] JSON parse error: Expecting ',' delimiter: line 32 column 2 (char 7719) | preview: ```json\n{"predictions": {\n  "ZNF587": {"probability": 0.25, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease association in my training data."},\n  "ZCCHC9": {"probability": 0.20, "confidence": "LOW", "evidence_type": 
+   ⚠️ [LLM batch 31] No JSON found | preview: ```json\n{"predictions": {\n  "ZNF587": {"probability": 0.25, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease associat
+   LLM batch 31/47: 30 genes (retry)
+   LLM batch 32/47: 30 genes
+   LLM batch 33/47: 30 genes
+   LLM batch 34/47: 30 genes
+   LLM batch 35/47: 30 genes
+   LLM batch 36/47: 30 genes
+   LLM batch 37/47: 30 genes
+   LLM batch 38/47: 30 genes
+   LLM batch 39/47: 30 genes
+   LLM batch 40/47: 30 genes
+   LLM batch 41/47: 30 genes
+   LLM batch 42/47: 30 genes
+   LLM batch 43/47: 30 genes
+   LLM batch 44/47: 30 genes
+   ⚠️ [LLM batch 45] JSON parse error: Expecting ',' delimiter: line 1 column 8417 (char 8416) | preview: ```json\n{"predictions": {"MZT1": {"probability": 0.15, "confidence": "LOW", "evidence_type": "limited evidence", "associated_diseases": [], "is_cancer_gene": false, "rationale": "MZT1 is a centrosomal protein involved in microtubule nucleation, but there is minimal evidence linking it directly to ca
+   ⚠️ [LLM batch 45] No JSON found | preview: ```json\n{"predictions": {"MZT1": {"probability": 0.15, "confidence": "LOW", "evidence_type": "limited evidence", "associated_diseases": [], "is_cancer_gene": false, "rationale": "MZT1 is a centrosomal
+   LLM batch 45/47: 30 genes (retry)
+   LLM batch 46/47: 30 genes
+   LLM batch 47/47: 18 genes
+
+   ── Ensemble (LLM + GPS) ──
+
+────────────────────────────────────────────────────────────
+✅ [LLMFabAgent] R1: LLM knowledge only Complete
+   LLM predictions: 1398/1398 genes
+   LLM+GPS ensemble: 1398/1398 genes
+
+============================================================
+🔍 [LiteratureAgent] Online Multi-Database Validation
+============================================================
+
+   🌐 Querying PubMed for 30 genes (batch with delay)...
+  [1/10] Querying TP53...
+  [2/10] Querying PIK3CA...
+  [3/10] Querying CTNNB1...
+  [4/10] Querying MYC...
+  [5/10] Querying ERBB2...
+  [6/10] Querying RB1...
+  [7/10] Querying HRAS...
+  [8/10] Querying EGFR...
+  [9/10] Querying MET...
+  [10/10] Querying KMT2D...
+  [1/10] Querying FANCA...
+  [2/10] Querying MTOR...
+  [3/10] Querying STK11...
+  [4/10] Querying KDM6A...
+  [5/10] Querying BLM...
+  [6/10] Querying NFE2L2...
+  [7/10] Querying SF3B1...
+  [8/10] Querying RUNX1...
+  [9/10] Querying ALK...
+  [10/10] Querying BRIP1...
+  [1/10] Querying ETV6...
+  [2/10] Querying CCND1...
+  [3/10] Querying NBN...
+  [4/10] Querying DICER1...
+  [5/10] Querying CDKN1B...
+  [6/10] Querying DNMT3A...
+  [7/10] Querying TGFBR2...
+  [8/10] Querying ABCB1...
+  [9/10] Querying ERBB3...
+  [10/10] Querying BCL2...
+   📊 PubMed: 30 high, 0 low
+   Top PubMed: EGFR=101650, MET=62134, BCL2=47904, MYC=38886, TP53=34069
+
+────────────────────────────────────────────────────────────
+✅ [LiteratureAgent] Online Validation Complete
+   └─ PubMed API queries: 30 genes
+
+============================================================
+📊 [GeneAnalysisAgent] Quantitative Evaluation + Real-DB Cross-Reference
+============================================================
+
+   =======================================================
+   Method                         AUC     AUPR     Prec      Rec       F1
+   -------------------------------------------------------
+   Baseline (LLM only)         0.9583   0.8599   0.6725   0.8925    0.767
+   Proposed (LLM+GPS)         0.9657   0.8996   0.7256   0.9019   0.8042
+
+   Improvement: ΔAUC=+0.0074, ΔF1=+0.0372
+
+   📊 LiteratureAgent provided PubMed data for 30 genes (30 high-evidence)
+
+────────────────────────────────────────────────────────────
+✅ [GeneAnalysisAgent] Analysis Complete
+   ├─ Baseline vs Proposed evaluation complete
+   ├─ Topology: 1398 genes
+   ├─ PubMed data (from LiteratureAgent): 30 genes
+   └─ Alignment: {'total_genes': 20, 'genes_with_pubmed_data': 20, 'concordant': 20, 'discordant': 0, 'concordance_rate': 1.0, 'breakdown': {'concordant_high': 20}}
+
+💾 [MemoryAgent] Archiving iteration 1...
+   ├─ Disagreements (LLM vs GPS): 279
+   ├─ Uncertain genes (prob ≈ 0.5): 112
+   ├─ PubMed discordant: 0
+   └─ AUC delta: +0.9657
+
+🧠 [MetaAgent] Reviewing iteration 1/1
+   Decision: FINISH — AUC of 0.9657 with perfect PubMed alignment (1.0) and no discordant genes indicates the model has reached near-optimal performance with minimal actionable uncertainty.
+
+============================================================
+🏁 [MetaAgent] Generating Final Conclusion...
+============================================================
+  [15:52:26] MTG complete!
+
+============================================================
+[15:52:26] DATASET: MULTINET
+============================================================
+  [15:52:26] Loading MULTINET...
+    Genes=14398, Train=3036, Val=338, Test=1125
+Walk iteration:
+1 / 6
+[[    0 12837  7365 ... 13272 10476 13270]
+ [    1  7206   310 ...  4039  5827 14027]
+ [    2  5731  5120 ... 14263  8244  8527]
+ ...
+ [14395 12189  9700 ... 13290  2515 13290]
+ [14396  9166  4184 ...  7343 11522 13839]
+ [14397 13001  5201 ...  5899  5141  5899]]
+2 / 6
+[[    0 12195 12218 ... 10004 10007 10002]
+ [    1  7204 11247 ... 11821 11337 11821]
+ [    2   951     2 ...  6683  2676 13802]
+ ...
+ [14395  3224  3093 ...  8123  6044  8123]
+ [14396  9914  1161 ...  9471  9472  9471]
+ [14397  9959 14397 ...  5501 11532 10762]]
+3 / 6
+[[    0 12195  6011 ...  1637 13841  6453]
+ [    1  7206  9208 ...   200 10287  3554]
+ [    2  4586 11003 ...  4586 13578  4585]
+ ...
+ [14395 13123 10197 ... 13160 14146 10863]
+ [14396  9914  5138 ...  8788 10594  6034]
+ [14397 14195  7278 ...  9234  1138  9807]]
+4 / 6
+[[    0 12837  8608 ...  5571  8274  7206]
+ [    1  7206 11138 ...   412  9812   637]
+ [    2  4585  2845 ...  9679 11235 12830]
+ ...
+ [14395  9680  5532 ...  9381 10142  6074]
+ [14396  9166  9407 ...  7343  9407  7343]
+ [14397  8975 14081 ... 11582  7945  3182]]
+5 / 6
+[[    0  6310  5574 ... 12176  8261 10680]
+ [    1  7206  2419 ...  7521 13839  2651]
+ [    2   951 12251 ... 11547  9888 12268]
+ ...
+ [14395  3767 14152 ...  9681  4469  6231]
+ [14396  9914 13866 ...  6183  4581   477]
+ [14397  2511  2897 ...  2651  2434  7320]]
+6 / 6
+[[    0 12195  6011 ... 12074 10431  4586]
+ [    1  7206  1912 ...  7206 11774 11929]
+ [    2  6645     2 ... 12379   636 10096]
+ ...
+ [14395   935  8106 ...  7320  7184 13846]
+ [14396  9166  9407 ...  7468  7446 12918]
+ [14397 11596  1055 ...  1923 10410  9651]]
+    [15:52:29] Training GPS on MULTINET...
+  GPS | 标签平滑=0.05 | 对比权重=0.1 | 流匹配权重=0.05
+/root/miniconda3/lib/python3.12/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+Epoch 1/30
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:431: UserWarning: `build()` was called on layer 'flow', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:431: UserWarning: `build()` was called on layer 'GPS', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/optimizers/base_optimizer.py:862: UserWarning: Gradients do not exist for variables ['ms_fusion/ms_fusion_weights'] when minimizing the loss. If using `model.compile()`, did you forget to provide a `loss` argument?
+  warnings.warn(
+  [15:52:52] epoch   1 ★ │ auc=0.7126  aupr=0.2728  acc=0.6217  f1=0.3611  contrast_loss=0.3523  flow_loss=0.2746
+
+Epoch 1: val_auc improved from None to 0.71258, saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+
+Epoch 1: finished saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+19/19 - 22s - 1s/step - acc: 0.6672 - contrast_loss: 0.3523 - contrast_temp: 0.2681 - flow_loss: 0.2746 - loss: 0.7489 - val_acc: 0.6217 - val_contrast_loss: 0.1889 - val_contrast_temp: 0.1889 - val_flow_loss: 0.1889 - val_loss: 0.2278 - val_auc: 0.7126 - val_aupr: 0.2728 - val_f1: 0.3611 - learning_rate: 0.0010
+Epoch 2/30
+  [15:52:53] epoch   2 ★ │ auc=0.7560  aupr=0.3465  acc=0.6332  f1=0.3683  contrast_loss=0.3998  flow_loss=0.3197
+
+Epoch 2: val_auc improved from 0.71258 to 0.75599, saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+
+Epoch 2: finished saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+19/19 - 1s - 60ms/step - acc: 0.7311 - contrast_loss: 0.3998 - contrast_temp: 0.3176 - flow_loss: 0.3197 - loss: 0.6464 - val_acc: 0.6332 - val_contrast_loss: 0.2031 - val_contrast_temp: 0.2031 - val_flow_loss: 0.2031 - val_loss: 0.2170 - val_auc: 0.7560 - val_aupr: 0.3465 - val_f1: 0.3683 - learning_rate: 0.0010
+Epoch 3/30
+  [15:52:54] epoch   3 ★ │ auc=0.7666  aupr=0.3112  acc=0.5625  f1=0.3575  contrast_loss=0.4124  flow_loss=0.3279
+
+Epoch 3: val_auc improved from 0.75599 to 0.76657, saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+
+Epoch 3: finished saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+19/19 - 1s - 60ms/step - acc: 0.7694 - contrast_loss: 0.4124 - contrast_temp: 0.3280 - flow_loss: 0.3279 - loss: 0.6227 - val_acc: 0.5625 - val_contrast_loss: 0.2031 - val_contrast_temp: 0.2031 - val_flow_loss: 0.2031 - val_loss: 0.2507 - val_auc: 0.7666 - val_aupr: 0.3112 - val_f1: 0.3575 - learning_rate: 0.0010
+Epoch 4/30
+  [15:52:55] epoch   4 ★ │ auc=0.7969  aupr=0.3575  acc=0.6234  f1=0.3926  contrast_loss=0.4237  flow_loss=0.3420
+
+Epoch 4: val_auc improved from 0.76657 to 0.79691, saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+
+Epoch 4: finished saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+19/19 - 1s - 61ms/step - acc: 0.7694 - contrast_loss: 0.4237 - contrast_temp: 0.3432 - flow_loss: 0.3420 - loss: 0.5988 - val_acc: 0.6234 - val_contrast_loss: 0.2139 - val_contrast_temp: 0.2139 - val_flow_loss: 0.2139 - val_loss: 0.2214 - val_auc: 0.7969 - val_aupr: 0.3575 - val_f1: 0.3926 - learning_rate: 0.0010
+Epoch 5/30
+  [15:52:56] epoch   5 │ auc=0.7955  aupr=0.3469  acc=0.6776  f1=0.4201  contrast_loss=0.4414  flow_loss=0.3600
+
+Epoch 5: val_auc did not improve from 0.79691
+19/19 - 1s - 47ms/step - acc: 0.7900 - contrast_loss: 0.4414 - contrast_temp: 0.3618 - flow_loss: 0.3600 - loss: 0.5772 - val_acc: 0.6776 - val_contrast_loss: 0.2248 - val_contrast_temp: 0.2248 - val_flow_loss: 0.2248 - val_loss: 0.2157 - val_auc: 0.7955 - val_aupr: 0.3469 - val_f1: 0.4201 - learning_rate: 0.0010
+Epoch 6/30
+  [15:52:57] epoch   6 ★ │ auc=0.8130  aupr=0.4063  acc=0.7270  f1=0.4467  contrast_loss=0.4430  flow_loss=0.3621
+
+Epoch 6: val_auc improved from 0.79691 to 0.81297, saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+
+Epoch 6: finished saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+19/19 - 1s - 60ms/step - acc: 0.8093 - contrast_loss: 0.4430 - contrast_temp: 0.3641 - flow_loss: 0.3621 - loss: 0.5637 - val_acc: 0.7270 - val_contrast_loss: 0.2361 - val_contrast_temp: 0.2361 - val_flow_loss: 0.2361 - val_loss: 0.1980 - val_auc: 0.8130 - val_aupr: 0.4063 - val_f1: 0.4467 - learning_rate: 0.0010
+Epoch 7/30
+  [15:52:58] epoch   7 │ auc=0.8103  aupr=0.4195  acc=0.7533  f1=0.4403  contrast_loss=0.4440  flow_loss=0.3657
+
+Epoch 7: val_auc did not improve from 0.81297
+19/19 - 1s - 48ms/step - acc: 0.8027 - contrast_loss: 0.4440 - contrast_temp: 0.3675 - flow_loss: 0.3657 - loss: 0.5488 - val_acc: 0.7533 - val_contrast_loss: 0.2441 - val_contrast_temp: 0.2441 - val_flow_loss: 0.2441 - val_loss: 0.1914 - val_auc: 0.8103 - val_aupr: 0.4195 - val_f1: 0.4403 - learning_rate: 0.0010
+Epoch 8/30
+  [15:52:59] epoch   8 │ auc=0.8121  aupr=0.4208  acc=0.6908  f1=0.4233  contrast_loss=0.4475  flow_loss=0.3713
+
+Epoch 8: val_auc did not improve from 0.81297
+19/19 - 1s - 46ms/step - acc: 0.8068 - contrast_loss: 0.4475 - contrast_temp: 0.3728 - flow_loss: 0.3713 - loss: 0.5360 - val_acc: 0.6908 - val_contrast_loss: 0.2340 - val_contrast_temp: 0.2340 - val_flow_loss: 0.2340 - val_loss: 0.2064 - val_auc: 0.8121 - val_aupr: 0.4208 - val_f1: 0.4233 - learning_rate: 0.0010
+Epoch 9/30
+  [15:53:00] epoch   9 ★ │ auc=0.8197  aupr=0.4248  acc=0.7599  f1=0.4632  contrast_loss=0.4508  flow_loss=0.3761
+
+Epoch 9: val_auc improved from 0.81297 to 0.81975, saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+
+Epoch 9: finished saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+19/19 - 1s - 59ms/step - acc: 0.8184 - contrast_loss: 0.4508 - contrast_temp: 0.3772 - flow_loss: 0.3761 - loss: 0.5248 - val_acc: 0.7599 - val_contrast_loss: 0.2503 - val_contrast_temp: 0.2503 - val_flow_loss: 0.2503 - val_loss: 0.1918 - val_auc: 0.8197 - val_aupr: 0.4248 - val_f1: 0.4632 - learning_rate: 0.0010
+Epoch 10/30
+  [15:53:01] epoch  10 │ auc=0.8138  aupr=0.4259  acc=0.7401  f1=0.4476  contrast_loss=0.4589  flow_loss=0.3838
+
+Epoch 10: val_auc did not improve from 0.81975
+19/19 - 1s - 48ms/step - acc: 0.8188 - contrast_loss: 0.4589 - contrast_temp: 0.3846 - flow_loss: 0.3838 - loss: 0.5114 - val_acc: 0.7401 - val_contrast_loss: 0.2373 - val_contrast_temp: 0.2373 - val_flow_loss: 0.2373 - val_loss: 0.1935 - val_auc: 0.8138 - val_aupr: 0.4259 - val_f1: 0.4476 - learning_rate: 0.0010
+Epoch 11/30
+  [15:53:02] epoch  11 ★ │ auc=0.8254  aupr=0.4328  acc=0.7484  f1=0.4669  contrast_loss=0.4637  flow_loss=0.3911
+
+Epoch 11: val_auc improved from 0.81975 to 0.82545, saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+
+Epoch 11: finished saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+19/19 - 1s - 61ms/step - acc: 0.8295 - contrast_loss: 0.4637 - contrast_temp: 0.3913 - flow_loss: 0.3911 - loss: 0.5011 - val_acc: 0.7484 - val_contrast_loss: 0.2478 - val_contrast_temp: 0.2478 - val_flow_loss: 0.2478 - val_loss: 0.1989 - val_auc: 0.8254 - val_aupr: 0.4328 - val_f1: 0.4669 - learning_rate: 0.0010
+Epoch 12/30
+  [15:53:03] epoch  12 │ auc=0.8215  aupr=0.4339  acc=0.7533  f1=0.4643  contrast_loss=0.4544  flow_loss=0.3845
+
+Epoch 12: val_auc did not improve from 0.82545
+19/19 - 1s - 48ms/step - acc: 0.8258 - contrast_loss: 0.4544 - contrast_temp: 0.3843 - flow_loss: 0.3845 - loss: 0.4933 - val_acc: 0.7533 - val_contrast_loss: 0.2455 - val_contrast_temp: 0.2455 - val_flow_loss: 0.2455 - val_loss: 0.1941 - val_auc: 0.8215 - val_aupr: 0.4339 - val_f1: 0.4643 - learning_rate: 0.0010
+Epoch 13/30
+  [15:53:04] epoch  13 ★ │ auc=0.8270  aupr=0.4713  acc=0.7549  f1=0.4419  contrast_loss=0.4623  flow_loss=0.3906
+
+Epoch 13: val_auc improved from 0.82545 to 0.82696, saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+
+Epoch 13: finished saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+19/19 - 1s - 60ms/step - acc: 0.8254 - contrast_loss: 0.4623 - contrast_temp: 0.3898 - flow_loss: 0.3906 - loss: 0.4885 - val_acc: 0.7549 - val_contrast_loss: 0.2479 - val_contrast_temp: 0.2479 - val_flow_loss: 0.2479 - val_loss: 0.1900 - val_auc: 0.8270 - val_aupr: 0.4713 - val_f1: 0.4419 - learning_rate: 0.0010
+Epoch 14/30
+  [15:53:05] epoch  14 │ auc=0.8239  aupr=0.4441  acc=0.6727  f1=0.4265  contrast_loss=0.4516  flow_loss=0.3859
+
+Epoch 14: val_auc did not improve from 0.82696
+19/19 - 1s - 48ms/step - acc: 0.8213 - contrast_loss: 0.4516 - contrast_temp: 0.3849 - flow_loss: 0.3859 - loss: 0.4762 - val_acc: 0.6727 - val_contrast_loss: 0.2401 - val_contrast_temp: 0.2401 - val_flow_loss: 0.2401 - val_loss: 0.2081 - val_auc: 0.8239 - val_aupr: 0.4441 - val_f1: 0.4265 - learning_rate: 0.0010
+Epoch 15/30
+  [15:53:06] epoch  15 │ auc=0.8239  aupr=0.4571  acc=0.7533  f1=0.4718  contrast_loss=0.4606  flow_loss=0.3942
+
+Epoch 15: val_auc did not improve from 0.82696
+19/19 - 1s - 48ms/step - acc: 0.8315 - contrast_loss: 0.4606 - contrast_temp: 0.3928 - flow_loss: 0.3942 - loss: 0.4723 - val_acc: 0.7533 - val_contrast_loss: 0.2489 - val_contrast_temp: 0.2489 - val_flow_loss: 0.2489 - val_loss: 0.1948 - val_auc: 0.8239 - val_aupr: 0.4571 - val_f1: 0.4718 - learning_rate: 0.0010
+Epoch 16/30
+  [15:53:07] epoch  16 │ auc=0.8001  aupr=0.4207  acc=0.7122  f1=0.4186  contrast_loss=0.4586  flow_loss=0.3924
+
+Epoch 16: val_auc did not improve from 0.82696
+19/19 - 1s - 48ms/step - acc: 0.8311 - contrast_loss: 0.4586 - contrast_temp: 0.3905 - flow_loss: 0.3924 - loss: 0.4629 - val_acc: 0.7122 - val_contrast_loss: 0.2307 - val_contrast_temp: 0.2307 - val_flow_loss: 0.2307 - val_loss: 0.2003 - val_auc: 0.8001 - val_aupr: 0.4207 - val_f1: 0.4186 - learning_rate: 0.0010
+Epoch 17/30
+  [15:53:08] epoch  17 │ auc=0.8154  aupr=0.4524  acc=0.7286  f1=0.4291  contrast_loss=0.4554  flow_loss=0.3926
+
+Epoch 17: val_auc did not improve from 0.82696
+19/19 - 1s - 47ms/step - acc: 0.8229 - contrast_loss: 0.4554 - contrast_temp: 0.3906 - flow_loss: 0.3926 - loss: 0.4591 - val_acc: 0.7286 - val_contrast_loss: 0.2379 - val_contrast_temp: 0.2379 - val_flow_loss: 0.2379 - val_loss: 0.1953 - val_auc: 0.8154 - val_aupr: 0.4524 - val_f1: 0.4291 - learning_rate: 0.0010
+Epoch 18/30
+  [15:53:09] epoch  18 │ auc=0.8246  aupr=0.4857  acc=0.7845  f1=0.4178  contrast_loss=0.4553  flow_loss=0.3935
+
+Epoch 18: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 18: val_auc did not improve from 0.82696
+19/19 - 1s - 48ms/step - acc: 0.8229 - contrast_loss: 0.4553 - contrast_temp: 0.3912 - flow_loss: 0.3935 - loss: 0.4515 - val_acc: 0.7845 - val_contrast_loss: 0.2703 - val_contrast_temp: 0.2703 - val_flow_loss: 0.2703 - val_loss: 0.1855 - val_auc: 0.8246 - val_aupr: 0.4857 - val_f1: 0.4178 - learning_rate: 0.0010
+Epoch 19/30
+  [15:53:10] epoch  19 │ auc=0.8267  aupr=0.4749  acc=0.7632  f1=0.4462  contrast_loss=0.4661  flow_loss=0.4031
+
+Epoch 19: val_auc did not improve from 0.82696
+19/19 - 1s - 48ms/step - acc: 0.8307 - contrast_loss: 0.4661 - contrast_temp: 0.4007 - flow_loss: 0.4031 - loss: 0.4463 - val_acc: 0.7632 - val_contrast_loss: 0.2447 - val_contrast_temp: 0.2447 - val_flow_loss: 0.2447 - val_loss: 0.1895 - val_auc: 0.8267 - val_aupr: 0.4749 - val_f1: 0.4462 - learning_rate: 5.0000e-04
+Epoch 20/30
+  [15:53:11] epoch  20 ★ │ auc=0.8303  aupr=0.4926  acc=0.7648  f1=0.4838  contrast_loss=0.4643  flow_loss=0.4028
+
+Epoch 20: val_auc improved from 0.82696 to 0.83033, saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+
+Epoch 20: finished saving model to /root/crossgene/gps/ckpt/GPS_MULTINET.weights.h5
+19/19 - 1s - 60ms/step - acc: 0.8406 - contrast_loss: 0.4643 - contrast_temp: 0.4004 - flow_loss: 0.4028 - loss: 0.4403 - val_acc: 0.7648 - val_contrast_loss: 0.2520 - val_contrast_temp: 0.2520 - val_flow_loss: 0.2520 - val_loss: 0.1941 - val_auc: 0.8303 - val_aupr: 0.4926 - val_f1: 0.4838 - learning_rate: 5.0000e-04
+Epoch 21/30
+  [15:53:12] epoch  21 │ auc=0.8206  aupr=0.4747  acc=0.7697  f1=0.4400  contrast_loss=0.4658  flow_loss=0.4055
+
+Epoch 21: val_auc did not improve from 0.83033
+19/19 - 1s - 48ms/step - acc: 0.8386 - contrast_loss: 0.4658 - contrast_temp: 0.4031 - flow_loss: 0.4055 - loss: 0.4381 - val_acc: 0.7697 - val_contrast_loss: 0.2538 - val_contrast_temp: 0.2538 - val_flow_loss: 0.2538 - val_loss: 0.1893 - val_auc: 0.8206 - val_aupr: 0.4747 - val_f1: 0.4400 - learning_rate: 5.0000e-04
+Epoch 22/30
+  [15:53:13] epoch  22 │ auc=0.8245  aupr=0.4864  acc=0.7977  f1=0.4484  contrast_loss=0.4680  flow_loss=0.4072
+
+Epoch 22: val_auc did not improve from 0.83033
+19/19 - 1s - 48ms/step - acc: 0.8435 - contrast_loss: 0.4680 - contrast_temp: 0.4046 - flow_loss: 0.4072 - loss: 0.4368 - val_acc: 0.7977 - val_contrast_loss: 0.2607 - val_contrast_temp: 0.2607 - val_flow_loss: 0.2607 - val_loss: 0.1826 - val_auc: 0.8245 - val_aupr: 0.4864 - val_f1: 0.4484 - learning_rate: 5.0000e-04
+Epoch 23/30
+  [15:53:14] epoch  23 │ auc=0.8187  aupr=0.4691  acc=0.7599  f1=0.4593  contrast_loss=0.4697  flow_loss=0.4083
+
+Epoch 23: val_auc did not improve from 0.83033
+19/19 - 1s - 47ms/step - acc: 0.8451 - contrast_loss: 0.4697 - contrast_temp: 0.4057 - flow_loss: 0.4083 - loss: 0.4341 - val_acc: 0.7599 - val_contrast_loss: 0.2465 - val_contrast_temp: 0.2465 - val_flow_loss: 0.2465 - val_loss: 0.1929 - val_auc: 0.8187 - val_aupr: 0.4691 - val_f1: 0.4593 - learning_rate: 5.0000e-04
+Epoch 24/30
+  [15:53:15] epoch  24 │ auc=0.8193  aupr=0.4853  acc=0.7632  f1=0.4462  contrast_loss=0.4641  flow_loss=0.4050
+
+Epoch 24: val_auc did not improve from 0.83033
+19/19 - 1s - 48ms/step - acc: 0.8406 - contrast_loss: 0.4641 - contrast_temp: 0.4024 - flow_loss: 0.4050 - loss: 0.4282 - val_acc: 0.7632 - val_contrast_loss: 0.2530 - val_contrast_temp: 0.2530 - val_flow_loss: 0.2530 - val_loss: 0.1891 - val_auc: 0.8193 - val_aupr: 0.4853 - val_f1: 0.4462 - learning_rate: 5.0000e-04
+Epoch 25/30
+  [15:53:16] epoch  25 │ auc=0.8165  aupr=0.4671  acc=0.6974  f1=0.4250  contrast_loss=0.4658  flow_loss=0.4062
+
+Epoch 25: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+
+Epoch 25: val_auc did not improve from 0.83033
+19/19 - 1s - 48ms/step - acc: 0.8394 - contrast_loss: 0.4658 - contrast_temp: 0.4037 - flow_loss: 0.4062 - loss: 0.4302 - val_acc: 0.6974 - val_contrast_loss: 0.2387 - val_contrast_temp: 0.2387 - val_flow_loss: 0.2387 - val_loss: 0.2059 - val_auc: 0.8165 - val_aupr: 0.4671 - val_f1: 0.4250 - learning_rate: 5.0000e-04
+Epoch 26/30
+  [15:53:16] epoch  26 │ auc=0.8037  aupr=0.4644  acc=0.7270  f1=0.4276  contrast_loss=0.4727  flow_loss=0.4129
+
+Epoch 26: val_auc did not improve from 0.83033
+19/19 - 1s - 48ms/step - acc: 0.8451 - contrast_loss: 0.4727 - contrast_temp: 0.4103 - flow_loss: 0.4129 - loss: 0.4267 - val_acc: 0.7270 - val_contrast_loss: 0.2400 - val_contrast_temp: 0.2400 - val_flow_loss: 0.2400 - val_loss: 0.2026 - val_auc: 0.8037 - val_aupr: 0.4644 - val_f1: 0.4276 - learning_rate: 2.5000e-04
+Epoch 27/30
+  [15:53:17] epoch  27 │ auc=0.8026  aupr=0.4642  acc=0.7401  f1=0.4060  contrast_loss=0.4852  flow_loss=0.4245
+
+Epoch 27: val_auc did not improve from 0.83033
+19/19 - 1s - 48ms/step - acc: 0.8497 - contrast_loss: 0.4852 - contrast_temp: 0.4219 - flow_loss: 0.4245 - loss: 0.4246 - val_acc: 0.7401 - val_contrast_loss: 0.2447 - val_contrast_temp: 0.2447 - val_flow_loss: 0.2447 - val_loss: 0.1990 - val_auc: 0.8026 - val_aupr: 0.4642 - val_f1: 0.4060 - learning_rate: 2.5000e-04
+Epoch 28/30
+  [15:53:18] epoch  28 │ auc=0.8104  aupr=0.4745  acc=0.7286  f1=0.4211  contrast_loss=0.4748  flow_loss=0.4146
+
+Epoch 28: val_auc did not improve from 0.83033
+19/19 - 1s - 48ms/step - acc: 0.8534 - contrast_loss: 0.4748 - contrast_temp: 0.4120 - flow_loss: 0.4146 - loss: 0.4246 - val_acc: 0.7286 - val_contrast_loss: 0.2453 - val_contrast_temp: 0.2453 - val_flow_loss: 0.2453 - val_loss: 0.2027 - val_auc: 0.8104 - val_aupr: 0.4745 - val_f1: 0.4211 - learning_rate: 2.5000e-04
+Epoch 29/30
+  [15:53:19] epoch  29 │ auc=0.7948  aupr=0.4504  acc=0.7434  f1=0.4091  contrast_loss=0.4926  flow_loss=0.4308
+
+Epoch 29: val_auc did not improve from 0.83033
+19/19 - 1s - 49ms/step - acc: 0.8558 - contrast_loss: 0.4926 - contrast_temp: 0.4280 - flow_loss: 0.4308 - loss: 0.4219 - val_acc: 0.7434 - val_contrast_loss: 0.2389 - val_contrast_temp: 0.2389 - val_flow_loss: 0.2389 - val_loss: 0.1990 - val_auc: 0.7948 - val_aupr: 0.4504 - val_f1: 0.4091 - learning_rate: 2.5000e-04
+Epoch 30/30
+  [15:53:20] epoch  30 │ auc=0.8111  aupr=0.4689  acc=0.7319  f1=0.4199  contrast_loss=0.4822  flow_loss=0.4228
+
+Epoch 30: ReduceLROnPlateau reducing learning rate to 0.0001250000059371814.
+
+Epoch 30: val_auc did not improve from 0.83033
+19/19 - 1s - 48ms/step - acc: 0.8501 - contrast_loss: 0.4822 - contrast_temp: 0.4202 - flow_loss: 0.4228 - loss: 0.4207 - val_acc: 0.7319 - val_contrast_loss: 0.2482 - val_contrast_temp: 0.2482 - val_flow_loss: 0.2482 - val_loss: 0.2032 - val_auc: 0.8111 - val_aupr: 0.4689 - val_f1: 0.4199 - learning_rate: 2.5000e-04
+[1m 1/36[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 26ms/step[1m18/36[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m0s[0m 3ms/step /root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+[1m36/36[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 31ms/step[1m36/36[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 32ms/step
+    [15:53:21] GPS Test: AUC=0.8638, AUPR=0.6087, F1=0.5451 (51s)
+    [15:53:21] Inference on 14398 genes...
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m9s[0m 624ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 4ms/step  
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 26ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 28ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 29ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 26ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m1/2[0m [32m━━━━━━━━━━[0m[37m━━━━━━━━━━[0m [1m0s[0m 26ms/step[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 961ms/step[1m2/2[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m1s[0m 981ms/step
+  [15:53:28] Running CrossGene Agent on MULTINET...
+Connecting GeneAgent agents...
+GeneAgent workflow ready (iterative mode).
+
+============================================================
+GeneAgent Workflow (iterative, max 1 rounds)
+Goal: Identify disease-associated genes
+Dataset (forced): MULTINET
+============================================================
+
+🧠 [MetaAgent] Planning: Identify disease-associated genes
+   🔒 Dataset forced to: MULTINET
+   Mode: network_enhanced | Dataset: MULTINET
+
+============================================================
+📚 [GeneDataAgent] Multi-Omics Data Analysis (direct)
+============================================================
+
+   📋 MetaAgent selected dataset: MULTINET
+
+   📂 Checking datasets...
+   8/8 datasets ready
+
+   🧬 Selecting candidate genes from MULTINET...
+   Network: 14398 genes, 219134 edges
+   Selected: 1145 candidates (1125 test + 20 hub)
+
+────────────────────────────────────────────────────────────
+✅ [GeneDataAgent] Done — 1145 genes selected
+   Attached GPS scores to 1145/1145 genes
+
+============================================================
+🤖 [LLMFabAgent] Gene-Disease Prediction
+   R1: LLM knowledge only
+============================================================
+
+   📋 1145 genes (1125 with ground truth, 20 discovery)
+
+   ── R1: LLM knowledge only ──
+   LLM batch 1/39: 30 genes
+   LLM batch 2/39: 30 genes
+   ⚠️ [LLM batch 3] JSON parse error: Expecting ',' delimiter: line 32 column 2 (char 7904) | preview: ```json\n{"predictions": {\n  "C19ORF43": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease association in training knowledge."},\n  "APOBEC3B": {"probability": 0.88, "confidence": "HIGH", "evidence_
+   ⚠️ [LLM batch 3] No JSON found | preview: ```json\n{"predictions": {\n  "C19ORF43": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease associ
+   LLM batch 3/39: 30 genes (retry)
+   ⚠️ [LLM batch 4] JSON parse error: Expecting ',' delimiter: line 32 column 2 (char 7460) | preview: ```json\n{"predictions": {\n  "FAM164C": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease association; limited literature."},\n  "C2ORF44": {"probability": 0.10, "confidence": "LOW", "evidence_type"
+   ⚠️ [LLM batch 4] No JSON found | preview: ```json\n{"predictions": {\n  "FAM164C": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease associa
+   LLM batch 4/39: 30 genes (retry)
+   LLM batch 5/39: 30 genes
+   LLM batch 6/39: 30 genes
+   LLM batch 7/39: 30 genes
+   LLM batch 8/39: 30 genes
+   LLM batch 9/39: 30 genes
+   ⚠️ [LLM batch 10] JSON parse error: Expecting ',' delimiter: line 1 column 8166 (char 8165) | preview: ```json\n{"predictions": {"WDR37": {"probability": 0.35, "confidence": "LOW", "evidence_type": "limited evidence", "associated_diseases": ["neurodevelopmental disorder"], "is_cancer_gene": false, "rationale": "WDR37 has been linked to a neurodevelopmental disorder with seizures and brain anomalies in
+   ⚠️ [LLM batch 10] No JSON found | preview: ```json\n{"predictions": {"WDR37": {"probability": 0.35, "confidence": "LOW", "evidence_type": "limited evidence", "associated_diseases": ["neurodevelopmental disorder"], "is_cancer_gene": false, "rati
+   LLM batch 10/39: 30 genes (retry)
+   LLM batch 11/39: 30 genes
+   ⚠️ [LLM batch 12] JSON parse error: Expecting ',' delimiter: line 242 column 2 (char 8956) | preview: ```json\n{"predictions": {\n  "STEAP1": {\n    "probability": 0.88,\n    "confidence": "HIGH",\n    "evidence_type": "well-established",\n    "associated_diseases": ["prostate cancer", "bladder cancer", "Ewing sarcoma"],\n    "is_cancer_gene": true,\n    "rationale": "STEAP1 is a cell surface protein overex
+   ⚠️ [LLM batch 12] No JSON found | preview: ```json\n{"predictions": {\n  "STEAP1": {\n    "probability": 0.88,\n    "confidence": "HIGH",\n    "evidence_type": "well-established",\n    "associated_diseases": ["prostate cancer", "bladder cancer", "Ew
+   LLM batch 12/39: 30 genes (retry)
+   LLM batch 13/39: 30 genes
+   ⚠️ [LLM batch 14] JSON parse error: Expecting ',' delimiter: line 242 column 2 (char 10481) | preview: ```json\n{"predictions": {\n  "ZMYM3": {\n    "probability": 0.65,\n    "confidence": "MEDIUM",\n    "evidence_type": "some evidence",\n    "associated_diseases": ["X-linked intellectual disability", "cancer"],\n    "is_cancer_gene": true,\n    "rationale": "ZMYM3 is a zinc finger protein involved in chroma
+   ⚠️ [LLM batch 14] No JSON found | preview: ```json\n{"predictions": {\n  "ZMYM3": {\n    "probability": 0.65,\n    "confidence": "MEDIUM",\n    "evidence_type": "some evidence",\n    "associated_diseases": ["X-linked intellectual disability", "cance
+   LLM batch 14/39: 30 genes (retry)
+   LLM batch 15/39: 30 genes
+   LLM batch 16/39: 30 genes
+   LLM batch 17/39: 30 genes
+   LLM batch 18/39: 30 genes
+   LLM batch 19/39: 30 genes
+   LLM batch 20/39: 30 genes
+   ⚠️ [LLM batch 21] JSON parse error: Expecting ',' delimiter: line 1 column 8905 (char 8904) | preview: ```json\n{"predictions": {"RAB39": {"probability": 0.35, "confidence": "LOW", "evidence_type": "limited evidence", "associated_diseases": ["intellectual disability", "Parkinson disease"], "is_cancer_gene": false, "rationale": "RAB39 is a small GTPase involved in vesicular trafficking; mutations are l
+   ⚠️ [LLM batch 21] No JSON found | preview: ```json\n{"predictions": {"RAB39": {"probability": 0.35, "confidence": "LOW", "evidence_type": "limited evidence", "associated_diseases": ["intellectual disability", "Parkinson disease"], "is_cancer_ge
+   LLM batch 21/39: 30 genes (retry)
+   LLM batch 22/39: 30 genes
+   LLM batch 23/39: 30 genes
+   ⚠️ [LLM batch 24] JSON parse error: Expecting ',' delimiter: line 1 column 8463 (char 8462) | preview: ```json\n{"predictions": {"PER1": {"probability": 0.72, "confidence": "MEDIUM", "evidence_type": "some evidence", "associated_diseases": ["breast cancer", "colorectal cancer", "prostate cancer", "sleep disorders"], "is_cancer_gene": true, "rationale": "PER1 is a core circadian clock gene. Dysregulati
+   ⚠️ [LLM batch 24] No JSON found | preview: ```json\n{"predictions": {"PER1": {"probability": 0.72, "confidence": "MEDIUM", "evidence_type": "some evidence", "associated_diseases": ["breast cancer", "colorectal cancer", "prostate cancer", "sleep
+   LLM batch 24/39: 30 genes (retry)
+   LLM batch 25/39: 30 genes
+   LLM batch 26/39: 30 genes
+   ⚠️ [LLM batch 27] JSON parse error: Expecting ',' delimiter: line 32 column 2 (char 7203) | preview: ```json\n{"predictions": {\n  "C16ORF5": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease association in training data."},\n  "CITED1": {"probability": 0.35, "confidence": "LOW", "evidence_type": "l
+   ⚠️ [LLM batch 27] No JSON found | preview: ```json\n{"predictions": {\n  "C16ORF5": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease associa
+   LLM batch 27/39: 30 genes (retry)
+   LLM batch 28/39: 30 genes
+   LLM batch 29/39: 30 genes
+   LLM batch 30/39: 30 genes
+   LLM batch 31/39: 30 genes
+   ⚠️ [LLM batch 32] JSON parse error: Expecting ',' delimiter: line 32 column 2 (char 8097) | preview: ```json\n{"predictions": {\n  "LOC100125556": {"probability": 0.05, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "Predicted non-coding RNA with no known disease association in training data."},\n  "CCDC92": {"probability": 0.15, "conf
+   ⚠️ [LLM batch 32] No JSON found | preview: ```json\n{"predictions": {\n  "LOC100125556": {"probability": 0.05, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "Predicted non-codin
+   LLM batch 32/39: 30 genes (retry)
+   LLM batch 33/39: 30 genes
+   LLM batch 34/39: 30 genes
+   ⚠️ [LLM batch 35] JSON parse error: Expecting ',' delimiter: line 1 column 7833 (char 7832) | preview: ```json\n{"predictions": {"C1ORF31": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease association in my training data."}, "CDC7": {"probability": 0.75, "confidence": "MEDIUM", "evidence_type": "so
+   ⚠️ [LLM batch 35] No JSON found | preview: ```json\n{"predictions": {"C1ORF31": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease associatio
+   LLM batch 35/39: 30 genes (retry)
+   ⚠️ [LLM batch 36] JSON parse error: Expecting ',' delimiter: line 32 column 2 (char 8789) | preview: ```json\n{"predictions": {\n  "NACA2": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease association; NACA2 is a nascent polypeptide-associated complex subunit with no established role in cancer."},
+   ⚠️ [LLM batch 36] No JSON found | preview: ```json\n{"predictions": {\n  "NACA2": {"probability": 0.10, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "No known disease associati
+   LLM batch 36/39: 30 genes (retry)
+   LLM batch 37/39: 30 genes
+   ⚠️ [LLM batch 38] JSON parse error: Expecting ',' delimiter: line 242 column 2 (char 11177) | preview: ```json\n{"predictions": {\n  "CTNNB1": {\n    "probability": 0.97,\n    "confidence": "HIGH",\n    "evidence_type": "well-established",\n    "associated_diseases": ["colorectal cancer", "hepatocellular carcinoma", "ovarian cancer", "endometrial cancer", "medulloblastoma", "Wnt signaling pathway-related c
+   ⚠️ [LLM batch 38] No JSON found | preview: ```json\n{"predictions": {\n  "CTNNB1": {\n    "probability": 0.97,\n    "confidence": "HIGH",\n    "evidence_type": "well-established",\n    "associated_diseases": ["colorectal cancer", "hepatocellular car
+   LLM batch 38/39: 30 genes (retry)
+   ⚠️ [LLM batch 39] JSON parse error: Expecting ',' delimiter: line 1 column 1776 (char 1775) | preview: ```json\n{"predictions": {"EXOC3L": {"probability": 0.25, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "EXOC3L (exocyst complex component 3-like) is a poorly characterized gene with no established disease or cancer association in th
+   ⚠️ [LLM batch 39] No JSON found | preview: ```json\n{"predictions": {"EXOC3L": {"probability": 0.25, "confidence": "LOW", "evidence_type": "unknown", "associated_diseases": [], "is_cancer_gene": false, "rationale": "EXOC3L (exocyst complex comp
+   LLM batch 39/39: 5 genes (retry)
+
+   ── Ensemble (LLM + GPS) ──
+
+────────────────────────────────────────────────────────────
+✅ [LLMFabAgent] R1: LLM knowledge only Complete
+   LLM predictions: 1145/1145 genes
+   LLM+GPS ensemble: 1145/1145 genes
+
+============================================================
+🔍 [LiteratureAgent] Online Multi-Database Validation
+============================================================
+
+   🌐 Querying PubMed for 30 genes (batch with delay)...
+  [1/10] Querying CTNNB1...
+  [2/10] Querying ERBB2...
+  [3/10] Querying BRAF...
+  [4/10] Querying AKT1...
+  [5/10] Querying CDH1...
+  [6/10] Querying MTOR...
+  [7/10] Querying MSH2...
+  [8/10] Querying JAK1...
+  [9/10] Querying BAP1...
+  [10/10] Querying NTRK1...
+  [1/10] Querying FGFR3...
+  [2/10] Querying KIT...
+  [3/10] Querying SMARCA4...
+  [4/10] Querying BLM...
+  [5/10] Querying ERCC2...
+  [6/10] Querying SDHD...
+  [7/10] Querying FANCD2...
+  [8/10] Querying COL1A1...
+  [9/10] Querying AR...
+  [10/10] Querying CDKN1A...
+  [1/10] Querying RARA...
+  [2/10] Querying MAP2K1...
+  [3/10] Querying SOX2...
+  [4/10] Querying BCR...
+  [5/10] Querying MUC16...
+  [6/10] Querying DICER1...
+  [7/10] Querying NTRK3...
+  [8/10] Querying ERG...
+  [9/10] Querying CXCR4...
+  [10/10] Querying NBN...
+   📊 PubMed: 30 high, 0 low
+   Top PubMed: AR=45086, BCR=37260, KIT=33642, MTOR=33293, BRAF=25550
+
+────────────────────────────────────────────────────────────
+✅ [LiteratureAgent] Online Validation Complete
+   └─ PubMed API queries: 30 genes
+
+============================================================
+📊 [GeneAnalysisAgent] Quantitative Evaluation + Real-DB Cross-Reference
+============================================================
+
+   =======================================================
+   Method                         AUC     AUPR     Prec      Rec       F1
+   -------------------------------------------------------
+   Baseline (LLM only)          0.974   0.8979   0.7103    0.904   0.7955
+   Proposed (LLM+GPS)         0.9782   0.9321   0.7284   0.8939   0.8027
+
+   Improvement: ΔAUC=+0.0042, ΔF1=+0.0072
+
+   📊 LiteratureAgent provided PubMed data for 30 genes (30 high-evidence)
+
+────────────────────────────────────────────────────────────
+✅ [GeneAnalysisAgent] Analysis Complete
+   ├─ Baseline vs Proposed evaluation complete
+   ├─ Topology: 1145 genes
+   ├─ PubMed data (from LiteratureAgent): 30 genes
+   └─ Alignment: {'total_genes': 20, 'genes_with_pubmed_data': 20, 'concordant': 20, 'discordant': 0, 'concordance_rate': 1.0, 'breakdown': {'concordant_high': 20}}
+
+💾 [MemoryAgent] Archiving iteration 1...
+   ├─ Disagreements (LLM vs GPS): 266
+   ├─ Uncertain genes (prob ≈ 0.5): 103
+   ├─ PubMed discordant: 0
+   └─ AUC delta: +0.9782
+
+🧠 [MetaAgent] Reviewing iteration 1/1
+   Decision: FINISH — The AUC of 0.9782 with perfect PubMed alignment (1.0) indicates the model has reached near-optimal performance, and the remaining disagreements reflect the LLM's inherent conservatism against network-derived signals rather than correctable errors.
+
+============================================================
+🏁 [MetaAgent] Generating Final Conclusion...
+============================================================
+  [16:04:55] MULTINET complete!
+
+============================================================
+[16:04:55] DATASET: IREF
+============================================================
+  [16:04:55] Loading IREF...
+    Genes=17013, Train=3302, Val=367, Test=1223
+Walk iteration:
+1 / 6
+[[    0   635    60 ...  3503 15206  2753]
+ [    1    52    67 ...   344  9572 12262]
+ [    2 13511  5334 ...  5410  9749  7392]
+ ...
+ [17010 17010 17010 ... 17010 17010 17010]
+ [17011 17011 17011 ... 17011 17011 17011]
+ [17012 17012 17012 ... 17012 17012 17012]]
+2 / 6
+[[    0   968   975 ... 14150   787  1372]
+ [    1    80   635 ...  1399  4038   550]
+ [    2  2397  9351 ...  3332  4181  8305]
+ ...
+ [17010 17010 17010 ... 17010 17010 17010]
+ [17011 17011 17011 ... 17011 17011 17011]
+ [17012 17012 17012 ... 17012 17012 17012]]
+3 / 6
+[[    0    99   529 ...   715  8576   247]
+ [    1    29 14169 ...   712 10602 10220]
+ [    2  7227  5517 ...  5433  5317  5410]
+ ...
+ [17010 17010 17010 ... 17010 17010 17010]
+ [17011 17011 17011 ... 17011 17011 17011]
+ [17012 17012 17012 ... 17012 17012 17012]]
+4 / 6
+[[    0  1277  1310 ...  3368   476  4298]
+ [    1     0   936 ...  7813  1085 12932]
+ [    2  4471  7163 ...  6932  6526  3531]
+ ...
+ [17010 17010 17010 ... 17010 17010 17010]
+ [17011 17011 17011 ... 17011 17011 17011]
+ [17012 17012 17012 ... 17012 17012 17012]]
+5 / 6
+[[    0  1262    17 ...  4566 10197  1271]
+ [    1   101  7531 ...  6448  3423  2573]
+ [    2 14001  7835 ...  8002   558  7929]
+ ...
+ [17010 17010 17010 ... 17010 17010 17010]
+ [17011 17011 17011 ... 17011 17011 17011]
+ [17012 17012 17012 ... 17012 17012 17012]]
+6 / 6
+[[    0  1409    43 ...  7409  1046  8055]
+ [    1    74  2870 ...  4677  4736  9705]
+ [    2  4682 10149 ...  7928  3850   784]
+ ...
+ [17010 17010 17010 ... 17010 17010 17010]
+ [17011 17011 17011 ... 17011 17011 17011]
+ [17012 17012 17012 ... 17012 17012 17012]]
+    [16:05:02] Training GPS on IREF...
+  GPS | 标签平滑=0.05 | 对比权重=0.1 | 流匹配权重=0.05
+/root/miniconda3/lib/python3.12/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+Epoch 1/30
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:431: UserWarning: `build()` was called on layer 'flow', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:431: UserWarning: `build()` was called on layer 'GPS', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/optimizers/base_optimizer.py:862: UserWarning: Gradients do not exist for variables ['ms_fusion/ms_fusion_weights'] when minimizing the loss. If using `model.compile()`, did you forget to provide a `loss` argument?
+  warnings.warn(
+  [16:05:25] epoch   1 ★ │ auc=0.7579  aupr=0.1954  acc=0.7065  f1=0.2177  contrast_loss=0.3132  flow_loss=0.2434
+
+Epoch 1: val_auc improved from None to 0.75787, saving model to /root/crossgene/gps/ckpt/GPS_IREF.weights.h5
+
+Epoch 1: finished saving model to /root/crossgene/gps/ckpt/GPS_IREF.weights.h5
+21/21 - 23s - 1s/step - acc: 0.6694 - contrast_loss: 0.3132 - contrast_temp: 0.2329 - flow_loss: 0.2434 - loss: 0.7748 - val_acc: 0.7065 - val_contrast_loss: 0.0912 - val_contrast_temp: 0.0912 - val_flow_loss: 0.0912 - val_loss: 0.1826 - val_auc: 0.7579 - val_aupr: 0.1954 - val_f1: 0.2177 - learning_rate: 0.0010
+Epoch 2/30
+  [16:05:26] epoch   2 ★ │ auc=0.7765  aupr=0.3220  acc=0.7958  f1=0.2623  contrast_loss=0.3396  flow_loss=0.2672
+
+Epoch 2: val_auc improved from 0.75787 to 0.77648, saving model to /root/crossgene/gps/ckpt/GPS_IREF.weights.h5
+
+Epoch 2: finished saving model to /root/crossgene/gps/ckpt/GPS_IREF.weights.h5
+21/21 - 1s - 59ms/step - acc: 0.7164 - contrast_loss: 0.3396 - contrast_temp: 0.2631 - flow_loss: 0.2672 - loss: 0.6890 - val_acc: 0.7958 - val_contrast_loss: 0.1016 - val_contrast_temp: 0.1016 - val_flow_loss: 0.1016 - val_loss: 0.1621 - val_auc: 0.7765 - val_aupr: 0.3220 - val_f1: 0.2623 - learning_rate: 0.0010
+Epoch 3/30
+  [16:05:27] epoch   3 ★ │ auc=0.7810  aupr=0.3544  acc=0.6490  f1=0.2162  contrast_loss=0.3462  flow_loss=0.2751
+
+Epoch 3: val_auc improved from 0.77648 to 0.78100, saving model to /root/crossgene/gps/ckpt/GPS_IREF.weights.h5
+
+Epoch 3: finished saving model to /root/crossgene/gps/ckpt/GPS_IREF.weights.h5
+21/21 - 1s - 59ms/step - acc: 0.7353 - contrast_loss: 0.3462 - contrast_temp: 0.2735 - flow_loss: 0.2751 - loss: 0.6546 - val_acc: 0.6490 - val_contrast_loss: 0.0987 - val_contrast_temp: 0.0987 - val_flow_loss: 0.0987 - val_loss: 0.1909 - val_auc: 0.7810 - val_aupr: 0.3544 - val_f1: 0.2162 - learning_rate: 0.0010
+Epoch 4/30
+  [16:05:29] epoch   4 ★ │ auc=0.8160  aupr=0.4380  acc=0.8079  f1=0.2983  contrast_loss=0.3531  flow_loss=0.2817
+
+Epoch 4: val_auc improved from 0.78100 to 0.81597, saving model to /root/crossgene/gps/ckpt/GPS_IREF.weights.h5
+
+Epoch 4: finished saving model to /root/crossgene/gps/ckpt/GPS_IREF.weights.h5
+21/21 - 1s - 60ms/step - acc: 0.7270 - contrast_loss: 0.3531 - contrast_temp: 0.2812 - flow_loss: 0.2817 - loss: 0.6357 - val_acc: 0.8079 - val_contrast_loss: 0.1119 - val_contrast_temp: 0.1119 - val_flow_loss: 0.1119 - val_loss: 0.1552 - val_auc: 0.8160 - val_aupr: 0.4380 - val_f1: 0.2983 - learning_rate: 0.0010
+Epoch 5/30
+  [16:05:30] epoch   5 ★ │ auc=0.8181  aupr=0.4787  acc=0.7776  f1=0.2967  contrast_loss=0.3585  flow_loss=0.2864
+
+Epoch 5: val_auc improved from 0.81597 to 0.81806, saving model to /root/crossgene/gps/ckpt/GPS_IREF.weights.h5
+
+Epoch 5: finished saving model to /root/crossgene/gps/ckpt/GPS_IREF.weights.h5
+21/21 - 1s - 58ms/step - acc: 0.7474 - contrast_loss: 0.3585 - contrast_temp: 0.2867 - flow_loss: 0.2864 - loss: 0.6203 - val_acc: 0.7776 - val_contrast_loss: 0.1119 - val_contrast_temp: 0.1119 - val_flow_loss: 0.1119 - val_loss: 0.1627 - val_auc: 0.8181 - val_aupr: 0.4787 - val_f1: 0.2967 - learning_rate: 0.0010
+Epoch 6/30

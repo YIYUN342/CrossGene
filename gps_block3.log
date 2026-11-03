@@ -1,0 +1,1743 @@
+
+############################################################
+[23:46:55] GPS Block: CPDB (G=6/N=8 sliced from 8/9)
+############################################################
+  Nodes=13627, Train+Val labeled=2237, Test=746
+  Loading subgraphs: CPDB_multiomics_method_rw_channel_8_neighbor_9_subgraphs_p_4_q_4.npy...
+  Loaded+sliced in 0s: neighbor=(13627, 6, 8), spatial=(13627, 6, 1, 8, 8)
+2026-07-24 23:46:57.826167: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1784908017.839715  829986 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1784908017.844057  829986 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+  XLA JIT: ON
+
+  [23:46:59] Fold 1/5: train=1789, val=448
+I0000 00:00:1784908019.712328  829986 gpu_device.cc:2022] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 94129 MB memory:  -> device: 0, name: NVIDIA H20, pci bus id: 0000:34:00.0, compute capability: 9.0
+  [GPU优化] Subclassed Model + 数据预加载显存 + 并行通道 + XLA JIT + 混合精度
+  [改进] 标签平滑=0.05, 数据增强噪声=0.1
+  [辅助损失] 对比权重=0.1, 流匹配权重=0.05
+/root/miniconda3/lib/python3.12/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+Epoch 1/150
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:431: UserWarning: `build()` was called on layer 'flow', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1784908032.386263  832056 service.cc:148] XLA service 0x7fc1b8004390 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+I0000 00:00:1784908032.386342  832056 service.cc:156]   StreamExecutor device (0): NVIDIA H20, Compute Capability 9.0
+I0000 00:00:1784908032.399834  832056 cuda_dnn.cc:529] Loaded cuDNN version 91002
+I0000 00:00:1784908032.443551  832056 device_compiler.h:188] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+  [23:48:04] epoch   1 ★ │ auc=0.6950  aupr=0.5014  acc=0.7165  f1=0.4201  contrast=0.3879  flow=0.2979
+
+Epoch 1: val_auc improved from None to 0.69499, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+
+Epoch 1: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+28/28 - 63s - 2s/step - acc: 0.6277 - contrast_loss: 0.3879 - contrast_temp: 0.2821 - flow_loss: 0.2979 - loss: 0.6213 - val_acc: 0.7165 - val_contrast_loss: 0.3232 - val_contrast_temp: 0.3232 - val_flow_loss: 0.3232 - val_loss: 0.2693 - val_auc: 0.6950 - val_aupr: 0.5014 - val_f1: 0.4201 - learning_rate: 0.0020
+Epoch 2/150
+  [23:48:30] epoch   2 ★ │ auc=0.7576  aupr=0.5945  acc=0.6808  f1=0.5017  contrast=0.4000  flow=0.3283
+
+Epoch 2: val_auc improved from 0.69499 to 0.75765, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+
+Epoch 2: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+28/28 - 26s - 945ms/step - acc: 0.6847 - contrast_loss: 0.4000 - contrast_temp: 0.3220 - flow_loss: 0.3283 - loss: 0.5041 - val_acc: 0.6808 - val_contrast_loss: 0.3870 - val_contrast_temp: 0.3870 - val_flow_loss: 0.3870 - val_loss: 0.2593 - val_auc: 0.7576 - val_aupr: 0.5945 - val_f1: 0.5017 - learning_rate: 0.0020
+Epoch 3/150
+  [23:48:31] epoch   3 ★ │ auc=0.8008  aupr=0.6709  acc=0.7969  f1=0.6026  contrast=0.4544  flow=0.3901
+
+Epoch 3: val_auc improved from 0.75765 to 0.80076, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+
+Epoch 3: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+28/28 - 1s - 32ms/step - acc: 0.7574 - contrast_loss: 0.4544 - contrast_temp: 0.3845 - flow_loss: 0.3901 - loss: 0.4388 - val_acc: 0.7969 - val_contrast_loss: 0.4373 - val_contrast_temp: 0.4373 - val_flow_loss: 0.4373 - val_loss: 0.2416 - val_auc: 0.8008 - val_aupr: 0.6709 - val_f1: 0.6026 - learning_rate: 0.0020
+Epoch 4/150
+  [23:48:32] epoch   4 ★ │ auc=0.8277  aupr=0.7054  acc=0.8170  f1=0.6204  contrast=0.4580  flow=0.4004
+
+Epoch 4: val_auc improved from 0.80076 to 0.82767, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+
+Epoch 4: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+28/28 - 1s - 41ms/step - acc: 0.7669 - contrast_loss: 0.4580 - contrast_temp: 0.3950 - flow_loss: 0.4004 - loss: 0.4106 - val_acc: 0.8170 - val_contrast_loss: 0.4590 - val_contrast_temp: 0.4590 - val_flow_loss: 0.4590 - val_loss: 0.2300 - val_auc: 0.8277 - val_aupr: 0.7054 - val_f1: 0.6204 - learning_rate: 0.0020
+Epoch 5/150
+  [23:48:33] epoch   5 ★ │ auc=0.8307  aupr=0.7064  acc=0.7522  f1=0.6078  contrast=0.4931  flow=0.4401
+
+Epoch 5: val_auc improved from 0.82767 to 0.83074, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+
+Epoch 5: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+28/28 - 1s - 31ms/step - acc: 0.7842 - contrast_loss: 0.4931 - contrast_temp: 0.4349 - flow_loss: 0.4401 - loss: 0.3801 - val_acc: 0.7522 - val_contrast_loss: 0.4378 - val_contrast_temp: 0.4378 - val_flow_loss: 0.4378 - val_loss: 0.2293 - val_auc: 0.8307 - val_aupr: 0.7064 - val_f1: 0.6078 - learning_rate: 0.0020
+Epoch 6/150
+  [23:48:34] epoch   6 ★ │ auc=0.8454  aupr=0.7254  acc=0.8170  f1=0.6058  contrast=0.5120  flow=0.4614
+
+Epoch 6: val_auc improved from 0.83074 to 0.84540, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+
+Epoch 6: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+28/28 - 1s - 30ms/step - acc: 0.8094 - contrast_loss: 0.5120 - contrast_temp: 0.4564 - flow_loss: 0.4614 - loss: 0.3622 - val_acc: 0.8170 - val_contrast_loss: 0.4946 - val_contrast_temp: 0.4946 - val_flow_loss: 0.4946 - val_loss: 0.2278 - val_auc: 0.8454 - val_aupr: 0.7254 - val_f1: 0.6058 - learning_rate: 0.0020
+Epoch 7/150
+  [23:48:35] epoch   7 ★ │ auc=0.8473  aupr=0.7185  acc=0.8080  f1=0.5943  contrast=0.5071  flow=0.4602
+
+Epoch 7: val_auc improved from 0.84540 to 0.84728, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+
+Epoch 7: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold0.weights.h5
+28/28 - 1s - 31ms/step - acc: 0.8161 - contrast_loss: 0.5071 - contrast_temp: 0.4556 - flow_loss: 0.4602 - loss: 0.3499 - val_acc: 0.8080 - val_contrast_loss: 0.5113 - val_contrast_temp: 0.5113 - val_flow_loss: 0.5113 - val_loss: 0.2310 - val_auc: 0.8473 - val_aupr: 0.7185 - val_f1: 0.5943 - learning_rate: 0.0020
+Epoch 8/150
+  [23:48:36] epoch   8 │ auc=0.8362  aupr=0.7241  acc=0.8214  f1=0.5789  contrast=0.5030  flow=0.4576
+
+Epoch 8: val_auc did not improve from 0.84728
+28/28 - 1s - 22ms/step - acc: 0.8049 - contrast_loss: 0.5030 - contrast_temp: 0.4533 - flow_loss: 0.4576 - loss: 0.3499 - val_acc: 0.8214 - val_contrast_loss: 0.5646 - val_contrast_temp: 0.5646 - val_flow_loss: 0.5646 - val_loss: 0.2624 - val_auc: 0.8362 - val_aupr: 0.7241 - val_f1: 0.5789 - learning_rate: 0.0020
+Epoch 9/150
+  [23:48:36] epoch   9 │ auc=0.8345  aupr=0.7094  acc=0.7701  f1=0.6255  contrast=0.5330  flow=0.4876
+
+Epoch 9: val_auc did not improve from 0.84728
+28/28 - 1s - 21ms/step - acc: 0.8273 - contrast_loss: 0.5330 - contrast_temp: 0.4831 - flow_loss: 0.4876 - loss: 0.3375 - val_acc: 0.7701 - val_contrast_loss: 0.4513 - val_contrast_temp: 0.4513 - val_flow_loss: 0.4513 - val_loss: 0.2293 - val_auc: 0.8345 - val_aupr: 0.7094 - val_f1: 0.6255 - learning_rate: 0.0020
+Epoch 10/150
+  [23:48:37] epoch  10 │ auc=0.8345  aupr=0.7090  acc=0.8058  f1=0.5029  contrast=0.5287  flow=0.4872
+
+Epoch 10: val_auc did not improve from 0.84728
+28/28 - 1s - 21ms/step - acc: 0.8278 - contrast_loss: 0.5287 - contrast_temp: 0.4831 - flow_loss: 0.4872 - loss: 0.3227 - val_acc: 0.8058 - val_contrast_loss: 0.5164 - val_contrast_temp: 0.5164 - val_flow_loss: 0.5164 - val_loss: 0.2591 - val_auc: 0.8345 - val_aupr: 0.7090 - val_f1: 0.5029 - learning_rate: 0.0020
+Epoch 11/150
+  [23:48:38] epoch  11 │ auc=0.8317  aupr=0.7063  acc=0.7835  f1=0.6394  contrast=0.5214  flow=0.4812
+
+Epoch 11: val_auc did not improve from 0.84728
+28/28 - 1s - 22ms/step - acc: 0.8329 - contrast_loss: 0.5214 - contrast_temp: 0.4772 - flow_loss: 0.4812 - loss: 0.3221 - val_acc: 0.7835 - val_contrast_loss: 0.4621 - val_contrast_temp: 0.4621 - val_flow_loss: 0.4621 - val_loss: 0.2328 - val_auc: 0.8317 - val_aupr: 0.7063 - val_f1: 0.6394 - learning_rate: 0.0020
+Epoch 12/150
+  [23:48:38] epoch  12 │ auc=0.8294  aupr=0.6977  acc=0.7991  f1=0.5161  contrast=0.5128  flow=0.4751
+
+Epoch 12: val_auc did not improve from 0.84728
+28/28 - 1s - 23ms/step - acc: 0.8306 - contrast_loss: 0.5128 - contrast_temp: 0.4715 - flow_loss: 0.4751 - loss: 0.3192 - val_acc: 0.7991 - val_contrast_loss: 0.5148 - val_contrast_temp: 0.5148 - val_flow_loss: 0.5148 - val_loss: 0.2550 - val_auc: 0.8294 - val_aupr: 0.6977 - val_f1: 0.5161 - learning_rate: 0.0020
+Epoch 13/150
+  [23:48:39] epoch  13 │ auc=0.8284  aupr=0.7029  acc=0.8103  f1=0.5854  contrast=0.5266  flow=0.4879
+
+Epoch 13: val_auc did not improve from 0.84728
+28/28 - 1s - 22ms/step - acc: 0.8357 - contrast_loss: 0.5266 - contrast_temp: 0.4843 - flow_loss: 0.4879 - loss: 0.3144 - val_acc: 0.8103 - val_contrast_loss: 0.5684 - val_contrast_temp: 0.5684 - val_flow_loss: 0.5684 - val_loss: 0.2778 - val_auc: 0.8284 - val_aupr: 0.7029 - val_f1: 0.5854 - learning_rate: 0.0020
+Epoch 14/150
+  [23:48:40] epoch  14 │ auc=0.8317  aupr=0.7099  acc=0.7545  f1=0.6181  contrast=0.5399  flow=0.5021
+
+Epoch 14: val_auc did not improve from 0.84728
+28/28 - 1s - 22ms/step - acc: 0.8362 - contrast_loss: 0.5399 - contrast_temp: 0.4982 - flow_loss: 0.5021 - loss: 0.3046 - val_acc: 0.7545 - val_contrast_loss: 0.4618 - val_contrast_temp: 0.4618 - val_flow_loss: 0.4618 - val_loss: 0.2460 - val_auc: 0.8317 - val_aupr: 0.7099 - val_f1: 0.6181 - learning_rate: 0.0020
+Epoch 15/150
+  [23:48:40] epoch  15 │ auc=0.8217  aupr=0.6968  acc=0.7679  f1=0.6061  contrast=0.5425  flow=0.5049
+
+Epoch 15: ReduceLROnPlateau reducing learning rate to 0.0010000000474974513.
+
+Epoch 15: val_auc did not improve from 0.84728
+28/28 - 1s - 23ms/step - acc: 0.8407 - contrast_loss: 0.5425 - contrast_temp: 0.5015 - flow_loss: 0.5049 - loss: 0.3029 - val_acc: 0.7679 - val_contrast_loss: 0.4559 - val_contrast_temp: 0.4559 - val_flow_loss: 0.4559 - val_loss: 0.2356 - val_auc: 0.8217 - val_aupr: 0.6968 - val_f1: 0.6061 - learning_rate: 0.0020
+Epoch 16/150
+  [23:48:41] epoch  16 │ auc=0.8194  aupr=0.7002  acc=0.7478  f1=0.5921  contrast=0.5595  flow=0.5225
+
+Epoch 16: val_auc did not improve from 0.84728
+28/28 - 1s - 21ms/step - acc: 0.8597 - contrast_loss: 0.5595 - contrast_temp: 0.5191 - flow_loss: 0.5225 - loss: 0.2909 - val_acc: 0.7478 - val_contrast_loss: 0.4597 - val_contrast_temp: 0.4597 - val_flow_loss: 0.4597 - val_loss: 0.2549 - val_auc: 0.8194 - val_aupr: 0.7002 - val_f1: 0.5921 - learning_rate: 0.0010
+Epoch 17/150
+  [23:48:41] epoch  17 │ auc=0.8241  aupr=0.7069  acc=0.7924  f1=0.5903  contrast=0.5524  flow=0.5162
+
+Epoch 17: val_auc did not improve from 0.84728
+28/28 - 1s - 22ms/step - acc: 0.8569 - contrast_loss: 0.5524 - contrast_temp: 0.5131 - flow_loss: 0.5162 - loss: 0.2875 - val_acc: 0.7924 - val_contrast_loss: 0.5283 - val_contrast_temp: 0.5283 - val_flow_loss: 0.5283 - val_loss: 0.2550 - val_auc: 0.8241 - val_aupr: 0.7069 - val_f1: 0.5903 - learning_rate: 0.0010
+Epoch 18/150
+  [23:48:42] epoch  18 │ auc=0.8240  aupr=0.7005  acc=0.7835  f1=0.5530  contrast=0.5646  flow=0.5306
+
+Epoch 18: val_auc did not improve from 0.84728
+28/28 - 1s - 21ms/step - acc: 0.8703 - contrast_loss: 0.5646 - contrast_temp: 0.5275 - flow_loss: 0.5306 - loss: 0.2792 - val_acc: 0.7835 - val_contrast_loss: 0.5098 - val_contrast_temp: 0.5098 - val_flow_loss: 0.5098 - val_loss: 0.2487 - val_auc: 0.8240 - val_aupr: 0.7005 - val_f1: 0.5530 - learning_rate: 0.0010
+Epoch 19/150
+  [23:48:43] epoch  19 │ auc=0.8265  aupr=0.6969  acc=0.7768  f1=0.6212  contrast=0.5705  flow=0.5354
+
+Epoch 19: val_auc did not improve from 0.84728
+28/28 - 1s - 21ms/step - acc: 0.8636 - contrast_loss: 0.5705 - contrast_temp: 0.5325 - flow_loss: 0.5354 - loss: 0.2808 - val_acc: 0.7768 - val_contrast_loss: 0.4948 - val_contrast_temp: 0.4948 - val_flow_loss: 0.4948 - val_loss: 0.2557 - val_auc: 0.8265 - val_aupr: 0.6969 - val_f1: 0.6212 - learning_rate: 0.0010
+Epoch 20/150
+  [23:48:43] epoch  20 │ auc=0.8168  aupr=0.6932  acc=0.7946  f1=0.5856  contrast=0.5783  flow=0.5425
+
+Epoch 20: val_auc did not improve from 0.84728
+28/28 - 1s - 22ms/step - acc: 0.8686 - contrast_loss: 0.5783 - contrast_temp: 0.5395 - flow_loss: 0.5425 - loss: 0.2767 - val_acc: 0.7946 - val_contrast_loss: 0.5207 - val_contrast_temp: 0.5207 - val_flow_loss: 0.5207 - val_loss: 0.2641 - val_auc: 0.8168 - val_aupr: 0.6932 - val_f1: 0.5856 - learning_rate: 0.0010
+Epoch 21/150
+  [23:48:44] epoch  21 │ auc=0.8166  aupr=0.6929  acc=0.7545  f1=0.6127  contrast=0.5857  flow=0.5510
+
+Epoch 21: val_auc did not improve from 0.84728
+28/28 - 1s - 22ms/step - acc: 0.8636 - contrast_loss: 0.5857 - contrast_temp: 0.5479 - flow_loss: 0.5510 - loss: 0.2758 - val_acc: 0.7545 - val_contrast_loss: 0.4417 - val_contrast_temp: 0.4417 - val_flow_loss: 0.4417 - val_loss: 0.2554 - val_auc: 0.8166 - val_aupr: 0.6929 - val_f1: 0.6127 - learning_rate: 0.0010
+Epoch 22/150
+  [23:48:44] epoch  22 │ auc=0.8052  aupr=0.6814  acc=0.7656  f1=0.5882  contrast=0.5723  flow=0.5393
+
+Epoch 22: val_auc did not improve from 0.84728
+28/28 - 1s - 23ms/step - acc: 0.8720 - contrast_loss: 0.5723 - contrast_temp: 0.5364 - flow_loss: 0.5393 - loss: 0.2714 - val_acc: 0.7656 - val_contrast_loss: 0.4711 - val_contrast_temp: 0.4711 - val_flow_loss: 0.4711 - val_loss: 0.2615 - val_auc: 0.8052 - val_aupr: 0.6814 - val_f1: 0.5882 - learning_rate: 0.0010
+Epoch 23/150
+  [23:48:45] epoch  23 │ auc=0.8132  aupr=0.6897  acc=0.7723  f1=0.6107  contrast=0.5837  flow=0.5505
+
+Epoch 23: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 23: val_auc did not improve from 0.84728
+28/28 - 1s - 26ms/step - acc: 0.8765 - contrast_loss: 0.5837 - contrast_temp: 0.5476 - flow_loss: 0.5505 - loss: 0.2636 - val_acc: 0.7723 - val_contrast_loss: 0.4796 - val_contrast_temp: 0.4796 - val_flow_loss: 0.4796 - val_loss: 0.2667 - val_auc: 0.8132 - val_aupr: 0.6897 - val_f1: 0.6107 - learning_rate: 0.0010
+Epoch 24/150
+  [23:48:46] epoch  24 │ auc=0.8106  aupr=0.6821  acc=0.7656  f1=0.5946  contrast=0.6033  flow=0.5690
+
+Epoch 24: val_auc did not improve from 0.84728
+28/28 - 1s - 22ms/step - acc: 0.8899 - contrast_loss: 0.6033 - contrast_temp: 0.5661 - flow_loss: 0.5690 - loss: 0.2598 - val_acc: 0.7656 - val_contrast_loss: 0.4790 - val_contrast_temp: 0.4790 - val_flow_loss: 0.4790 - val_loss: 0.2679 - val_auc: 0.8106 - val_aupr: 0.6821 - val_f1: 0.5946 - learning_rate: 5.0000e-04
+Epoch 25/150
+  [23:48:46] epoch  25 │ auc=0.8009  aupr=0.6717  acc=0.7746  f1=0.5665  contrast=0.5998  flow=0.5668
+
+Epoch 25: val_auc did not improve from 0.84728
+28/28 - 1s - 23ms/step - acc: 0.8876 - contrast_loss: 0.5998 - contrast_temp: 0.5641 - flow_loss: 0.5668 - loss: 0.2560 - val_acc: 0.7746 - val_contrast_loss: 0.4982 - val_contrast_temp: 0.4982 - val_flow_loss: 0.4982 - val_loss: 0.2722 - val_auc: 0.8009 - val_aupr: 0.6717 - val_f1: 0.5665 - learning_rate: 5.0000e-04
+Epoch 26/150
+  [23:48:47] epoch  26 │ auc=0.8042  aupr=0.6698  acc=0.7612  f1=0.5771  contrast=0.6007  flow=0.5669
+
+Epoch 26: val_auc did not improve from 0.84728
+28/28 - 1s - 22ms/step - acc: 0.8753 - contrast_loss: 0.6007 - contrast_temp: 0.5641 - flow_loss: 0.5669 - loss: 0.2614 - val_acc: 0.7612 - val_contrast_loss: 0.4827 - val_contrast_temp: 0.4827 - val_flow_loss: 0.4827 - val_loss: 0.2754 - val_auc: 0.8042 - val_aupr: 0.6698 - val_f1: 0.5771 - learning_rate: 5.0000e-04
+Epoch 27/150
+  [23:48:48] epoch  27 │ auc=0.8002  aupr=0.6735  acc=0.7835  f1=0.5571  contrast=0.6004  flow=0.5653
+
+Epoch 27: val_auc did not improve from 0.84728
+28/28 - 1s - 22ms/step - acc: 0.8759 - contrast_loss: 0.6004 - contrast_temp: 0.5625 - flow_loss: 0.5653 - loss: 0.2651 - val_acc: 0.7835 - val_contrast_loss: 0.5209 - val_contrast_temp: 0.5209 - val_flow_loss: 0.5209 - val_loss: 0.2768 - val_auc: 0.8002 - val_aupr: 0.6735 - val_f1: 0.5571 - learning_rate: 5.0000e-04
+Epoch 27: early stopping
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 230ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 231ms/step
+  [23:48:54] Fold 1 Test: AUROC=0.8703 AUPRC=0.7419 Acc=0.8378 Prec=0.7600 Rec=0.5729 F1=0.6533 (107s)
+
+  [23:48:55] Fold 2/5: train=1789, val=448
+  [GPU优化] Subclassed Model + 数据预加载显存 + 并行通道 + XLA JIT + 混合精度
+  [改进] 标签平滑=0.05, 数据增强噪声=0.1
+  [辅助损失] 对比权重=0.1, 流匹配权重=0.05
+/root/miniconda3/lib/python3.12/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+Epoch 1/150
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:431: UserWarning: `build()` was called on layer 'flow', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+  [23:49:43] epoch   1 ★ │ auc=0.6903  aupr=0.4214  acc=0.7321  f1=0.0000  contrast=0.3671  flow=0.2836
+
+Epoch 1: val_auc improved from None to 0.69027, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold1.weights.h5
+
+Epoch 1: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold1.weights.h5
+28/28 - 48s - 2s/step - acc: 0.5875 - contrast_loss: 0.3671 - contrast_temp: 0.2673 - flow_loss: 0.2836 - loss: 0.6335 - val_acc: 0.7321 - val_contrast_loss: 0.3007 - val_contrast_temp: 0.3007 - val_flow_loss: 0.3007 - val_loss: 0.2959 - val_auc: 0.6903 - val_aupr: 0.4214 - val_f1: 0.0000e+00 - learning_rate: 0.0020
+Epoch 2/150
+  [23:50:01] epoch   2 ★ │ auc=0.6921  aupr=0.4581  acc=0.6473  f1=0.4275  contrast=0.3779  flow=0.3060
+
+Epoch 2: val_auc improved from 0.69027 to 0.69212, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold1.weights.h5
+
+Epoch 2: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold1.weights.h5
+28/28 - 18s - 651ms/step - acc: 0.6607 - contrast_loss: 0.3779 - contrast_temp: 0.2986 - flow_loss: 0.3060 - loss: 0.5092 - val_acc: 0.6473 - val_contrast_loss: 0.3195 - val_contrast_temp: 0.3195 - val_flow_loss: 0.3195 - val_loss: 0.2707 - val_auc: 0.6921 - val_aupr: 0.4581 - val_f1: 0.4275 - learning_rate: 0.0020
+Epoch 3/150
+  [23:50:02] epoch   3 ★ │ auc=0.7924  aupr=0.5858  acc=0.7455  f1=0.5403  contrast=0.4020  flow=0.3412
+
+Epoch 3: val_auc improved from 0.69212 to 0.79243, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold1.weights.h5
+
+Epoch 3: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold1.weights.h5
+28/28 - 1s - 32ms/step - acc: 0.7172 - contrast_loss: 0.4020 - contrast_temp: 0.3357 - flow_loss: 0.3412 - loss: 0.4558 - val_acc: 0.7455 - val_contrast_loss: 0.3793 - val_contrast_temp: 0.3793 - val_flow_loss: 0.3793 - val_loss: 0.2448 - val_auc: 0.7924 - val_aupr: 0.5858 - val_f1: 0.5403 - learning_rate: 0.0020
+Epoch 4/150
+  [23:50:03] epoch   4 ★ │ auc=0.8166  aupr=0.6742  acc=0.7857  f1=0.5556  contrast=0.4604  flow=0.4045
+
+Epoch 4: val_auc improved from 0.79243 to 0.81657, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold1.weights.h5
+
+Epoch 4: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold1.weights.h5
+28/28 - 1s - 33ms/step - acc: 0.7736 - contrast_loss: 0.4604 - contrast_temp: 0.3987 - flow_loss: 0.4045 - loss: 0.4070 - val_acc: 0.7857 - val_contrast_loss: 0.4275 - val_contrast_temp: 0.4275 - val_flow_loss: 0.4275 - val_loss: 0.2353 - val_auc: 0.8166 - val_aupr: 0.6742 - val_f1: 0.5556 - learning_rate: 0.0020
+Epoch 5/150
+  [23:50:03] epoch   5 ★ │ auc=0.8173  aupr=0.6809  acc=0.6741  f1=0.5706  contrast=0.4754  flow=0.4245
+
+Epoch 5: val_auc improved from 0.81657 to 0.81728, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold1.weights.h5
+
+Epoch 5: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold1.weights.h5
+28/28 - 1s - 30ms/step - acc: 0.7893 - contrast_loss: 0.4754 - contrast_temp: 0.4188 - flow_loss: 0.4245 - loss: 0.3845 - val_acc: 0.6741 - val_contrast_loss: 0.3928 - val_contrast_temp: 0.3928 - val_flow_loss: 0.3928 - val_loss: 0.2598 - val_auc: 0.8173 - val_aupr: 0.6809 - val_f1: 0.5706 - learning_rate: 0.0020
+Epoch 6/150
+  [23:50:04] epoch   6 │ auc=0.8144  aupr=0.6931  acc=0.8080  f1=0.4941  contrast=0.4943  flow=0.4464
+
+Epoch 6: val_auc did not improve from 0.81728
+28/28 - 1s - 21ms/step - acc: 0.7932 - contrast_loss: 0.4943 - contrast_temp: 0.4413 - flow_loss: 0.4464 - loss: 0.3646 - val_acc: 0.8080 - val_contrast_loss: 0.4666 - val_contrast_temp: 0.4666 - val_flow_loss: 0.4666 - val_loss: 0.2571 - val_auc: 0.8144 - val_aupr: 0.6931 - val_f1: 0.4941 - learning_rate: 0.0020
+Epoch 7/150
+  [23:50:05] epoch   7 ★ │ auc=0.8462  aupr=0.7312  acc=0.7812  f1=0.6525  contrast=0.4944  flow=0.4498
+
+Epoch 7: val_auc improved from 0.81728 to 0.84616, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold1.weights.h5
+
+Epoch 7: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold1.weights.h5
+28/28 - 1s - 29ms/step - acc: 0.8105 - contrast_loss: 0.4944 - contrast_temp: 0.4449 - flow_loss: 0.4498 - loss: 0.3482 - val_acc: 0.7812 - val_contrast_loss: 0.4733 - val_contrast_temp: 0.4733 - val_flow_loss: 0.4733 - val_loss: 0.2272 - val_auc: 0.8462 - val_aupr: 0.7312 - val_f1: 0.6525 - learning_rate: 0.0020
+Epoch 8/150
+  [23:50:06] epoch   8 │ auc=0.8367  aupr=0.7277  acc=0.8259  f1=0.6020  contrast=0.5104  flow=0.4671
+
+Epoch 8: val_auc did not improve from 0.84616
+28/28 - 1s - 21ms/step - acc: 0.8088 - contrast_loss: 0.5104 - contrast_temp: 0.4622 - flow_loss: 0.4671 - loss: 0.3402 - val_acc: 0.8259 - val_contrast_loss: 0.5169 - val_contrast_temp: 0.5169 - val_flow_loss: 0.5169 - val_loss: 0.2378 - val_auc: 0.8367 - val_aupr: 0.7277 - val_f1: 0.6020 - learning_rate: 0.0020
+Epoch 9/150
+  [23:50:06] epoch   9 │ auc=0.8319  aupr=0.7201  acc=0.8259  f1=0.6100  contrast=0.4941  flow=0.4526
+
+Epoch 9: val_auc did not improve from 0.84616
+28/28 - 1s - 20ms/step - acc: 0.8127 - contrast_loss: 0.4941 - contrast_temp: 0.4480 - flow_loss: 0.4526 - loss: 0.3396 - val_acc: 0.8259 - val_contrast_loss: 0.5459 - val_contrast_temp: 0.5459 - val_flow_loss: 0.5459 - val_loss: 0.2473 - val_auc: 0.8319 - val_aupr: 0.7201 - val_f1: 0.6100 - learning_rate: 0.0020
+Epoch 10/150
+  [23:50:07] epoch  10 │ auc=0.8171  aupr=0.6935  acc=0.7612  f1=0.6137  contrast=0.5035  flow=0.4647
+
+Epoch 10: val_auc did not improve from 0.84616
+28/28 - 1s - 21ms/step - acc: 0.8016 - contrast_loss: 0.5035 - contrast_temp: 0.4606 - flow_loss: 0.4647 - loss: 0.3324 - val_acc: 0.7612 - val_contrast_loss: 0.4331 - val_contrast_temp: 0.4331 - val_flow_loss: 0.4331 - val_loss: 0.2365 - val_auc: 0.8171 - val_aupr: 0.6935 - val_f1: 0.6137 - learning_rate: 0.0020
+Epoch 11/150
+  [23:50:07] epoch  11 │ auc=0.8185  aupr=0.6940  acc=0.7857  f1=0.6098  contrast=0.5031  flow=0.4650
+
+Epoch 11: val_auc did not improve from 0.84616
+28/28 - 1s - 21ms/step - acc: 0.8211 - contrast_loss: 0.5031 - contrast_temp: 0.4610 - flow_loss: 0.4650 - loss: 0.3207 - val_acc: 0.7857 - val_contrast_loss: 0.4918 - val_contrast_temp: 0.4918 - val_flow_loss: 0.4918 - val_loss: 0.2483 - val_auc: 0.8185 - val_aupr: 0.6940 - val_f1: 0.6098 - learning_rate: 0.0020
+Epoch 12/150
+  [23:50:08] epoch  12 │ auc=0.8163  aupr=0.7097  acc=0.8013  f1=0.5899  contrast=0.5271  flow=0.4884
+
+Epoch 12: val_auc did not improve from 0.84616
+28/28 - 1s - 20ms/step - acc: 0.8239 - contrast_loss: 0.5271 - contrast_temp: 0.4846 - flow_loss: 0.4884 - loss: 0.3154 - val_acc: 0.8013 - val_contrast_loss: 0.5202 - val_contrast_temp: 0.5202 - val_flow_loss: 0.5202 - val_loss: 0.2498 - val_auc: 0.8163 - val_aupr: 0.7097 - val_f1: 0.5899 - learning_rate: 0.0020
+Epoch 13/150
+  [23:50:08] epoch  13 │ auc=0.8236  aupr=0.7218  acc=0.7589  f1=0.6224  contrast=0.5277  flow=0.4903
+
+Epoch 13: val_auc did not improve from 0.84616
+28/28 - 1s - 19ms/step - acc: 0.8262 - contrast_loss: 0.5277 - contrast_temp: 0.4866 - flow_loss: 0.4903 - loss: 0.3077 - val_acc: 0.7589 - val_contrast_loss: 0.4537 - val_contrast_temp: 0.4537 - val_flow_loss: 0.4537 - val_loss: 0.2405 - val_auc: 0.8236 - val_aupr: 0.7218 - val_f1: 0.6224 - learning_rate: 0.0020
+Epoch 14/150
+  [23:50:09] epoch  14 │ auc=0.8046  aupr=0.6939  acc=0.7723  f1=0.5887  contrast=0.5294  flow=0.4936
+
+Epoch 14: val_auc did not improve from 0.84616
+28/28 - 1s - 22ms/step - acc: 0.8334 - contrast_loss: 0.5294 - contrast_temp: 0.4898 - flow_loss: 0.4936 - loss: 0.3060 - val_acc: 0.7723 - val_contrast_loss: 0.4523 - val_contrast_temp: 0.4523 - val_flow_loss: 0.4523 - val_loss: 0.2392 - val_auc: 0.8046 - val_aupr: 0.6939 - val_f1: 0.5887 - learning_rate: 0.0020
+Epoch 15/150
+  [23:50:10] epoch  15 │ auc=0.8175  aupr=0.7102  acc=0.8013  f1=0.6213  contrast=0.5301  flow=0.4943
+
+Epoch 15: ReduceLROnPlateau reducing learning rate to 0.0010000000474974513.
+
+Epoch 15: val_auc did not improve from 0.84616
+28/28 - 1s - 21ms/step - acc: 0.8362 - contrast_loss: 0.5301 - contrast_temp: 0.4907 - flow_loss: 0.4943 - loss: 0.3019 - val_acc: 0.8013 - val_contrast_loss: 0.4942 - val_contrast_temp: 0.4942 - val_flow_loss: 0.4942 - val_loss: 0.2413 - val_auc: 0.8175 - val_aupr: 0.7102 - val_f1: 0.6213 - learning_rate: 0.0020
+Epoch 16/150
+  [23:50:10] epoch  16 │ auc=0.8229  aupr=0.7180  acc=0.8304  f1=0.6238  contrast=0.5433  flow=0.5086
+
+Epoch 16: val_auc did not improve from 0.84616
+28/28 - 1s - 22ms/step - acc: 0.8396 - contrast_loss: 0.5433 - contrast_temp: 0.5053 - flow_loss: 0.5086 - loss: 0.2950 - val_acc: 0.8304 - val_contrast_loss: 0.5302 - val_contrast_temp: 0.5302 - val_flow_loss: 0.5302 - val_loss: 0.2458 - val_auc: 0.8229 - val_aupr: 0.7180 - val_f1: 0.6238 - learning_rate: 0.0010
+Epoch 17/150
+  [23:50:11] epoch  17 │ auc=0.8286  aupr=0.7329  acc=0.8013  f1=0.6245  contrast=0.5445  flow=0.5119
+
+Epoch 17: val_auc did not improve from 0.84616
+28/28 - 1s - 26ms/step - acc: 0.8496 - contrast_loss: 0.5445 - contrast_temp: 0.5086 - flow_loss: 0.5119 - loss: 0.2799 - val_acc: 0.8013 - val_contrast_loss: 0.5388 - val_contrast_temp: 0.5388 - val_flow_loss: 0.5388 - val_loss: 0.2474 - val_auc: 0.8286 - val_aupr: 0.7329 - val_f1: 0.6245 - learning_rate: 0.0010
+Epoch 18/150
+  [23:50:12] epoch  18 │ auc=0.8151  aupr=0.7101  acc=0.8214  f1=0.6078  contrast=0.5782  flow=0.5420
+
+Epoch 18: val_auc did not improve from 0.84616
+28/28 - 1s - 20ms/step - acc: 0.8597 - contrast_loss: 0.5782 - contrast_temp: 0.5387 - flow_loss: 0.5420 - loss: 0.2798 - val_acc: 0.8214 - val_contrast_loss: 0.5417 - val_contrast_temp: 0.5417 - val_flow_loss: 0.5417 - val_loss: 0.2609 - val_auc: 0.8151 - val_aupr: 0.7101 - val_f1: 0.6078 - learning_rate: 0.0010
+Epoch 19/150
+  [23:50:12] epoch  19 │ auc=0.8135  aupr=0.7105  acc=0.8192  f1=0.6197  contrast=0.5775  flow=0.5438
+
+Epoch 19: val_auc did not improve from 0.84616
+28/28 - 1s - 19ms/step - acc: 0.8603 - contrast_loss: 0.5775 - contrast_temp: 0.5407 - flow_loss: 0.5438 - loss: 0.2735 - val_acc: 0.8192 - val_contrast_loss: 0.5175 - val_contrast_temp: 0.5175 - val_flow_loss: 0.5175 - val_loss: 0.2445 - val_auc: 0.8135 - val_aupr: 0.7105 - val_f1: 0.6197 - learning_rate: 0.0010
+Epoch 20/150
+  [23:50:13] epoch  20 │ auc=0.8244  aupr=0.7264  acc=0.8304  f1=0.6346  contrast=0.5739  flow=0.5406
+
+Epoch 20: val_auc did not improve from 0.84616
+28/28 - 1s - 19ms/step - acc: 0.8698 - contrast_loss: 0.5739 - contrast_temp: 0.5374 - flow_loss: 0.5406 - loss: 0.2709 - val_acc: 0.8304 - val_contrast_loss: 0.5618 - val_contrast_temp: 0.5618 - val_flow_loss: 0.5618 - val_loss: 0.2549 - val_auc: 0.8244 - val_aupr: 0.7264 - val_f1: 0.6346 - learning_rate: 0.0010
+Epoch 21/150
+  [23:50:13] epoch  21 │ auc=0.8112  aupr=0.6906  acc=0.7879  f1=0.5923  contrast=0.5682  flow=0.5352
+
+Epoch 21: val_auc did not improve from 0.84616
+28/28 - 1s - 19ms/step - acc: 0.8647 - contrast_loss: 0.5682 - contrast_temp: 0.5320 - flow_loss: 0.5352 - loss: 0.2729 - val_acc: 0.7879 - val_contrast_loss: 0.5064 - val_contrast_temp: 0.5064 - val_flow_loss: 0.5064 - val_loss: 0.2546 - val_auc: 0.8112 - val_aupr: 0.6906 - val_f1: 0.5923 - learning_rate: 0.0010
+Epoch 22/150
+  [23:50:14] epoch  22 │ auc=0.8212  aupr=0.7073  acc=0.7812  f1=0.6142  contrast=0.5831  flow=0.5483
+
+Epoch 22: val_auc did not improve from 0.84616
+28/28 - 1s - 19ms/step - acc: 0.8675 - contrast_loss: 0.5831 - contrast_temp: 0.5452 - flow_loss: 0.5483 - loss: 0.2717 - val_acc: 0.7812 - val_contrast_loss: 0.4687 - val_contrast_temp: 0.4687 - val_flow_loss: 0.4687 - val_loss: 0.2372 - val_auc: 0.8212 - val_aupr: 0.7073 - val_f1: 0.6142 - learning_rate: 0.0010
+Epoch 23/150
+  [23:50:14] epoch  23 │ auc=0.8121  aupr=0.7013  acc=0.8259  f1=0.5806  contrast=0.5858  flow=0.5542
+
+Epoch 23: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 23: val_auc did not improve from 0.84616
+28/28 - 1s - 19ms/step - acc: 0.8742 - contrast_loss: 0.5858 - contrast_temp: 0.5511 - flow_loss: 0.5542 - loss: 0.2626 - val_acc: 0.8259 - val_contrast_loss: 0.5593 - val_contrast_temp: 0.5593 - val_flow_loss: 0.5593 - val_loss: 0.2693 - val_auc: 0.8121 - val_aupr: 0.7013 - val_f1: 0.5806 - learning_rate: 0.0010
+Epoch 24/150
+  [23:50:15] epoch  24 │ auc=0.8256  aupr=0.7249  acc=0.8036  f1=0.6303  contrast=0.5903  flow=0.5578
+
+Epoch 24: val_auc did not improve from 0.84616
+28/28 - 1s - 20ms/step - acc: 0.8709 - contrast_loss: 0.5903 - contrast_temp: 0.5548 - flow_loss: 0.5578 - loss: 0.2595 - val_acc: 0.8036 - val_contrast_loss: 0.5165 - val_contrast_temp: 0.5165 - val_flow_loss: 0.5165 - val_loss: 0.2442 - val_auc: 0.8256 - val_aupr: 0.7249 - val_f1: 0.6303 - learning_rate: 5.0000e-04
+Epoch 25/150
+  [23:50:15] epoch  25 │ auc=0.8111  aupr=0.7016  acc=0.8170  f1=0.6019  contrast=0.5973  flow=0.5642
+
+Epoch 25: val_auc did not improve from 0.84616
+28/28 - 1s - 20ms/step - acc: 0.8798 - contrast_loss: 0.5973 - contrast_temp: 0.5611 - flow_loss: 0.5642 - loss: 0.2581 - val_acc: 0.8170 - val_contrast_loss: 0.5407 - val_contrast_temp: 0.5407 - val_flow_loss: 0.5407 - val_loss: 0.2632 - val_auc: 0.8111 - val_aupr: 0.7016 - val_f1: 0.6019 - learning_rate: 5.0000e-04
+Epoch 26/150
+  [23:50:16] epoch  26 │ auc=0.8075  aupr=0.6891  acc=0.8080  f1=0.6126  contrast=0.6074  flow=0.5740
+
+Epoch 26: val_auc did not improve from 0.84616
+28/28 - 1s - 19ms/step - acc: 0.8742 - contrast_loss: 0.6074 - contrast_temp: 0.5710 - flow_loss: 0.5740 - loss: 0.2567 - val_acc: 0.8080 - val_contrast_loss: 0.5160 - val_contrast_temp: 0.5160 - val_flow_loss: 0.5160 - val_loss: 0.2595 - val_auc: 0.8075 - val_aupr: 0.6891 - val_f1: 0.6126 - learning_rate: 5.0000e-04
+Epoch 27/150
+  [23:50:16] epoch  27 │ auc=0.7993  aupr=0.6793  acc=0.8036  f1=0.5888  contrast=0.6088  flow=0.5762
+
+Epoch 27: val_auc did not improve from 0.84616
+28/28 - 1s - 19ms/step - acc: 0.8826 - contrast_loss: 0.6088 - contrast_temp: 0.5732 - flow_loss: 0.5762 - loss: 0.2519 - val_acc: 0.8036 - val_contrast_loss: 0.5191 - val_contrast_temp: 0.5191 - val_flow_loss: 0.5191 - val_loss: 0.2688 - val_auc: 0.7993 - val_aupr: 0.6793 - val_f1: 0.5888 - learning_rate: 5.0000e-04
+Epoch 27: early stopping
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 110ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m3s[0m 111ms/step
+  [23:50:19] Fold 2 Test: AUROC=0.8647 AUPRC=0.7326 Acc=0.8029 Prec=0.6083 Rec=0.7337 F1=0.6651 (81s)
+
+  [23:50:21] Fold 3/5: train=1790, val=447
+  [GPU优化] Subclassed Model + 数据预加载显存 + 并行通道 + XLA JIT + 混合精度
+  [改进] 标签平滑=0.05, 数据增强噪声=0.1
+  [辅助损失] 对比权重=0.1, 流匹配权重=0.05
+/root/miniconda3/lib/python3.12/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+Epoch 1/150
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:431: UserWarning: `build()` was called on layer 'flow', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+  [23:51:12] epoch   1 ★ │ auc=0.7017  aupr=0.4632  acc=0.6488  f1=0.4952  contrast=0.3867  flow=0.3026
+
+Epoch 1: val_auc improved from None to 0.70173, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+
+Epoch 1: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+28/28 - 51s - 2s/step - acc: 0.6223 - contrast_loss: 0.3867 - contrast_temp: 0.2866 - flow_loss: 0.3026 - loss: 0.6117 - val_acc: 0.6488 - val_contrast_loss: 0.3152 - val_contrast_temp: 0.3152 - val_flow_loss: 0.3152 - val_loss: 0.2714 - val_auc: 0.7017 - val_aupr: 0.4632 - val_f1: 0.4952 - learning_rate: 0.0020
+Epoch 2/150
+  [23:51:42] epoch   2 ★ │ auc=0.7799  aupr=0.6086  acc=0.6846  f1=0.5495  contrast=0.4031  flow=0.3318
+
+Epoch 2: val_auc improved from 0.70173 to 0.77987, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+
+Epoch 2: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+28/28 - 31s - 1s/step - acc: 0.6922 - contrast_loss: 0.4031 - contrast_temp: 0.3246 - flow_loss: 0.3318 - loss: 0.4958 - val_acc: 0.6846 - val_contrast_loss: 0.3539 - val_contrast_temp: 0.3539 - val_flow_loss: 0.3539 - val_loss: 0.2512 - val_auc: 0.7799 - val_aupr: 0.6086 - val_f1: 0.5495 - learning_rate: 0.0020
+Epoch 3/150
+  [23:51:43] epoch   3 ★ │ auc=0.8044  aupr=0.6517  acc=0.7785  f1=0.5677  contrast=0.4284  flow=0.3669
+
+Epoch 3: val_auc improved from 0.77987 to 0.80439, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+
+Epoch 3: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+28/28 - 1s - 33ms/step - acc: 0.7285 - contrast_loss: 0.4284 - contrast_temp: 0.3616 - flow_loss: 0.3669 - loss: 0.4428 - val_acc: 0.7785 - val_contrast_loss: 0.4330 - val_contrast_temp: 0.4330 - val_flow_loss: 0.4330 - val_loss: 0.2398 - val_auc: 0.8044 - val_aupr: 0.6517 - val_f1: 0.5677 - learning_rate: 0.0020
+Epoch 4/150
+  [23:51:44] epoch   4 ★ │ auc=0.8320  aupr=0.6843  acc=0.7584  f1=0.6087  contrast=0.4633  flow=0.4064
+
+Epoch 4: val_auc improved from 0.80439 to 0.83201, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+
+Epoch 4: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+28/28 - 1s - 31ms/step - acc: 0.7704 - contrast_loss: 0.4633 - contrast_temp: 0.4013 - flow_loss: 0.4064 - loss: 0.4025 - val_acc: 0.7584 - val_contrast_loss: 0.4275 - val_contrast_temp: 0.4275 - val_flow_loss: 0.4275 - val_loss: 0.2283 - val_auc: 0.8320 - val_aupr: 0.6843 - val_f1: 0.6087 - learning_rate: 0.0020
+Epoch 5/150
+  [23:51:45] epoch   5 │ auc=0.8253  aupr=0.6787  acc=0.8031  f1=0.4943  contrast=0.4805  flow=0.4292
+
+Epoch 5: val_auc did not improve from 0.83201
+28/28 - 1s - 21ms/step - acc: 0.7855 - contrast_loss: 0.4805 - contrast_temp: 0.4244 - flow_loss: 0.4292 - loss: 0.3817 - val_acc: 0.8031 - val_contrast_loss: 0.4817 - val_contrast_temp: 0.4817 - val_flow_loss: 0.4817 - val_loss: 0.2595 - val_auc: 0.8253 - val_aupr: 0.6787 - val_f1: 0.4943 - learning_rate: 0.0020
+Epoch 6/150
+  [23:51:46] epoch   6 ★ │ auc=0.8439  aupr=0.7052  acc=0.7763  f1=0.6296  contrast=0.4806  flow=0.4310
+
+Epoch 6: val_auc improved from 0.83201 to 0.84390, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+
+Epoch 6: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+28/28 - 1s - 31ms/step - acc: 0.7810 - contrast_loss: 0.4806 - contrast_temp: 0.4264 - flow_loss: 0.4310 - loss: 0.3709 - val_acc: 0.7763 - val_contrast_loss: 0.4613 - val_contrast_temp: 0.4613 - val_flow_loss: 0.4613 - val_loss: 0.2259 - val_auc: 0.8439 - val_aupr: 0.7052 - val_f1: 0.6296 - learning_rate: 0.0020
+Epoch 7/150
+  [23:51:47] epoch   7 ★ │ auc=0.8439  aupr=0.7033  acc=0.8121  f1=0.6182  contrast=0.4882  flow=0.4414
+
+Epoch 7: val_auc improved from 0.84390 to 0.84392, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+
+Epoch 7: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+28/28 - 1s - 31ms/step - acc: 0.8073 - contrast_loss: 0.4882 - contrast_temp: 0.4371 - flow_loss: 0.4414 - loss: 0.3558 - val_acc: 0.8121 - val_contrast_loss: 0.4743 - val_contrast_temp: 0.4743 - val_flow_loss: 0.4743 - val_loss: 0.2254 - val_auc: 0.8439 - val_aupr: 0.7033 - val_f1: 0.6182 - learning_rate: 0.0020
+Epoch 8/150
+  [23:51:47] epoch   8 │ auc=0.8373  aupr=0.6876  acc=0.7830  f1=0.6312  contrast=0.5023  flow=0.4588
+
+Epoch 8: val_auc did not improve from 0.84392
+28/28 - 1s - 24ms/step - acc: 0.8117 - contrast_loss: 0.5023 - contrast_temp: 0.4547 - flow_loss: 0.4588 - loss: 0.3432 - val_acc: 0.7830 - val_contrast_loss: 0.4371 - val_contrast_temp: 0.4371 - val_flow_loss: 0.4371 - val_loss: 0.2243 - val_auc: 0.8373 - val_aupr: 0.6876 - val_f1: 0.6312 - learning_rate: 0.0020
+Epoch 9/150
+  [23:51:48] epoch   9 ★ │ auc=0.8508  aupr=0.7176  acc=0.7987  f1=0.6457  contrast=0.5069  flow=0.4645
+
+Epoch 9: val_auc improved from 0.84392 to 0.85084, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+
+Epoch 9: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold2.weights.h5
+28/28 - 1s - 33ms/step - acc: 0.8184 - contrast_loss: 0.5069 - contrast_temp: 0.4605 - flow_loss: 0.4645 - loss: 0.3341 - val_acc: 0.7987 - val_contrast_loss: 0.4841 - val_contrast_temp: 0.4841 - val_flow_loss: 0.4841 - val_loss: 0.2215 - val_auc: 0.8508 - val_aupr: 0.7176 - val_f1: 0.6457 - learning_rate: 0.0020
+Epoch 10/150
+  [23:51:49] epoch  10 │ auc=0.8403  aupr=0.7152  acc=0.8210  f1=0.6078  contrast=0.5026  flow=0.4638
+
+Epoch 10: val_auc did not improve from 0.85084
+28/28 - 1s - 24ms/step - acc: 0.8145 - contrast_loss: 0.5026 - contrast_temp: 0.4601 - flow_loss: 0.4638 - loss: 0.3247 - val_acc: 0.8210 - val_contrast_loss: 0.5531 - val_contrast_temp: 0.5531 - val_flow_loss: 0.5531 - val_loss: 0.2498 - val_auc: 0.8403 - val_aupr: 0.7152 - val_f1: 0.6078 - learning_rate: 0.0020
+Epoch 11/150
+  [23:51:50] epoch  11 │ auc=0.8320  aupr=0.6868  acc=0.7808  f1=0.6423  contrast=0.5023  flow=0.4625
+
+Epoch 11: val_auc did not improve from 0.85084
+28/28 - 1s - 21ms/step - acc: 0.8168 - contrast_loss: 0.5023 - contrast_temp: 0.4590 - flow_loss: 0.4625 - loss: 0.3264 - val_acc: 0.7808 - val_contrast_loss: 0.4458 - val_contrast_temp: 0.4458 - val_flow_loss: 0.4458 - val_loss: 0.2362 - val_auc: 0.8320 - val_aupr: 0.6868 - val_f1: 0.6423 - learning_rate: 0.0020
+Epoch 12/150
+  [23:51:50] epoch  12 │ auc=0.8488  aupr=0.7335  acc=0.8255  f1=0.6061  contrast=0.5193  flow=0.4808
+
+Epoch 12: val_auc did not improve from 0.85084
+28/28 - 1s - 20ms/step - acc: 0.8318 - contrast_loss: 0.5193 - contrast_temp: 0.4773 - flow_loss: 0.4808 - loss: 0.3174 - val_acc: 0.8255 - val_contrast_loss: 0.4722 - val_contrast_temp: 0.4722 - val_flow_loss: 0.4722 - val_loss: 0.2241 - val_auc: 0.8488 - val_aupr: 0.7335 - val_f1: 0.6061 - learning_rate: 0.0020
+Epoch 13/150
+  [23:51:51] epoch  13 │ auc=0.8319  aupr=0.7156  acc=0.7987  f1=0.6121  contrast=0.5144  flow=0.4773
+
+Epoch 13: val_auc did not improve from 0.85084
+28/28 - 1s - 21ms/step - acc: 0.8218 - contrast_loss: 0.5144 - contrast_temp: 0.4738 - flow_loss: 0.4773 - loss: 0.3137 - val_acc: 0.7987 - val_contrast_loss: 0.5001 - val_contrast_temp: 0.5001 - val_flow_loss: 0.5001 - val_loss: 0.2315 - val_auc: 0.8319 - val_aupr: 0.7156 - val_f1: 0.6121 - learning_rate: 0.0020
+Epoch 14/150
+  [23:51:51] epoch  14 │ auc=0.8246  aupr=0.6879  acc=0.7517  f1=0.6105  contrast=0.5306  flow=0.4929
+
+Epoch 14: val_auc did not improve from 0.85084
+28/28 - 1s - 20ms/step - acc: 0.8218 - contrast_loss: 0.5306 - contrast_temp: 0.4895 - flow_loss: 0.4929 - loss: 0.3121 - val_acc: 0.7517 - val_contrast_loss: 0.4304 - val_contrast_temp: 0.4304 - val_flow_loss: 0.4304 - val_loss: 0.2371 - val_auc: 0.8246 - val_aupr: 0.6879 - val_f1: 0.6105 - learning_rate: 0.0020
+Epoch 15/150
+  [23:51:52] epoch  15 │ auc=0.8337  aupr=0.7285  acc=0.8277  f1=0.6051  contrast=0.5050  flow=0.4695
+
+Epoch 15: val_auc did not improve from 0.85084
+28/28 - 1s - 28ms/step - acc: 0.8156 - contrast_loss: 0.5050 - contrast_temp: 0.4664 - flow_loss: 0.4695 - loss: 0.3147 - val_acc: 0.8277 - val_contrast_loss: 0.4938 - val_contrast_temp: 0.4938 - val_flow_loss: 0.4938 - val_loss: 0.2331 - val_auc: 0.8337 - val_aupr: 0.7285 - val_f1: 0.6051 - learning_rate: 0.0020
+Epoch 16/150
+  [23:51:53] epoch  16 │ auc=0.8274  aupr=0.7062  acc=0.8009  f1=0.6564  contrast=0.5308  flow=0.4964
+
+Epoch 16: val_auc did not improve from 0.85084
+28/28 - 1s - 21ms/step - acc: 0.8369 - contrast_loss: 0.5308 - contrast_temp: 0.4931 - flow_loss: 0.4964 - loss: 0.2947 - val_acc: 0.8009 - val_contrast_loss: 0.5054 - val_contrast_temp: 0.5054 - val_flow_loss: 0.5054 - val_loss: 0.2472 - val_auc: 0.8274 - val_aupr: 0.7062 - val_f1: 0.6564 - learning_rate: 0.0020
+Epoch 17/150
+  [23:51:53] epoch  17 │ auc=0.8388  aupr=0.7099  acc=0.8054  f1=0.6201  contrast=0.5088  flow=0.4762
+
+Epoch 17: ReduceLROnPlateau reducing learning rate to 0.0010000000474974513.
+
+Epoch 17: val_auc did not improve from 0.85084
+28/28 - 1s - 20ms/step - acc: 0.8145 - contrast_loss: 0.5088 - contrast_temp: 0.4729 - flow_loss: 0.4762 - loss: 0.3036 - val_acc: 0.8054 - val_contrast_loss: 0.5111 - val_contrast_temp: 0.5111 - val_flow_loss: 0.5111 - val_loss: 0.2327 - val_auc: 0.8388 - val_aupr: 0.7099 - val_f1: 0.6201 - learning_rate: 0.0020
+Epoch 18/150
+  [23:51:54] epoch  18 │ auc=0.8243  aupr=0.7102  acc=0.8277  f1=0.6280  contrast=0.5509  flow=0.5162
+
+Epoch 18: val_auc did not improve from 0.85084
+28/28 - 1s - 20ms/step - acc: 0.8419 - contrast_loss: 0.5509 - contrast_temp: 0.5131 - flow_loss: 0.5162 - loss: 0.2881 - val_acc: 0.8277 - val_contrast_loss: 0.5147 - val_contrast_temp: 0.5147 - val_flow_loss: 0.5147 - val_loss: 0.2374 - val_auc: 0.8243 - val_aupr: 0.7102 - val_f1: 0.6280 - learning_rate: 0.0010
+Epoch 19/150
+  [23:51:54] epoch  19 │ auc=0.8277  aupr=0.7204  acc=0.8277  f1=0.6385  contrast=0.5561  flow=0.5221
+
+Epoch 19: val_auc did not improve from 0.85084
+28/28 - 1s - 21ms/step - acc: 0.8581 - contrast_loss: 0.5561 - contrast_temp: 0.5192 - flow_loss: 0.5221 - loss: 0.2825 - val_acc: 0.8277 - val_contrast_loss: 0.5435 - val_contrast_temp: 0.5435 - val_flow_loss: 0.5435 - val_loss: 0.2400 - val_auc: 0.8277 - val_aupr: 0.7204 - val_f1: 0.6385 - learning_rate: 0.0010
+Epoch 20/150
+  [23:51:55] epoch  20 │ auc=0.8223  aupr=0.6999  acc=0.7942  f1=0.6434  contrast=0.5608  flow=0.5274
+
+Epoch 20: val_auc did not improve from 0.85084
+28/28 - 1s - 20ms/step - acc: 0.8486 - contrast_loss: 0.5608 - contrast_temp: 0.5244 - flow_loss: 0.5274 - loss: 0.2828 - val_acc: 0.7942 - val_contrast_loss: 0.4888 - val_contrast_temp: 0.4888 - val_flow_loss: 0.4888 - val_loss: 0.2418 - val_auc: 0.8223 - val_aupr: 0.6999 - val_f1: 0.6434 - learning_rate: 0.0010
+Epoch 21/150
+  [23:51:56] epoch  21 │ auc=0.8186  aupr=0.7028  acc=0.8076  f1=0.6126  contrast=0.5717  flow=0.5374
+
+Epoch 21: val_auc did not improve from 0.85084
+28/28 - 1s - 21ms/step - acc: 0.8676 - contrast_loss: 0.5717 - contrast_temp: 0.5344 - flow_loss: 0.5374 - loss: 0.2741 - val_acc: 0.8076 - val_contrast_loss: 0.5549 - val_contrast_temp: 0.5549 - val_flow_loss: 0.5549 - val_loss: 0.2546 - val_auc: 0.8186 - val_aupr: 0.7028 - val_f1: 0.6126 - learning_rate: 0.0010
+Epoch 22/150
+  [23:51:56] epoch  22 │ auc=0.8254  aupr=0.7143  acc=0.8009  f1=0.6397  contrast=0.5641  flow=0.5300
+
+Epoch 22: val_auc did not improve from 0.85084
+28/28 - 1s - 20ms/step - acc: 0.8609 - contrast_loss: 0.5641 - contrast_temp: 0.5271 - flow_loss: 0.5300 - loss: 0.2776 - val_acc: 0.8009 - val_contrast_loss: 0.4718 - val_contrast_temp: 0.4718 - val_flow_loss: 0.4718 - val_loss: 0.2301 - val_auc: 0.8254 - val_aupr: 0.7143 - val_f1: 0.6397 - learning_rate: 0.0010
+Epoch 23/150
+  [23:51:57] epoch  23 │ auc=0.8221  aupr=0.6939  acc=0.8121  f1=0.6667  contrast=0.5693  flow=0.5364
+
+Epoch 23: val_auc did not improve from 0.85084
+28/28 - 1s - 21ms/step - acc: 0.8531 - contrast_loss: 0.5693 - contrast_temp: 0.5336 - flow_loss: 0.5364 - loss: 0.2755 - val_acc: 0.8121 - val_contrast_loss: 0.4976 - val_contrast_temp: 0.4976 - val_flow_loss: 0.4976 - val_loss: 0.2401 - val_auc: 0.8221 - val_aupr: 0.6939 - val_f1: 0.6667 - learning_rate: 0.0010
+Epoch 24/150
+  [23:51:57] epoch  24 │ auc=0.8200  aupr=0.7056  acc=0.8166  f1=0.6404  contrast=0.5840  flow=0.5510
+
+Epoch 24: val_auc did not improve from 0.85084
+28/28 - 1s - 20ms/step - acc: 0.8765 - contrast_loss: 0.5840 - contrast_temp: 0.5481 - flow_loss: 0.5510 - loss: 0.2663 - val_acc: 0.8166 - val_contrast_loss: 0.5195 - val_contrast_temp: 0.5195 - val_flow_loss: 0.5195 - val_loss: 0.2415 - val_auc: 0.8200 - val_aupr: 0.7056 - val_f1: 0.6404 - learning_rate: 0.0010
+Epoch 25/150
+  [23:51:58] epoch  25 │ auc=0.8185  aupr=0.6925  acc=0.8031  f1=0.6615  contrast=0.6030  flow=0.5688
+
+Epoch 25: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 25: val_auc did not improve from 0.85084
+28/28 - 1s - 28ms/step - acc: 0.8810 - contrast_loss: 0.6030 - contrast_temp: 0.5658 - flow_loss: 0.5688 - loss: 0.2621 - val_acc: 0.8031 - val_contrast_loss: 0.5067 - val_contrast_temp: 0.5067 - val_flow_loss: 0.5067 - val_loss: 0.2523 - val_auc: 0.8185 - val_aupr: 0.6925 - val_f1: 0.6615 - learning_rate: 0.0010
+Epoch 26/150
+  [23:51:59] epoch  26 │ auc=0.7991  aupr=0.6796  acc=0.8166  f1=0.6132  contrast=0.5813  flow=0.5504
+
+Epoch 26: val_auc did not improve from 0.85084
+28/28 - 1s - 33ms/step - acc: 0.8676 - contrast_loss: 0.5813 - contrast_temp: 0.5477 - flow_loss: 0.5504 - loss: 0.2572 - val_acc: 0.8166 - val_contrast_loss: 0.5525 - val_contrast_temp: 0.5525 - val_flow_loss: 0.5525 - val_loss: 0.2710 - val_auc: 0.7991 - val_aupr: 0.6796 - val_f1: 0.6132 - learning_rate: 5.0000e-04
+Epoch 27/150
+  [23:52:00] epoch  27 │ auc=0.8106  aupr=0.6880  acc=0.7942  f1=0.6406  contrast=0.6022  flow=0.5697
+
+Epoch 27: val_auc did not improve from 0.85084
+28/28 - 1s - 21ms/step - acc: 0.8754 - contrast_loss: 0.6022 - contrast_temp: 0.5669 - flow_loss: 0.5697 - loss: 0.2544 - val_acc: 0.7942 - val_contrast_loss: 0.5152 - val_contrast_temp: 0.5152 - val_flow_loss: 0.5152 - val_loss: 0.2622 - val_auc: 0.8106 - val_aupr: 0.6880 - val_f1: 0.6406 - learning_rate: 5.0000e-04
+Epoch 28/150
+  [23:52:00] epoch  28 │ auc=0.8114  aupr=0.7015  acc=0.8233  f1=0.6220  contrast=0.5960  flow=0.5637
+
+Epoch 28: val_auc did not improve from 0.85084
+28/28 - 1s - 20ms/step - acc: 0.8810 - contrast_loss: 0.5960 - contrast_temp: 0.5610 - flow_loss: 0.5637 - loss: 0.2557 - val_acc: 0.8233 - val_contrast_loss: 0.5588 - val_contrast_temp: 0.5588 - val_flow_loss: 0.5588 - val_loss: 0.2613 - val_auc: 0.8114 - val_aupr: 0.7015 - val_f1: 0.6220 - learning_rate: 5.0000e-04
+Epoch 29/150
+  [23:52:01] epoch  29 │ auc=0.8102  aupr=0.6910  acc=0.8009  f1=0.6564  contrast=0.6095  flow=0.5768
+
+Epoch 29: val_auc did not improve from 0.85084
+28/28 - 1s - 21ms/step - acc: 0.8821 - contrast_loss: 0.6095 - contrast_temp: 0.5740 - flow_loss: 0.5768 - loss: 0.2529 - val_acc: 0.8009 - val_contrast_loss: 0.5044 - val_contrast_temp: 0.5044 - val_flow_loss: 0.5044 - val_loss: 0.2526 - val_auc: 0.8102 - val_aupr: 0.6910 - val_f1: 0.6564 - learning_rate: 5.0000e-04
+Epoch 29: early stopping
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+  [23:52:02] Fold 3 Test: AUROC=0.8681 AUPRC=0.7399 Acc=0.8016 Prec=0.6041 Rec=0.7437 F1=0.6667 (100s)
+
+  [23:52:03] Fold 4/5: train=1790, val=447
+  [GPU优化] Subclassed Model + 数据预加载显存 + 并行通道 + XLA JIT + 混合精度
+  [改进] 标签平滑=0.05, 数据增强噪声=0.1
+  [辅助损失] 对比权重=0.1, 流匹配权重=0.05
+/root/miniconda3/lib/python3.12/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+Epoch 1/150
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:431: UserWarning: `build()` was called on layer 'flow', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+  [23:52:55] epoch   1 ★ │ auc=0.6472  aupr=0.3886  acc=0.5973  f1=0.4545  contrast=0.3691  flow=0.2891
+
+Epoch 1: val_auc improved from None to 0.64719, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold3.weights.h5
+
+Epoch 1: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold3.weights.h5
+28/28 - 51s - 2s/step - acc: 0.6017 - contrast_loss: 0.3691 - contrast_temp: 0.2724 - flow_loss: 0.2891 - loss: 0.6217 - val_acc: 0.5973 - val_contrast_loss: 0.2961 - val_contrast_temp: 0.2961 - val_flow_loss: 0.2961 - val_loss: 0.2876 - val_auc: 0.6472 - val_aupr: 0.3886 - val_f1: 0.4545 - learning_rate: 0.0020
+Epoch 2/150
+  [23:53:15] epoch   2 ★ │ auc=0.7918  aupr=0.6577  acc=0.5749  f1=0.5226  contrast=0.3913  flow=0.3242
+
+Epoch 2: val_auc improved from 0.64719 to 0.79179, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold3.weights.h5
+
+Epoch 2: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold3.weights.h5
+28/28 - 21s - 734ms/step - acc: 0.6721 - contrast_loss: 0.3913 - contrast_temp: 0.3166 - flow_loss: 0.3242 - loss: 0.4986 - val_acc: 0.5749 - val_contrast_loss: 0.3330 - val_contrast_temp: 0.3330 - val_flow_loss: 0.3330 - val_loss: 0.2739 - val_auc: 0.7918 - val_aupr: 0.6577 - val_f1: 0.5226 - learning_rate: 0.0020
+Epoch 3/150
+  [23:53:16] epoch   3 ★ │ auc=0.8111  aupr=0.6679  acc=0.7785  f1=0.2878  contrast=0.4244  flow=0.3636
+
+Epoch 3: val_auc improved from 0.79179 to 0.81113, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold3.weights.h5
+
+Epoch 3: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold3.weights.h5
+28/28 - 1s - 32ms/step - acc: 0.7313 - contrast_loss: 0.4244 - contrast_temp: 0.3579 - flow_loss: 0.3636 - loss: 0.4453 - val_acc: 0.7785 - val_contrast_loss: 0.3987 - val_contrast_temp: 0.3987 - val_flow_loss: 0.3987 - val_loss: 0.2800 - val_auc: 0.8111 - val_aupr: 0.6679 - val_f1: 0.2878 - learning_rate: 0.0020
+Epoch 4/150
+  [23:53:17] epoch   4 ★ │ auc=0.8269  aupr=0.6997  acc=0.7383  f1=0.6113  contrast=0.4384  flow=0.3855
+
+Epoch 4: val_auc improved from 0.81113 to 0.82689, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold3.weights.h5
+
+Epoch 4: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold3.weights.h5
+28/28 - 1s - 30ms/step - acc: 0.7458 - contrast_loss: 0.4384 - contrast_temp: 0.3803 - flow_loss: 0.3855 - loss: 0.4054 - val_acc: 0.7383 - val_contrast_loss: 0.3994 - val_contrast_temp: 0.3994 - val_flow_loss: 0.3994 - val_loss: 0.2370 - val_auc: 0.8269 - val_aupr: 0.6997 - val_f1: 0.6113 - learning_rate: 0.0020
+Epoch 5/150
+  [23:53:18] epoch   5 ★ │ auc=0.8415  aupr=0.7183  acc=0.8009  f1=0.4540  contrast=0.4684  flow=0.4189
+
+Epoch 5: val_auc improved from 0.82689 to 0.84151, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold3.weights.h5
+
+Epoch 5: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold3.weights.h5
+28/28 - 1s - 30ms/step - acc: 0.7732 - contrast_loss: 0.4684 - contrast_temp: 0.4141 - flow_loss: 0.4189 - loss: 0.3822 - val_acc: 0.8009 - val_contrast_loss: 0.4954 - val_contrast_temp: 0.4954 - val_flow_loss: 0.4954 - val_loss: 0.2567 - val_auc: 0.8415 - val_aupr: 0.7183 - val_f1: 0.4540 - learning_rate: 0.0020
+Epoch 6/150
+  [23:53:19] epoch   6 ★ │ auc=0.8497  aupr=0.7328  acc=0.8188  f1=0.5668  contrast=0.4847  flow=0.4365
+
+Epoch 6: val_auc improved from 0.84151 to 0.84974, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold3.weights.h5
+
+Epoch 6: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold3.weights.h5
+28/28 - 1s - 30ms/step - acc: 0.8011 - contrast_loss: 0.4847 - contrast_temp: 0.4318 - flow_loss: 0.4365 - loss: 0.3630 - val_acc: 0.8188 - val_contrast_loss: 0.5247 - val_contrast_temp: 0.5247 - val_flow_loss: 0.5247 - val_loss: 0.2413 - val_auc: 0.8497 - val_aupr: 0.7328 - val_f1: 0.5668 - learning_rate: 0.0020
+Epoch 7/150
+  [23:53:20] epoch   7 │ auc=0.8426  aupr=0.7174  acc=0.8166  f1=0.5980  contrast=0.4931  flow=0.4473
+
+Epoch 7: val_auc did not improve from 0.84974
+28/28 - 1s - 22ms/step - acc: 0.8067 - contrast_loss: 0.4931 - contrast_temp: 0.4428 - flow_loss: 0.4473 - loss: 0.3550 - val_acc: 0.8166 - val_contrast_loss: 0.4891 - val_contrast_temp: 0.4891 - val_flow_loss: 0.4891 - val_loss: 0.2309 - val_auc: 0.8426 - val_aupr: 0.7174 - val_f1: 0.5980 - learning_rate: 0.0020
+Epoch 8/150
+  [23:53:20] epoch   8 │ auc=0.8454  aupr=0.7227  acc=0.8233  f1=0.6393  contrast=0.5115  flow=0.4695
+
+Epoch 8: val_auc did not improve from 0.84974
+28/28 - 1s - 23ms/step - acc: 0.8173 - contrast_loss: 0.5115 - contrast_temp: 0.4653 - flow_loss: 0.4695 - loss: 0.3326 - val_acc: 0.8233 - val_contrast_loss: 0.5026 - val_contrast_temp: 0.5026 - val_flow_loss: 0.5026 - val_loss: 0.2269 - val_auc: 0.8454 - val_aupr: 0.7227 - val_f1: 0.6393 - learning_rate: 0.0020
+Epoch 9/150
+  [23:53:21] epoch   9 │ auc=0.8474  aupr=0.7285  acc=0.8345  f1=0.6783  contrast=0.5101  flow=0.4665
+
+Epoch 9: val_auc did not improve from 0.84974
+28/28 - 1s - 22ms/step - acc: 0.8279 - contrast_loss: 0.5101 - contrast_temp: 0.4624 - flow_loss: 0.4665 - loss: 0.3372 - val_acc: 0.8345 - val_contrast_loss: 0.4729 - val_contrast_temp: 0.4729 - val_flow_loss: 0.4729 - val_loss: 0.2190 - val_auc: 0.8474 - val_aupr: 0.7285 - val_f1: 0.6783 - learning_rate: 0.0020
+Epoch 10/150
+  [23:53:22] epoch  10 ★ │ auc=0.8497  aupr=0.7270  acc=0.8300  f1=0.6696  contrast=0.5162  flow=0.4750
+
+Epoch 10: val_auc did not improve from 0.84974
+28/28 - 1s - 23ms/step - acc: 0.8229 - contrast_loss: 0.5162 - contrast_temp: 0.4713 - flow_loss: 0.4750 - loss: 0.3250 - val_acc: 0.8300 - val_contrast_loss: 0.4574 - val_contrast_temp: 0.4574 - val_flow_loss: 0.4574 - val_loss: 0.2171 - val_auc: 0.8497 - val_aupr: 0.7270 - val_f1: 0.6696 - learning_rate: 0.0020
+Epoch 11/150
+  [23:53:22] epoch  11 │ auc=0.8384  aupr=0.7090  acc=0.8121  f1=0.5758  contrast=0.5187  flow=0.4790
+
+Epoch 11: val_auc did not improve from 0.84974
+28/28 - 1s - 20ms/step - acc: 0.8251 - contrast_loss: 0.5187 - contrast_temp: 0.4754 - flow_loss: 0.4790 - loss: 0.3189 - val_acc: 0.8121 - val_contrast_loss: 0.5042 - val_contrast_temp: 0.5042 - val_flow_loss: 0.5042 - val_loss: 0.2374 - val_auc: 0.8384 - val_aupr: 0.7090 - val_f1: 0.5758 - learning_rate: 0.0020
+Epoch 12/150
+  [23:53:23] epoch  12 │ auc=0.8298  aupr=0.6944  acc=0.8121  f1=0.6000  contrast=0.5170  flow=0.4796
+
+Epoch 12: val_auc did not improve from 0.84974
+28/28 - 1s - 21ms/step - acc: 0.8212 - contrast_loss: 0.5170 - contrast_temp: 0.4762 - flow_loss: 0.4796 - loss: 0.3120 - val_acc: 0.8121 - val_contrast_loss: 0.5144 - val_contrast_temp: 0.5144 - val_flow_loss: 0.5144 - val_loss: 0.2477 - val_auc: 0.8298 - val_aupr: 0.6944 - val_f1: 0.6000 - learning_rate: 0.0020
+Epoch 13/150
+  [23:53:23] epoch  13 │ auc=0.8464  aupr=0.7022  acc=0.8188  f1=0.6010  contrast=0.5353  flow=0.4982
+
+Epoch 13: val_auc did not improve from 0.84974
+28/28 - 1s - 21ms/step - acc: 0.8291 - contrast_loss: 0.5353 - contrast_temp: 0.4947 - flow_loss: 0.4982 - loss: 0.3035 - val_acc: 0.8188 - val_contrast_loss: 0.5432 - val_contrast_temp: 0.5432 - val_flow_loss: 0.5432 - val_loss: 0.2469 - val_auc: 0.8464 - val_aupr: 0.7022 - val_f1: 0.6010 - learning_rate: 0.0020
+Epoch 14/150
+  [23:53:24] epoch  14 │ auc=0.8471  aupr=0.7294  acc=0.7919  f1=0.6517  contrast=0.5143  flow=0.4788
+
+Epoch 14: ReduceLROnPlateau reducing learning rate to 0.0010000000474974513.
+
+Epoch 14: val_auc did not improve from 0.84974
+28/28 - 1s - 21ms/step - acc: 0.8291 - contrast_loss: 0.5143 - contrast_temp: 0.4756 - flow_loss: 0.4788 - loss: 0.3101 - val_acc: 0.7919 - val_contrast_loss: 0.4977 - val_contrast_temp: 0.4977 - val_flow_loss: 0.4977 - val_loss: 0.2326 - val_auc: 0.8471 - val_aupr: 0.7294 - val_f1: 0.6517 - learning_rate: 0.0020
+Epoch 15/150
+  [23:53:25] epoch  15 │ auc=0.8490  aupr=0.7238  acc=0.8277  f1=0.6169  contrast=0.5507  flow=0.5143
+
+Epoch 15: val_auc did not improve from 0.84974
+28/28 - 1s - 21ms/step - acc: 0.8453 - contrast_loss: 0.5507 - contrast_temp: 0.5112 - flow_loss: 0.5143 - loss: 0.2913 - val_acc: 0.8277 - val_contrast_loss: 0.5420 - val_contrast_temp: 0.5420 - val_flow_loss: 0.5420 - val_loss: 0.2407 - val_auc: 0.8490 - val_aupr: 0.7238 - val_f1: 0.6169 - learning_rate: 0.0010
+Epoch 16/150
+  [23:53:25] epoch  16 │ auc=0.8383  aupr=0.7132  acc=0.7942  f1=0.6198  contrast=0.5512  flow=0.5152
+
+Epoch 16: val_auc did not improve from 0.84974
+28/28 - 1s - 20ms/step - acc: 0.8469 - contrast_loss: 0.5512 - contrast_temp: 0.5121 - flow_loss: 0.5152 - loss: 0.2917 - val_acc: 0.7942 - val_contrast_loss: 0.4764 - val_contrast_temp: 0.4764 - val_flow_loss: 0.4764 - val_loss: 0.2275 - val_auc: 0.8383 - val_aupr: 0.7132 - val_f1: 0.6198 - learning_rate: 0.0010
+Epoch 17/150
+  [23:53:26] epoch  17 │ auc=0.8378  aupr=0.7206  acc=0.8300  f1=0.6415  contrast=0.5361  flow=0.5023
+
+Epoch 17: val_auc did not improve from 0.84974
+28/28 - 1s - 20ms/step - acc: 0.8369 - contrast_loss: 0.5361 - contrast_temp: 0.4995 - flow_loss: 0.5023 - loss: 0.2867 - val_acc: 0.8300 - val_contrast_loss: 0.5390 - val_contrast_temp: 0.5390 - val_flow_loss: 0.5390 - val_loss: 0.2418 - val_auc: 0.8378 - val_aupr: 0.7206 - val_f1: 0.6415 - learning_rate: 0.0010
+Epoch 18/150
+  [23:53:26] epoch  18 │ auc=0.8258  aupr=0.6985  acc=0.8121  f1=0.6147  contrast=0.5622  flow=0.5285
+
+Epoch 18: val_auc did not improve from 0.84974
+28/28 - 1s - 23ms/step - acc: 0.8520 - contrast_loss: 0.5622 - contrast_temp: 0.5257 - flow_loss: 0.5285 - loss: 0.2796 - val_acc: 0.8121 - val_contrast_loss: 0.4913 - val_contrast_temp: 0.4913 - val_flow_loss: 0.4913 - val_loss: 0.2383 - val_auc: 0.8258 - val_aupr: 0.6985 - val_f1: 0.6147 - learning_rate: 0.0010
+Epoch 19/150
+  [23:53:27] epoch  19 │ auc=0.8287  aupr=0.6920  acc=0.7919  f1=0.6043  contrast=0.5755  flow=0.5413
+
+Epoch 19: val_auc did not improve from 0.84974
+28/28 - 1s - 27ms/step - acc: 0.8659 - contrast_loss: 0.5755 - contrast_temp: 0.5384 - flow_loss: 0.5413 - loss: 0.2725 - val_acc: 0.7919 - val_contrast_loss: 0.4870 - val_contrast_temp: 0.4870 - val_flow_loss: 0.4870 - val_loss: 0.2444 - val_auc: 0.8287 - val_aupr: 0.6920 - val_f1: 0.6043 - learning_rate: 0.0010
+Epoch 20/150
+  [23:53:28] epoch  20 │ auc=0.8201  aupr=0.6925  acc=0.7875  f1=0.6154  contrast=0.5711  flow=0.5365
+
+Epoch 20: val_auc did not improve from 0.84974
+28/28 - 1s - 21ms/step - acc: 0.8670 - contrast_loss: 0.5711 - contrast_temp: 0.5337 - flow_loss: 0.5365 - loss: 0.2743 - val_acc: 0.7875 - val_contrast_loss: 0.4904 - val_contrast_temp: 0.4904 - val_flow_loss: 0.4904 - val_loss: 0.2529 - val_auc: 0.8201 - val_aupr: 0.6925 - val_f1: 0.6154 - learning_rate: 0.0010
+Epoch 21/150
+  [23:53:28] epoch  21 │ auc=0.8267  aupr=0.7133  acc=0.8233  f1=0.6489  contrast=0.5721  flow=0.5381
+
+Epoch 21: val_auc did not improve from 0.84974
+28/28 - 1s - 21ms/step - acc: 0.8603 - contrast_loss: 0.5721 - contrast_temp: 0.5354 - flow_loss: 0.5381 - loss: 0.2726 - val_acc: 0.8233 - val_contrast_loss: 0.5126 - val_contrast_temp: 0.5126 - val_flow_loss: 0.5126 - val_loss: 0.2383 - val_auc: 0.8267 - val_aupr: 0.7133 - val_f1: 0.6489 - learning_rate: 0.0010
+Epoch 22/150
+  [23:53:29] epoch  22 │ auc=0.8186  aupr=0.6916  acc=0.8121  f1=0.5800  contrast=0.5693  flow=0.5351
+
+Epoch 22: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 22: val_auc did not improve from 0.84974
+28/28 - 1s - 21ms/step - acc: 0.8592 - contrast_loss: 0.5693 - contrast_temp: 0.5324 - flow_loss: 0.5351 - loss: 0.2728 - val_acc: 0.8121 - val_contrast_loss: 0.5347 - val_contrast_temp: 0.5347 - val_flow_loss: 0.5347 - val_loss: 0.2593 - val_auc: 0.8186 - val_aupr: 0.6916 - val_f1: 0.5800 - learning_rate: 0.0010
+Epoch 23/150
+  [23:53:29] epoch  23 │ auc=0.8226  aupr=0.6972  acc=0.8054  f1=0.6298  contrast=0.5739  flow=0.5412
+
+Epoch 23: val_auc did not improve from 0.84974
+28/28 - 1s - 21ms/step - acc: 0.8648 - contrast_loss: 0.5739 - contrast_temp: 0.5386 - flow_loss: 0.5412 - loss: 0.2657 - val_acc: 0.8054 - val_contrast_loss: 0.5032 - val_contrast_temp: 0.5032 - val_flow_loss: 0.5032 - val_loss: 0.2516 - val_auc: 0.8226 - val_aupr: 0.6972 - val_f1: 0.6298 - learning_rate: 5.0000e-04
+Epoch 24/150
+  [23:53:30] epoch  24 │ auc=0.8130  aupr=0.6884  acc=0.8031  f1=0.5000  contrast=0.5994  flow=0.5655
+
+Epoch 24: val_auc did not improve from 0.84974
+28/28 - 1s - 21ms/step - acc: 0.8676 - contrast_loss: 0.5994 - contrast_temp: 0.5630 - flow_loss: 0.5655 - loss: 0.2616 - val_acc: 0.8031 - val_contrast_loss: 0.5580 - val_contrast_temp: 0.5580 - val_flow_loss: 0.5580 - val_loss: 0.2817 - val_auc: 0.8130 - val_aupr: 0.6884 - val_f1: 0.5000 - learning_rate: 5.0000e-04
+Epoch 25/150
+  [23:53:31] epoch  25 │ auc=0.8195  aupr=0.6897  acc=0.8098  f1=0.6222  contrast=0.5703  flow=0.5380
+
+Epoch 25: val_auc did not improve from 0.84974
+28/28 - 1s - 21ms/step - acc: 0.8715 - contrast_loss: 0.5703 - contrast_temp: 0.5356 - flow_loss: 0.5380 - loss: 0.2665 - val_acc: 0.8098 - val_contrast_loss: 0.5027 - val_contrast_temp: 0.5027 - val_flow_loss: 0.5027 - val_loss: 0.2503 - val_auc: 0.8195 - val_aupr: 0.6897 - val_f1: 0.6222 - learning_rate: 5.0000e-04
+Epoch 26/150
+  [23:53:31] epoch  26 │ auc=0.8178  aupr=0.6974  acc=0.8054  f1=0.5991  contrast=0.5982  flow=0.5646
+
+Epoch 26: val_auc did not improve from 0.84974
+28/28 - 1s - 22ms/step - acc: 0.8721 - contrast_loss: 0.5982 - contrast_temp: 0.5620 - flow_loss: 0.5646 - loss: 0.2630 - val_acc: 0.8054 - val_contrast_loss: 0.5153 - val_contrast_temp: 0.5153 - val_flow_loss: 0.5153 - val_loss: 0.2507 - val_auc: 0.8178 - val_aupr: 0.6974 - val_f1: 0.5991 - learning_rate: 5.0000e-04
+Epoch 26: early stopping
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 25ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 16ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 17ms/step
+  [23:53:32] Fold 4 Test: AUROC=0.8712 AUPRC=0.7445 Acc=0.8271 Prec=0.7823 Rec=0.4874 F1=0.6006 (87s)
+
+  [23:53:33] Fold 5/5: train=1790, val=447
+  [GPU优化] Subclassed Model + 数据预加载显存 + 并行通道 + XLA JIT + 混合精度
+  [改进] 标签平滑=0.05, 数据增强噪声=0.1
+  [辅助损失] 对比权重=0.1, 流匹配权重=0.05
+/root/miniconda3/lib/python3.12/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+Epoch 1/150
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:431: UserWarning: `build()` was called on layer 'flow', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+  [23:54:23] epoch   1 ★ │ auc=0.7054  aupr=0.4504  acc=0.6376  f1=0.4873  contrast=0.3740  flow=0.2918
+
+Epoch 1: val_auc improved from None to 0.70545, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+
+Epoch 1: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+28/28 - 50s - 2s/step - acc: 0.5978 - contrast_loss: 0.3740 - contrast_temp: 0.2751 - flow_loss: 0.2918 - loss: 0.6231 - val_acc: 0.6376 - val_contrast_loss: 0.3131 - val_contrast_temp: 0.3131 - val_flow_loss: 0.3131 - val_loss: 0.2708 - val_auc: 0.7054 - val_aupr: 0.4504 - val_f1: 0.4873 - learning_rate: 0.0020
+Epoch 2/150
+  [23:54:44] epoch   2 ★ │ auc=0.7926  aupr=0.5584  acc=0.7539  f1=0.2568  contrast=0.3776  flow=0.3038
+
+Epoch 2: val_auc improved from 0.70545 to 0.79261, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+
+Epoch 2: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+28/28 - 21s - 744ms/step - acc: 0.6659 - contrast_loss: 0.3776 - contrast_temp: 0.2965 - flow_loss: 0.3038 - loss: 0.5215 - val_acc: 0.7539 - val_contrast_loss: 0.3893 - val_contrast_temp: 0.3893 - val_flow_loss: 0.3893 - val_loss: 0.2709 - val_auc: 0.7926 - val_aupr: 0.5584 - val_f1: 0.2568 - learning_rate: 0.0020
+Epoch 3/150
+  [23:54:45] epoch   3 ★ │ auc=0.8011  aupr=0.6101  acc=0.7808  f1=0.5051  contrast=0.4008  flow=0.3356
+
+Epoch 3: val_auc improved from 0.79261 to 0.80111, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+
+Epoch 3: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+28/28 - 1s - 32ms/step - acc: 0.6916 - contrast_loss: 0.4008 - contrast_temp: 0.3299 - flow_loss: 0.3356 - loss: 0.4680 - val_acc: 0.7808 - val_contrast_loss: 0.3352 - val_contrast_temp: 0.3352 - val_flow_loss: 0.3352 - val_loss: 0.2523 - val_auc: 0.8011 - val_aupr: 0.6101 - val_f1: 0.5051 - learning_rate: 0.0020
+Epoch 4/150
+  [23:54:46] epoch   4 ★ │ auc=0.8489  aupr=0.6764  acc=0.7494  f1=0.6340  contrast=0.4013  flow=0.3504
+
+Epoch 4: val_auc improved from 0.80111 to 0.84887, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+
+Epoch 4: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+28/28 - 1s - 31ms/step - acc: 0.6989 - contrast_loss: 0.4013 - contrast_temp: 0.3452 - flow_loss: 0.3504 - loss: 0.4282 - val_acc: 0.7494 - val_contrast_loss: 0.3879 - val_contrast_temp: 0.3879 - val_flow_loss: 0.3879 - val_loss: 0.2289 - val_auc: 0.8489 - val_aupr: 0.6764 - val_f1: 0.6340 - learning_rate: 0.0020
+Epoch 5/150
+  [23:54:47] epoch   5 ★ │ auc=0.8629  aupr=0.6918  acc=0.6667  f1=0.5940  contrast=0.4300  flow=0.3804
+
+Epoch 5: val_auc improved from 0.84887 to 0.86291, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+
+Epoch 5: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+28/28 - 1s - 32ms/step - acc: 0.7620 - contrast_loss: 0.4300 - contrast_temp: 0.3752 - flow_loss: 0.3804 - loss: 0.3975 - val_acc: 0.6667 - val_contrast_loss: 0.4038 - val_contrast_temp: 0.4038 - val_flow_loss: 0.4038 - val_loss: 0.2601 - val_auc: 0.8629 - val_aupr: 0.6918 - val_f1: 0.5940 - learning_rate: 0.0020
+Epoch 6/150
+  [23:54:47] epoch   6 ★ │ auc=0.8639  aupr=0.7039  acc=0.8121  f1=0.6316  contrast=0.4293  flow=0.3855
+
+Epoch 6: val_auc improved from 0.86291 to 0.86391, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+
+Epoch 6: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+28/28 - 1s - 30ms/step - acc: 0.7335 - contrast_loss: 0.4293 - contrast_temp: 0.3810 - flow_loss: 0.3855 - loss: 0.3893 - val_acc: 0.8121 - val_contrast_loss: 0.4235 - val_contrast_temp: 0.4235 - val_flow_loss: 0.4235 - val_loss: 0.2185 - val_auc: 0.8639 - val_aupr: 0.7039 - val_f1: 0.6316 - learning_rate: 0.0020
+Epoch 7/150
+  [23:54:48] epoch   7 ★ │ auc=0.8676  aupr=0.7094  acc=0.8031  f1=0.6692  contrast=0.4601  flow=0.4151
+
+Epoch 7: val_auc improved from 0.86391 to 0.86760, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+
+Epoch 7: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+28/28 - 1s - 32ms/step - acc: 0.7872 - contrast_loss: 0.4601 - contrast_temp: 0.4105 - flow_loss: 0.4151 - loss: 0.3664 - val_acc: 0.8031 - val_contrast_loss: 0.4575 - val_contrast_temp: 0.4575 - val_flow_loss: 0.4575 - val_loss: 0.2118 - val_auc: 0.8676 - val_aupr: 0.7094 - val_f1: 0.6692 - learning_rate: 0.0020
+Epoch 8/150
+  [23:54:49] epoch   8 ★ │ auc=0.8871  aupr=0.7453  acc=0.8054  f1=0.6813  contrast=0.4763  flow=0.4311
+
+Epoch 8: val_auc improved from 0.86760 to 0.88707, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+
+Epoch 8: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_fold4.weights.h5
+28/28 - 1s - 32ms/step - acc: 0.8045 - contrast_loss: 0.4763 - contrast_temp: 0.4266 - flow_loss: 0.4311 - loss: 0.3576 - val_acc: 0.8054 - val_contrast_loss: 0.4947 - val_contrast_temp: 0.4947 - val_flow_loss: 0.4947 - val_loss: 0.2044 - val_auc: 0.8871 - val_aupr: 0.7453 - val_f1: 0.6813 - learning_rate: 0.0020
+Epoch 9/150
+  [23:54:50] epoch   9 │ auc=0.8777  aupr=0.7236  acc=0.8031  f1=0.6393  contrast=0.4816  flow=0.4406
+
+Epoch 9: val_auc did not improve from 0.88707
+28/28 - 1s - 24ms/step - acc: 0.8006 - contrast_loss: 0.4816 - contrast_temp: 0.4365 - flow_loss: 0.4406 - loss: 0.3443 - val_acc: 0.8031 - val_contrast_loss: 0.4718 - val_contrast_temp: 0.4718 - val_flow_loss: 0.4718 - val_loss: 0.2067 - val_auc: 0.8777 - val_aupr: 0.7236 - val_f1: 0.6393 - learning_rate: 0.0020
+Epoch 10/150
+  [23:54:51] epoch  10 │ auc=0.8841  aupr=0.7395  acc=0.7181  f1=0.6358  contrast=0.4912  flow=0.4501
+
+Epoch 10: val_auc did not improve from 0.88707
+28/28 - 1s - 23ms/step - acc: 0.8034 - contrast_loss: 0.4912 - contrast_temp: 0.4460 - flow_loss: 0.4501 - loss: 0.3373 - val_acc: 0.7181 - val_contrast_loss: 0.4287 - val_contrast_temp: 0.4287 - val_flow_loss: 0.4287 - val_loss: 0.2294 - val_auc: 0.8841 - val_aupr: 0.7395 - val_f1: 0.6358 - learning_rate: 0.0020
+Epoch 11/150
+  [23:54:51] epoch  11 │ auc=0.8753  aupr=0.7332  acc=0.7293  f1=0.6452  contrast=0.4851  flow=0.4458
+
+Epoch 11: val_auc did not improve from 0.88707
+28/28 - 1s - 23ms/step - acc: 0.7950 - contrast_loss: 0.4851 - contrast_temp: 0.4420 - flow_loss: 0.4458 - loss: 0.3340 - val_acc: 0.7293 - val_contrast_loss: 0.4371 - val_contrast_temp: 0.4371 - val_flow_loss: 0.4371 - val_loss: 0.2353 - val_auc: 0.8753 - val_aupr: 0.7332 - val_f1: 0.6452 - learning_rate: 0.0020
+Epoch 12/150
+  [23:54:52] epoch  12 │ auc=0.8819  aupr=0.7446  acc=0.7919  f1=0.6714  contrast=0.4981  flow=0.4593
+
+Epoch 12: val_auc did not improve from 0.88707
+28/28 - 1s - 22ms/step - acc: 0.8201 - contrast_loss: 0.4981 - contrast_temp: 0.4557 - flow_loss: 0.4593 - loss: 0.3268 - val_acc: 0.7919 - val_contrast_loss: 0.4685 - val_contrast_temp: 0.4685 - val_flow_loss: 0.4685 - val_loss: 0.2077 - val_auc: 0.8819 - val_aupr: 0.7446 - val_f1: 0.6714 - learning_rate: 0.0020
+Epoch 13/150
+  [23:54:53] epoch  13 │ auc=0.8744  aupr=0.7339  acc=0.7987  f1=0.6763  contrast=0.4807  flow=0.4460
+
+Epoch 13: val_auc did not improve from 0.88707
+28/28 - 1s - 28ms/step - acc: 0.7989 - contrast_loss: 0.4807 - contrast_temp: 0.4427 - flow_loss: 0.4460 - loss: 0.3211 - val_acc: 0.7987 - val_contrast_loss: 0.4507 - val_contrast_temp: 0.4507 - val_flow_loss: 0.4507 - val_loss: 0.2161 - val_auc: 0.8744 - val_aupr: 0.7339 - val_f1: 0.6763 - learning_rate: 0.0020
+Epoch 14/150
+  [23:54:54] epoch  14 │ auc=0.8856  aupr=0.7485  acc=0.8367  f1=0.6667  contrast=0.5049  flow=0.4676
+
+Epoch 14: val_auc did not improve from 0.88707
+28/28 - 1s - 26ms/step - acc: 0.8207 - contrast_loss: 0.5049 - contrast_temp: 0.4641 - flow_loss: 0.4676 - loss: 0.3206 - val_acc: 0.8367 - val_contrast_loss: 0.4944 - val_contrast_temp: 0.4944 - val_flow_loss: 0.4944 - val_loss: 0.2079 - val_auc: 0.8856 - val_aupr: 0.7485 - val_f1: 0.6667 - learning_rate: 0.0020
+Epoch 15/150
+  [23:54:54] epoch  15 │ auc=0.8776  aupr=0.7360  acc=0.8233  f1=0.6550  contrast=0.4969  flow=0.4618
+
+Epoch 15: val_auc did not improve from 0.88707
+28/28 - 1s - 23ms/step - acc: 0.8307 - contrast_loss: 0.4969 - contrast_temp: 0.4587 - flow_loss: 0.4618 - loss: 0.3138 - val_acc: 0.8233 - val_contrast_loss: 0.4714 - val_contrast_temp: 0.4714 - val_flow_loss: 0.4714 - val_loss: 0.2100 - val_auc: 0.8776 - val_aupr: 0.7360 - val_f1: 0.6550 - learning_rate: 0.0020
+Epoch 16/150
+  [23:54:55] epoch  16 │ auc=0.8783  aupr=0.7368  acc=0.8210  f1=0.5789  contrast=0.4994  flow=0.4634
+
+Epoch 16: ReduceLROnPlateau reducing learning rate to 0.0010000000474974513.
+
+Epoch 16: val_auc did not improve from 0.88707
+28/28 - 1s - 23ms/step - acc: 0.8128 - contrast_loss: 0.4994 - contrast_temp: 0.4603 - flow_loss: 0.4634 - loss: 0.3135 - val_acc: 0.8210 - val_contrast_loss: 0.5121 - val_contrast_temp: 0.5121 - val_flow_loss: 0.5121 - val_loss: 0.2301 - val_auc: 0.8783 - val_aupr: 0.7368 - val_f1: 0.5789 - learning_rate: 0.0020
+Epoch 17/150
+  [23:54:55] epoch  17 │ auc=0.8765  aupr=0.7367  acc=0.8009  f1=0.6855  contrast=0.5139  flow=0.4801
+
+Epoch 17: val_auc did not improve from 0.88707
+28/28 - 1s - 21ms/step - acc: 0.8313 - contrast_loss: 0.5139 - contrast_temp: 0.4771 - flow_loss: 0.4801 - loss: 0.3011 - val_acc: 0.8009 - val_contrast_loss: 0.4793 - val_contrast_temp: 0.4793 - val_flow_loss: 0.4793 - val_loss: 0.2152 - val_auc: 0.8765 - val_aupr: 0.7367 - val_f1: 0.6855 - learning_rate: 0.0010
+Epoch 18/150
+  [23:54:56] epoch  18 │ auc=0.8770  aupr=0.7355  acc=0.7852  f1=0.6757  contrast=0.5182  flow=0.4855
+
+Epoch 18: val_auc did not improve from 0.88707
+28/28 - 1s - 26ms/step - acc: 0.8358 - contrast_loss: 0.5182 - contrast_temp: 0.4826 - flow_loss: 0.4855 - loss: 0.2946 - val_acc: 0.7852 - val_contrast_loss: 0.4786 - val_contrast_temp: 0.4786 - val_flow_loss: 0.4786 - val_loss: 0.2279 - val_auc: 0.8770 - val_aupr: 0.7355 - val_f1: 0.6757 - learning_rate: 0.0010
+Epoch 19/150
+  [23:54:57] epoch  19 │ auc=0.8777  aupr=0.7413  acc=0.8188  f1=0.6694  contrast=0.5268  flow=0.4927
+
+Epoch 19: val_auc did not improve from 0.88707
+28/28 - 1s - 23ms/step - acc: 0.8363 - contrast_loss: 0.5268 - contrast_temp: 0.4899 - flow_loss: 0.4927 - loss: 0.2943 - val_acc: 0.8188 - val_contrast_loss: 0.5069 - val_contrast_temp: 0.5069 - val_flow_loss: 0.5069 - val_loss: 0.2103 - val_auc: 0.8777 - val_aupr: 0.7413 - val_f1: 0.6694 - learning_rate: 0.0010
+Epoch 20/150
+  [23:54:57] epoch  20 │ auc=0.8754  aupr=0.7386  acc=0.8188  f1=0.6747  contrast=0.5423  flow=0.5077
+
+Epoch 20: val_auc did not improve from 0.88707
+28/28 - 1s - 23ms/step - acc: 0.8486 - contrast_loss: 0.5423 - contrast_temp: 0.5048 - flow_loss: 0.5077 - loss: 0.2874 - val_acc: 0.8188 - val_contrast_loss: 0.4984 - val_contrast_temp: 0.4984 - val_flow_loss: 0.4984 - val_loss: 0.2124 - val_auc: 0.8754 - val_aupr: 0.7386 - val_f1: 0.6747 - learning_rate: 0.0010
+Epoch 21/150
+  [23:54:58] epoch  21 │ auc=0.8663  aupr=0.7246  acc=0.8210  f1=0.6460  contrast=0.5389  flow=0.5065
+
+Epoch 21: val_auc did not improve from 0.88707
+28/28 - 1s - 23ms/step - acc: 0.8475 - contrast_loss: 0.5389 - contrast_temp: 0.5039 - flow_loss: 0.5065 - loss: 0.2840 - val_acc: 0.8210 - val_contrast_loss: 0.5306 - val_contrast_temp: 0.5306 - val_flow_loss: 0.5306 - val_loss: 0.2209 - val_auc: 0.8663 - val_aupr: 0.7246 - val_f1: 0.6460 - learning_rate: 0.0010
+Epoch 22/150
+  [23:54:59] epoch  22 │ auc=0.8772  aupr=0.7279  acc=0.8031  f1=0.6812  contrast=0.5491  flow=0.5167
+
+Epoch 22: val_auc did not improve from 0.88707
+28/28 - 1s - 25ms/step - acc: 0.8503 - contrast_loss: 0.5491 - contrast_temp: 0.5138 - flow_loss: 0.5167 - loss: 0.2794 - val_acc: 0.8031 - val_contrast_loss: 0.4954 - val_contrast_temp: 0.4954 - val_flow_loss: 0.4954 - val_loss: 0.2233 - val_auc: 0.8772 - val_aupr: 0.7279 - val_f1: 0.6812 - learning_rate: 0.0010
+Epoch 23/150
+  [23:54:59] epoch  23 │ auc=0.8705  aupr=0.7129  acc=0.7830  f1=0.6498  contrast=0.5576  flow=0.5243
+
+Epoch 23: val_auc did not improve from 0.88707
+28/28 - 1s - 24ms/step - acc: 0.8592 - contrast_loss: 0.5576 - contrast_temp: 0.5215 - flow_loss: 0.5243 - loss: 0.2766 - val_acc: 0.7830 - val_contrast_loss: 0.5013 - val_contrast_temp: 0.5013 - val_flow_loss: 0.5013 - val_loss: 0.2326 - val_auc: 0.8705 - val_aupr: 0.7129 - val_f1: 0.6498 - learning_rate: 0.0010
+Epoch 24/150
+  [23:55:00] epoch  24 │ auc=0.8660  aupr=0.7150  acc=0.7830  f1=0.6523  contrast=0.5623  flow=0.5288
+
+Epoch 24: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 24: val_auc did not improve from 0.88707
+28/28 - 1s - 23ms/step - acc: 0.8648 - contrast_loss: 0.5623 - contrast_temp: 0.5259 - flow_loss: 0.5288 - loss: 0.2777 - val_acc: 0.7830 - val_contrast_loss: 0.5082 - val_contrast_temp: 0.5082 - val_flow_loss: 0.5082 - val_loss: 0.2353 - val_auc: 0.8660 - val_aupr: 0.7150 - val_f1: 0.6523 - learning_rate: 0.0010
+Epoch 25/150
+  [23:55:01] epoch  25 │ auc=0.8585  aupr=0.7175  acc=0.8300  f1=0.6780  contrast=0.5657  flow=0.5335
+
+Epoch 25: val_auc did not improve from 0.88707
+28/28 - 1s - 23ms/step - acc: 0.8642 - contrast_loss: 0.5657 - contrast_temp: 0.5308 - flow_loss: 0.5335 - loss: 0.2680 - val_acc: 0.8300 - val_contrast_loss: 0.5189 - val_contrast_temp: 0.5189 - val_flow_loss: 0.5189 - val_loss: 0.2230 - val_auc: 0.8585 - val_aupr: 0.7175 - val_f1: 0.6780 - learning_rate: 5.0000e-04
+Epoch 26/150
+  [23:55:01] epoch  26 │ auc=0.8654  aupr=0.7154  acc=0.8277  f1=0.6932  contrast=0.5833  flow=0.5501
+
+Epoch 26: val_auc did not improve from 0.88707
+28/28 - 1s - 24ms/step - acc: 0.8726 - contrast_loss: 0.5833 - contrast_temp: 0.5472 - flow_loss: 0.5501 - loss: 0.2669 - val_acc: 0.8277 - val_contrast_loss: 0.5270 - val_contrast_temp: 0.5270 - val_flow_loss: 0.5270 - val_loss: 0.2269 - val_auc: 0.8654 - val_aupr: 0.7154 - val_f1: 0.6932 - learning_rate: 5.0000e-04
+Epoch 27/150
+  [23:55:02] epoch  27 │ auc=0.8654  aupr=0.7128  acc=0.8076  f1=0.6718  contrast=0.5673  flow=0.5362
+
+Epoch 27: val_auc did not improve from 0.88707
+28/28 - 1s - 24ms/step - acc: 0.8665 - contrast_loss: 0.5673 - contrast_temp: 0.5335 - flow_loss: 0.5362 - loss: 0.2633 - val_acc: 0.8076 - val_contrast_loss: 0.5090 - val_contrast_temp: 0.5090 - val_flow_loss: 0.5090 - val_loss: 0.2285 - val_auc: 0.8654 - val_aupr: 0.7128 - val_f1: 0.6718 - learning_rate: 5.0000e-04
+Epoch 28/150
+  [23:55:03] epoch  28 │ auc=0.8552  aupr=0.7094  acc=0.8188  f1=0.6301  contrast=0.5893  flow=0.5568
+
+Epoch 28: val_auc did not improve from 0.88707
+28/28 - 1s - 23ms/step - acc: 0.8793 - contrast_loss: 0.5893 - contrast_temp: 0.5541 - flow_loss: 0.5568 - loss: 0.2596 - val_acc: 0.8188 - val_contrast_loss: 0.5397 - val_contrast_temp: 0.5397 - val_flow_loss: 0.5397 - val_loss: 0.2339 - val_auc: 0.8552 - val_aupr: 0.7094 - val_f1: 0.6301 - learning_rate: 5.0000e-04
+Epoch 28: early stopping
+[1m 1/24[0m [37m━━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 19ms/step[1m24/24[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 20ms/step
+  [23:55:04] Fold 5 Test: AUROC=0.8552 AUPRC=0.7192 Acc=0.7869 Prec=0.5787 Rec=0.7387 F1=0.6490 (89s)
+
+  [23:55:05] CPDB 5-Fold CV Results:
+    AUC: 0.8659 ± 0.0058
+    AUPR: 0.7356 ± 0.0091
+    ACC: 0.8113 ± 0.0185
+    PREC: 0.6667 ± 0.0862
+    REC: 0.6553 ± 0.1057
+    F1: 0.6469 ± 0.0241
+
+  [23:55:05] Training FINAL model on all 2237 train+val genes...
+  [GPU优化] Subclassed Model + 数据预加载显存 + 并行通道 + XLA JIT + 混合精度
+  [改进] 标签平滑=0.05, 数据增强噪声=0.1
+  [辅助损失] 对比权重=0.1, 流匹配权重=0.05
+/root/miniconda3/lib/python3.12/site-packages/keras/src/trainers/epoch_iterator.py:74: UserWarning: `shuffle=True` was passed, but will be ignored since the data `x` was provided as a tf.data.Dataset. The Dataset is expected to already be shuffled (via `.shuffle(buffer_size)`).
+  self.data_adapter = data_adapters.get_data_adapter(
+Epoch 1/150
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:431: UserWarning: `build()` was called on layer 'flow', however the layer does not have a `build()` method implemented and it looks like it has unbuilt state. This will cause the layer to be marked as built, despite not being actually built, which may cause failures down the line. Make sure to implement a proper `build()` method.
+  warnings.warn(
+  [23:55:55] epoch   1 ★ │ auc=0.7243  aupr=0.4736  acc=0.7386  f1=0.2041  contrast=0.3768  flow=0.2980
+
+Epoch 1: val_auc improved from None to 0.72426, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+
+Epoch 1: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+35/35 - 50s - 1s/step - acc: 0.6173 - contrast_loss: 0.3768 - contrast_temp: 0.2824 - flow_loss: 0.2980 - loss: 0.5973 - val_acc: 0.7386 - val_contrast_loss: 0.3144 - val_contrast_temp: 0.3144 - val_flow_loss: 0.3144 - val_loss: 0.2708 - val_auc: 0.7243 - val_aupr: 0.4736 - val_f1: 0.2041 - learning_rate: 0.0020
+Epoch 2/150
+  [23:56:18] epoch   2 ★ │ auc=0.7902  aupr=0.6146  acc=0.7855  f1=0.5604  contrast=0.4032  flow=0.3359
+
+Epoch 2: val_auc improved from 0.72426 to 0.79024, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+
+Epoch 2: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+35/35 - 23s - 659ms/step - acc: 0.6987 - contrast_loss: 0.4032 - contrast_temp: 0.3294 - flow_loss: 0.3359 - loss: 0.4747 - val_acc: 0.7855 - val_contrast_loss: 0.4095 - val_contrast_temp: 0.4095 - val_flow_loss: 0.4095 - val_loss: 0.2488 - val_auc: 0.7902 - val_aupr: 0.6146 - val_f1: 0.5604 - learning_rate: 0.0020
+Epoch 3/150
+  [23:56:19] epoch   3 ★ │ auc=0.8258  aupr=0.6537  acc=0.7627  f1=0.5855  contrast=0.4360  flow=0.3781
+
+Epoch 3: val_auc improved from 0.79024 to 0.82580, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+
+Epoch 3: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+35/35 - 1s - 31ms/step - acc: 0.7385 - contrast_loss: 0.4360 - contrast_temp: 0.3722 - flow_loss: 0.3781 - loss: 0.4285 - val_acc: 0.7627 - val_contrast_loss: 0.3858 - val_contrast_temp: 0.3858 - val_flow_loss: 0.3858 - val_loss: 0.2328 - val_auc: 0.8258 - val_aupr: 0.6537 - val_f1: 0.5855 - learning_rate: 0.0020
+Epoch 4/150
+  [23:56:21] epoch   4 ★ │ auc=0.8533  aupr=0.7125  acc=0.8083  f1=0.6166  contrast=0.4586  flow=0.4086
+
+Epoch 4: val_auc improved from 0.82580 to 0.85325, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+
+Epoch 4: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+35/35 - 1s - 35ms/step - acc: 0.7707 - contrast_loss: 0.4586 - contrast_temp: 0.4030 - flow_loss: 0.4086 - loss: 0.3870 - val_acc: 0.8083 - val_contrast_loss: 0.4740 - val_contrast_temp: 0.4740 - val_flow_loss: 0.4740 - val_loss: 0.2212 - val_auc: 0.8533 - val_aupr: 0.7125 - val_f1: 0.6166 - learning_rate: 0.0020
+Epoch 5/150
+  [23:56:22] epoch   5 ★ │ auc=0.8541  aupr=0.7127  acc=0.8204  f1=0.6215  contrast=0.4646  flow=0.4173
+
+Epoch 5: val_auc improved from 0.85325 to 0.85407, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+
+Epoch 5: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+35/35 - 1s - 29ms/step - acc: 0.7693 - contrast_loss: 0.4646 - contrast_temp: 0.4122 - flow_loss: 0.4173 - loss: 0.3799 - val_acc: 0.8204 - val_contrast_loss: 0.4331 - val_contrast_temp: 0.4331 - val_flow_loss: 0.4331 - val_loss: 0.2222 - val_auc: 0.8541 - val_aupr: 0.7127 - val_f1: 0.6215 - learning_rate: 0.0020
+Epoch 6/150
+  [23:56:22] epoch   6 ★ │ auc=0.8543  aupr=0.7181  acc=0.8097  f1=0.5590  contrast=0.4682  flow=0.4257
+
+Epoch 6: val_auc improved from 0.85407 to 0.85428, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+
+Epoch 6: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+35/35 - 1s - 27ms/step - acc: 0.7774 - contrast_loss: 0.4682 - contrast_temp: 0.4210 - flow_loss: 0.4257 - loss: 0.3612 - val_acc: 0.8097 - val_contrast_loss: 0.4418 - val_contrast_temp: 0.4418 - val_flow_loss: 0.4418 - val_loss: 0.2283 - val_auc: 0.8543 - val_aupr: 0.7181 - val_f1: 0.5590 - learning_rate: 0.0020
+Epoch 7/150
+  [23:56:23] epoch   7 ★ │ auc=0.8556  aupr=0.7224  acc=0.7265  f1=0.6180  contrast=0.4756  flow=0.4336
+
+Epoch 7: val_auc improved from 0.85428 to 0.85561, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+
+Epoch 7: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+35/35 - 1s - 27ms/step - acc: 0.8011 - contrast_loss: 0.4756 - contrast_temp: 0.4291 - flow_loss: 0.4336 - loss: 0.3524 - val_acc: 0.7265 - val_contrast_loss: 0.4148 - val_contrast_temp: 0.4148 - val_flow_loss: 0.4148 - val_loss: 0.2248 - val_auc: 0.8556 - val_aupr: 0.7224 - val_f1: 0.6180 - learning_rate: 0.0020
+Epoch 8/150
+  [23:56:25] epoch   8 ★ │ auc=0.8684  aupr=0.7352  acc=0.8164  f1=0.6460  contrast=0.4732  flow=0.4348
+
+Epoch 8: val_auc improved from 0.85561 to 0.86835, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+
+Epoch 8: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+35/35 - 1s - 31ms/step - acc: 0.7903 - contrast_loss: 0.4732 - contrast_temp: 0.4307 - flow_loss: 0.4348 - loss: 0.3434 - val_acc: 0.8164 - val_contrast_loss: 0.4482 - val_contrast_temp: 0.4482 - val_flow_loss: 0.4482 - val_loss: 0.2117 - val_auc: 0.8684 - val_aupr: 0.7352 - val_f1: 0.6460 - learning_rate: 0.0020
+Epoch 9/150
+  [23:56:26] epoch   9 ★ │ auc=0.8730  aupr=0.7461  acc=0.8016  f1=0.6783  contrast=0.4812  flow=0.4413
+
+Epoch 9: val_auc improved from 0.86835 to 0.87297, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+
+Epoch 9: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+35/35 - 1s - 34ms/step - acc: 0.8078 - contrast_loss: 0.4812 - contrast_temp: 0.4371 - flow_loss: 0.4413 - loss: 0.3374 - val_acc: 0.8016 - val_contrast_loss: 0.4609 - val_contrast_temp: 0.4609 - val_flow_loss: 0.4609 - val_loss: 0.2154 - val_auc: 0.8730 - val_aupr: 0.7461 - val_f1: 0.6783 - learning_rate: 0.0020
+Epoch 10/150
+  [23:56:27] epoch  10 │ auc=0.8686  aupr=0.7314  acc=0.8324  f1=0.6313  contrast=0.5177  flow=0.4788
+
+Epoch 10: val_auc did not improve from 0.87297
+35/35 - 1s - 19ms/step - acc: 0.8176 - contrast_loss: 0.5177 - contrast_temp: 0.4748 - flow_loss: 0.4788 - loss: 0.3272 - val_acc: 0.8324 - val_contrast_loss: 0.4774 - val_contrast_temp: 0.4774 - val_flow_loss: 0.4774 - val_loss: 0.2208 - val_auc: 0.8686 - val_aupr: 0.7314 - val_f1: 0.6313 - learning_rate: 0.0020
+Epoch 11/150
+  [23:56:27] epoch  11 │ auc=0.8590  aupr=0.7240  acc=0.8123  f1=0.6023  contrast=0.4858  flow=0.4498
+
+Epoch 11: val_auc did not improve from 0.87297
+35/35 - 1s - 19ms/step - acc: 0.8158 - contrast_loss: 0.4858 - contrast_temp: 0.4463 - flow_loss: 0.4498 - loss: 0.3221 - val_acc: 0.8123 - val_contrast_loss: 0.4983 - val_contrast_temp: 0.4983 - val_flow_loss: 0.4983 - val_loss: 0.2247 - val_auc: 0.8590 - val_aupr: 0.7240 - val_f1: 0.6023 - learning_rate: 0.0020
+Epoch 12/150
+  [23:56:28] epoch  12 ★ │ auc=0.8740  aupr=0.7380  acc=0.8257  f1=0.6649  contrast=0.5130  flow=0.4772
+
+Epoch 12: val_auc improved from 0.87297 to 0.87403, saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+
+Epoch 12: finished saving model to /root/crossgene/gps/ckpt/GPSBlock_CPDB_FINAL.weights.h5
+35/35 - 1s - 25ms/step - acc: 0.8252 - contrast_loss: 0.5130 - contrast_temp: 0.4737 - flow_loss: 0.4772 - loss: 0.3119 - val_acc: 0.8257 - val_contrast_loss: 0.4784 - val_contrast_temp: 0.4784 - val_flow_loss: 0.4784 - val_loss: 0.2095 - val_auc: 0.8740 - val_aupr: 0.7380 - val_f1: 0.6649 - learning_rate: 0.0020
+Epoch 13/150
+  [23:56:29] epoch  13 │ auc=0.8661  aupr=0.7258  acc=0.7775  f1=0.6327  contrast=0.4999  flow=0.4651
+
+Epoch 13: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8167 - contrast_loss: 0.4999 - contrast_temp: 0.4619 - flow_loss: 0.4651 - loss: 0.3106 - val_acc: 0.7775 - val_contrast_loss: 0.4916 - val_contrast_temp: 0.4916 - val_flow_loss: 0.4916 - val_loss: 0.2162 - val_auc: 0.8661 - val_aupr: 0.7258 - val_f1: 0.6327 - learning_rate: 0.0020
+Epoch 14/150
+  [23:56:30] epoch  14 │ auc=0.8704  aupr=0.7335  acc=0.8177  f1=0.6531  contrast=0.5196  flow=0.4845
+
+Epoch 14: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8301 - contrast_loss: 0.5196 - contrast_temp: 0.4813 - flow_loss: 0.4845 - loss: 0.3047 - val_acc: 0.8177 - val_contrast_loss: 0.5037 - val_contrast_temp: 0.5037 - val_flow_loss: 0.5037 - val_loss: 0.2142 - val_auc: 0.8704 - val_aupr: 0.7335 - val_f1: 0.6531 - learning_rate: 0.0020
+Epoch 15/150
+  [23:56:30] epoch  15 │ auc=0.8705  aupr=0.7337  acc=0.8271  f1=0.6407  contrast=0.5079  flow=0.4753
+
+Epoch 15: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8333 - contrast_loss: 0.5079 - contrast_temp: 0.4723 - flow_loss: 0.4753 - loss: 0.3000 - val_acc: 0.8271 - val_contrast_loss: 0.5289 - val_contrast_temp: 0.5289 - val_flow_loss: 0.5289 - val_loss: 0.2206 - val_auc: 0.8705 - val_aupr: 0.7337 - val_f1: 0.6407 - learning_rate: 0.0020
+Epoch 16/150
+  [23:56:31] epoch  16 │ auc=0.8712  aupr=0.7324  acc=0.8231  f1=0.6452  contrast=0.5222  flow=0.4892
+
+Epoch 16: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.8306 - contrast_loss: 0.5222 - contrast_temp: 0.4863 - flow_loss: 0.4892 - loss: 0.2940 - val_acc: 0.8231 - val_contrast_loss: 0.5203 - val_contrast_temp: 0.5203 - val_flow_loss: 0.5203 - val_loss: 0.2192 - val_auc: 0.8712 - val_aupr: 0.7324 - val_f1: 0.6452 - learning_rate: 0.0020
+Epoch 17/150
+  [23:56:32] epoch  17 │ auc=0.8691  aupr=0.7328  acc=0.8231  f1=0.6393  contrast=0.5127  flow=0.4799
+
+Epoch 17: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.8283 - contrast_loss: 0.5127 - contrast_temp: 0.4771 - flow_loss: 0.4799 - loss: 0.2977 - val_acc: 0.8231 - val_contrast_loss: 0.5728 - val_contrast_temp: 0.5728 - val_flow_loss: 0.5728 - val_loss: 0.2371 - val_auc: 0.8691 - val_aupr: 0.7328 - val_f1: 0.6393 - learning_rate: 0.0020
+Epoch 18/150
+  [23:56:32] epoch  18 │ auc=0.8674  aupr=0.7270  acc=0.8204  f1=0.6455  contrast=0.5418  flow=0.5089
+
+Epoch 18: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.8395 - contrast_loss: 0.5418 - contrast_temp: 0.5061 - flow_loss: 0.5089 - loss: 0.2902 - val_acc: 0.8204 - val_contrast_loss: 0.4940 - val_contrast_temp: 0.4940 - val_flow_loss: 0.4940 - val_loss: 0.2159 - val_auc: 0.8674 - val_aupr: 0.7270 - val_f1: 0.6455 - learning_rate: 0.0020
+Epoch 19/150
+  [23:56:33] epoch  19 │ auc=0.8636  aupr=0.7096  acc=0.8083  f1=0.5731  contrast=0.5257  flow=0.4949
+
+Epoch 19: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.8453 - contrast_loss: 0.5257 - contrast_temp: 0.4925 - flow_loss: 0.4949 - loss: 0.2844 - val_acc: 0.8083 - val_contrast_loss: 0.5259 - val_contrast_temp: 0.5259 - val_flow_loss: 0.5259 - val_loss: 0.2363 - val_auc: 0.8636 - val_aupr: 0.7096 - val_f1: 0.5731 - learning_rate: 0.0020
+Epoch 20/150
+  [23:56:34] epoch  20 │ auc=0.8542  aupr=0.7164  acc=0.8110  f1=0.5347  contrast=0.5232  flow=0.4920
+
+Epoch 20: ReduceLROnPlateau reducing learning rate to 0.0010000000474974513.
+
+Epoch 20: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8319 - contrast_loss: 0.5232 - contrast_temp: 0.4894 - flow_loss: 0.4920 - loss: 0.2896 - val_acc: 0.8110 - val_contrast_loss: 0.5643 - val_contrast_temp: 0.5643 - val_flow_loss: 0.5643 - val_loss: 0.2599 - val_auc: 0.8542 - val_aupr: 0.7164 - val_f1: 0.5347 - learning_rate: 0.0020
+Epoch 21/150
+  [23:56:34] epoch  21 │ auc=0.8612  aupr=0.7135  acc=0.7708  f1=0.6369  contrast=0.5545  flow=0.5234
+
+Epoch 21: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.8480 - contrast_loss: 0.5545 - contrast_temp: 0.5208 - flow_loss: 0.5234 - loss: 0.2777 - val_acc: 0.7708 - val_contrast_loss: 0.4627 - val_contrast_temp: 0.4627 - val_flow_loss: 0.4627 - val_loss: 0.2240 - val_auc: 0.8612 - val_aupr: 0.7135 - val_f1: 0.6369 - learning_rate: 0.0010
+Epoch 22/150
+  [23:56:35] epoch  22 │ auc=0.8598  aupr=0.7269  acc=0.8231  f1=0.6292  contrast=0.5601  flow=0.5286
+
+Epoch 22: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8605 - contrast_loss: 0.5601 - contrast_temp: 0.5261 - flow_loss: 0.5286 - loss: 0.2710 - val_acc: 0.8231 - val_contrast_loss: 0.5516 - val_contrast_temp: 0.5516 - val_flow_loss: 0.5516 - val_loss: 0.2366 - val_auc: 0.8598 - val_aupr: 0.7269 - val_f1: 0.6292 - learning_rate: 0.0010
+Epoch 23/150
+  [23:56:36] epoch  23 │ auc=0.8615  aupr=0.7211  acc=0.8056  f1=0.6588  contrast=0.5497  flow=0.5207
+
+Epoch 23: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.8525 - contrast_loss: 0.5497 - contrast_temp: 0.5184 - flow_loss: 0.5207 - loss: 0.2648 - val_acc: 0.8056 - val_contrast_loss: 0.5038 - val_contrast_temp: 0.5038 - val_flow_loss: 0.5038 - val_loss: 0.2218 - val_auc: 0.8615 - val_aupr: 0.7211 - val_f1: 0.6588 - learning_rate: 0.0010
+Epoch 24/150
+  [23:56:36] epoch  24 │ auc=0.8379  aupr=0.6919  acc=0.8083  f1=0.5903  contrast=0.5719  flow=0.5419
+
+Epoch 24: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8668 - contrast_loss: 0.5719 - contrast_temp: 0.5395 - flow_loss: 0.5419 - loss: 0.2622 - val_acc: 0.8083 - val_contrast_loss: 0.5316 - val_contrast_temp: 0.5316 - val_flow_loss: 0.5316 - val_loss: 0.2529 - val_auc: 0.8379 - val_aupr: 0.6919 - val_f1: 0.5903 - learning_rate: 0.0010
+Epoch 25/150
+  [23:56:37] epoch  25 │ auc=0.8494  aupr=0.7046  acc=0.7922  f1=0.6265  contrast=0.5664  flow=0.5366
+
+Epoch 25: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8690 - contrast_loss: 0.5664 - contrast_temp: 0.5344 - flow_loss: 0.5366 - loss: 0.2596 - val_acc: 0.7922 - val_contrast_loss: 0.5024 - val_contrast_temp: 0.5024 - val_flow_loss: 0.5024 - val_loss: 0.2354 - val_auc: 0.8494 - val_aupr: 0.7046 - val_f1: 0.6265 - learning_rate: 0.0010
+Epoch 26/150
+  [23:56:38] epoch  26 │ auc=0.8437  aupr=0.6936  acc=0.7922  f1=0.6096  contrast=0.5745  flow=0.5448
+
+Epoch 26: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8614 - contrast_loss: 0.5745 - contrast_temp: 0.5426 - flow_loss: 0.5448 - loss: 0.2597 - val_acc: 0.7922 - val_contrast_loss: 0.5275 - val_contrast_temp: 0.5275 - val_flow_loss: 0.5275 - val_loss: 0.2506 - val_auc: 0.8437 - val_aupr: 0.6936 - val_f1: 0.6096 - learning_rate: 0.0010
+Epoch 27/150
+  [23:56:38] epoch  27 │ auc=0.8343  aupr=0.6925  acc=0.7949  f1=0.5591  contrast=0.5890  flow=0.5585
+
+Epoch 27: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8757 - contrast_loss: 0.5890 - contrast_temp: 0.5562 - flow_loss: 0.5585 - loss: 0.2545 - val_acc: 0.7949 - val_contrast_loss: 0.5388 - val_contrast_temp: 0.5388 - val_flow_loss: 0.5388 - val_loss: 0.2592 - val_auc: 0.8343 - val_aupr: 0.6925 - val_f1: 0.5591 - learning_rate: 0.0010
+Epoch 28/150
+  [23:56:39] epoch  28 │ auc=0.8399  aupr=0.6911  acc=0.7909  f1=0.6195  contrast=0.5941  flow=0.5637
+
+Epoch 28: ReduceLROnPlateau reducing learning rate to 0.0005000000237487257.
+
+Epoch 28: val_auc did not improve from 0.87403
+35/35 - 1s - 26ms/step - acc: 0.8802 - contrast_loss: 0.5941 - contrast_temp: 0.5615 - flow_loss: 0.5637 - loss: 0.2517 - val_acc: 0.7909 - val_contrast_loss: 0.5089 - val_contrast_temp: 0.5089 - val_flow_loss: 0.5089 - val_loss: 0.2481 - val_auc: 0.8399 - val_aupr: 0.6911 - val_f1: 0.6195 - learning_rate: 0.0010
+Epoch 29/150
+  [23:56:40] epoch  29 │ auc=0.8300  aupr=0.6861  acc=0.8003  f1=0.5731  contrast=0.5852  flow=0.5564
+
+Epoch 29: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.8753 - contrast_loss: 0.5852 - contrast_temp: 0.5543 - flow_loss: 0.5564 - loss: 0.2458 - val_acc: 0.8003 - val_contrast_loss: 0.5439 - val_contrast_temp: 0.5439 - val_flow_loss: 0.5439 - val_loss: 0.2693 - val_auc: 0.8300 - val_aupr: 0.6861 - val_f1: 0.5731 - learning_rate: 5.0000e-04
+Epoch 30/150
+  [23:56:41] epoch  30 │ auc=0.8360  aupr=0.6875  acc=0.7962  f1=0.6293  contrast=0.6050  flow=0.5757
+
+Epoch 30: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.8802 - contrast_loss: 0.6050 - contrast_temp: 0.5735 - flow_loss: 0.5757 - loss: 0.2465 - val_acc: 0.7962 - val_contrast_loss: 0.5090 - val_contrast_temp: 0.5090 - val_flow_loss: 0.5090 - val_loss: 0.2481 - val_auc: 0.8360 - val_aupr: 0.6875 - val_f1: 0.6293 - learning_rate: 5.0000e-04
+Epoch 31/150
+  [23:56:41] epoch  31 │ auc=0.8262  aupr=0.6797  acc=0.7949  f1=0.6313  contrast=0.6220  flow=0.5918
+
+Epoch 31: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.8949 - contrast_loss: 0.6220 - contrast_temp: 0.5896 - flow_loss: 0.5918 - loss: 0.2394 - val_acc: 0.7949 - val_contrast_loss: 0.5029 - val_contrast_temp: 0.5029 - val_flow_loss: 0.5029 - val_loss: 0.2642 - val_auc: 0.8262 - val_aupr: 0.6797 - val_f1: 0.6313 - learning_rate: 5.0000e-04
+Epoch 32/150
+  [23:56:42] epoch  32 │ auc=0.8267  aupr=0.6790  acc=0.7855  f1=0.6000  contrast=0.6075  flow=0.5792
+
+Epoch 32: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8847 - contrast_loss: 0.6075 - contrast_temp: 0.5770 - flow_loss: 0.5792 - loss: 0.2367 - val_acc: 0.7855 - val_contrast_loss: 0.5099 - val_contrast_temp: 0.5099 - val_flow_loss: 0.5099 - val_loss: 0.2636 - val_auc: 0.8267 - val_aupr: 0.6790 - val_f1: 0.6000 - learning_rate: 5.0000e-04
+Epoch 33/150
+  [23:56:43] epoch  33 │ auc=0.8186  aupr=0.6623  acc=0.7788  f1=0.5985  contrast=0.6336  flow=0.6037
+
+Epoch 33: val_auc did not improve from 0.87403
+35/35 - 1s - 23ms/step - acc: 0.8967 - contrast_loss: 0.6336 - contrast_temp: 0.6013 - flow_loss: 0.6037 - loss: 0.2353 - val_acc: 0.7788 - val_contrast_loss: 0.5001 - val_contrast_temp: 0.5001 - val_flow_loss: 0.5001 - val_loss: 0.2716 - val_auc: 0.8186 - val_aupr: 0.6623 - val_f1: 0.5985 - learning_rate: 5.0000e-04
+Epoch 34/150
+  [23:56:44] epoch  34 │ auc=0.8241  aupr=0.6735  acc=0.7815  f1=0.5915  contrast=0.6339  flow=0.6038
+
+Epoch 34: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8949 - contrast_loss: 0.6339 - contrast_temp: 0.6016 - flow_loss: 0.6038 - loss: 0.2351 - val_acc: 0.7815 - val_contrast_loss: 0.4989 - val_contrast_temp: 0.4989 - val_flow_loss: 0.4989 - val_loss: 0.2621 - val_auc: 0.8241 - val_aupr: 0.6735 - val_f1: 0.5915 - learning_rate: 5.0000e-04
+Epoch 35/150
+  [23:56:44] epoch  35 │ auc=0.8196  aupr=0.6625  acc=0.7761  f1=0.6014  contrast=0.6271  flow=0.5973
+
+Epoch 35: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8985 - contrast_loss: 0.6271 - contrast_temp: 0.5952 - flow_loss: 0.5973 - loss: 0.2337 - val_acc: 0.7761 - val_contrast_loss: 0.4950 - val_contrast_temp: 0.4950 - val_flow_loss: 0.4950 - val_loss: 0.2637 - val_auc: 0.8196 - val_aupr: 0.6625 - val_f1: 0.6014 - learning_rate: 5.0000e-04
+Epoch 36/150
+  [23:56:45] epoch  36 │ auc=0.8211  aupr=0.6642  acc=0.7761  f1=0.6143  contrast=0.6215  flow=0.5924
+
+Epoch 36: ReduceLROnPlateau reducing learning rate to 0.0002500000118743628.
+
+Epoch 36: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.8869 - contrast_loss: 0.6215 - contrast_temp: 0.5903 - flow_loss: 0.5924 - loss: 0.2325 - val_acc: 0.7761 - val_contrast_loss: 0.4939 - val_contrast_temp: 0.4939 - val_flow_loss: 0.4939 - val_loss: 0.2688 - val_auc: 0.8211 - val_aupr: 0.6642 - val_f1: 0.6143 - learning_rate: 5.0000e-04
+Epoch 37/150
+  [23:56:46] epoch  37 │ auc=0.8216  aupr=0.6735  acc=0.7788  f1=0.5926  contrast=0.6288  flow=0.6000
+
+Epoch 37: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.8994 - contrast_loss: 0.6288 - contrast_temp: 0.5979 - flow_loss: 0.6000 - loss: 0.2287 - val_acc: 0.7788 - val_contrast_loss: 0.5185 - val_contrast_temp: 0.5185 - val_flow_loss: 0.5185 - val_loss: 0.2739 - val_auc: 0.8216 - val_aupr: 0.6735 - val_f1: 0.5926 - learning_rate: 2.5000e-04
+Epoch 38/150
+  [23:56:46] epoch  38 │ auc=0.8124  aupr=0.6636  acc=0.7828  f1=0.5714  contrast=0.6524  flow=0.6221
+
+Epoch 38: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9066 - contrast_loss: 0.6524 - contrast_temp: 0.6199 - flow_loss: 0.6221 - loss: 0.2256 - val_acc: 0.7828 - val_contrast_loss: 0.5192 - val_contrast_temp: 0.5192 - val_flow_loss: 0.5192 - val_loss: 0.2814 - val_auc: 0.8124 - val_aupr: 0.6636 - val_f1: 0.5714 - learning_rate: 2.5000e-04
+Epoch 39/150
+  [23:56:47] epoch  39 │ auc=0.8151  aupr=0.6644  acc=0.7895  f1=0.5836  contrast=0.6353  flow=0.6050
+
+Epoch 39: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8954 - contrast_loss: 0.6353 - contrast_temp: 0.6029 - flow_loss: 0.6050 - loss: 0.2313 - val_acc: 0.7895 - val_contrast_loss: 0.5206 - val_contrast_temp: 0.5206 - val_flow_loss: 0.5206 - val_loss: 0.2783 - val_auc: 0.8151 - val_aupr: 0.6644 - val_f1: 0.5836 - learning_rate: 2.5000e-04
+Epoch 40/150
+  [23:56:48] epoch  40 │ auc=0.8202  aupr=0.6667  acc=0.7842  f1=0.6005  contrast=0.6331  flow=0.6042
+
+Epoch 40: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.8981 - contrast_loss: 0.6331 - contrast_temp: 0.6021 - flow_loss: 0.6042 - loss: 0.2282 - val_acc: 0.7842 - val_contrast_loss: 0.5158 - val_contrast_temp: 0.5158 - val_flow_loss: 0.5158 - val_loss: 0.2746 - val_auc: 0.8202 - val_aupr: 0.6667 - val_f1: 0.6005 - learning_rate: 2.5000e-04
+Epoch 41/150
+  [23:56:48] epoch  41 │ auc=0.8129  aupr=0.6591  acc=0.7815  f1=0.5788  contrast=0.6514  flow=0.6217
+
+Epoch 41: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9075 - contrast_loss: 0.6514 - contrast_temp: 0.6196 - flow_loss: 0.6217 - loss: 0.2214 - val_acc: 0.7815 - val_contrast_loss: 0.5194 - val_contrast_temp: 0.5194 - val_flow_loss: 0.5194 - val_loss: 0.2849 - val_auc: 0.8129 - val_aupr: 0.6591 - val_f1: 0.5788 - learning_rate: 2.5000e-04
+Epoch 42/150
+  [23:56:49] epoch  42 │ auc=0.8148  aupr=0.6713  acc=0.7936  f1=0.5926  contrast=0.6534  flow=0.6232
+
+Epoch 42: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9025 - contrast_loss: 0.6534 - contrast_temp: 0.6210 - flow_loss: 0.6232 - loss: 0.2278 - val_acc: 0.7936 - val_contrast_loss: 0.5238 - val_contrast_temp: 0.5238 - val_flow_loss: 0.5238 - val_loss: 0.2802 - val_auc: 0.8148 - val_aupr: 0.6713 - val_f1: 0.5926 - learning_rate: 2.5000e-04
+Epoch 43/150
+  [23:56:50] epoch  43 │ auc=0.8115  aupr=0.6628  acc=0.7922  f1=0.6056  contrast=0.6406  flow=0.6109
+
+Epoch 43: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.8985 - contrast_loss: 0.6406 - contrast_temp: 0.6088 - flow_loss: 0.6109 - loss: 0.2263 - val_acc: 0.7922 - val_contrast_loss: 0.5161 - val_contrast_temp: 0.5161 - val_flow_loss: 0.5161 - val_loss: 0.2802 - val_auc: 0.8115 - val_aupr: 0.6628 - val_f1: 0.6056 - learning_rate: 2.5000e-04
+Epoch 44/150
+  [23:56:50] epoch  44 │ auc=0.8131  aupr=0.6641  acc=0.7869  f1=0.6074  contrast=0.6577  flow=0.6284
+
+Epoch 44: ReduceLROnPlateau reducing learning rate to 0.0001250000059371814.
+
+Epoch 44: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9124 - contrast_loss: 0.6577 - contrast_temp: 0.6263 - flow_loss: 0.6284 - loss: 0.2208 - val_acc: 0.7869 - val_contrast_loss: 0.5131 - val_contrast_temp: 0.5131 - val_flow_loss: 0.5131 - val_loss: 0.2817 - val_auc: 0.8131 - val_aupr: 0.6641 - val_f1: 0.6074 - learning_rate: 2.5000e-04
+Epoch 45/150
+  [23:56:51] epoch  45 │ auc=0.8042  aupr=0.6537  acc=0.7855  f1=0.5745  contrast=0.6642  flow=0.6337
+
+Epoch 45: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9101 - contrast_loss: 0.6642 - contrast_temp: 0.6315 - flow_loss: 0.6337 - loss: 0.2216 - val_acc: 0.7855 - val_contrast_loss: 0.5191 - val_contrast_temp: 0.5191 - val_flow_loss: 0.5191 - val_loss: 0.2904 - val_auc: 0.8042 - val_aupr: 0.6537 - val_f1: 0.5745 - learning_rate: 1.2500e-04
+Epoch 46/150
+  [23:56:52] epoch  46 │ auc=0.8103  aupr=0.6599  acc=0.7842  f1=0.5774  contrast=0.6486  flow=0.6200
+
+Epoch 46: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9043 - contrast_loss: 0.6486 - contrast_temp: 0.6179 - flow_loss: 0.6200 - loss: 0.2234 - val_acc: 0.7842 - val_contrast_loss: 0.5141 - val_contrast_temp: 0.5141 - val_flow_loss: 0.5141 - val_loss: 0.2794 - val_auc: 0.8103 - val_aupr: 0.6599 - val_f1: 0.5774 - learning_rate: 1.2500e-04
+Epoch 47/150
+  [23:56:53] epoch  47 │ auc=0.8073  aupr=0.6573  acc=0.7895  f1=0.5745  contrast=0.6524  flow=0.6234
+
+Epoch 47: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9133 - contrast_loss: 0.6524 - contrast_temp: 0.6214 - flow_loss: 0.6234 - loss: 0.2197 - val_acc: 0.7895 - val_contrast_loss: 0.5220 - val_contrast_temp: 0.5220 - val_flow_loss: 0.5220 - val_loss: 0.2900 - val_auc: 0.8073 - val_aupr: 0.6573 - val_f1: 0.5745 - learning_rate: 1.2500e-04
+Epoch 48/150
+  [23:56:53] epoch  48 │ auc=0.8126  aupr=0.6591  acc=0.7855  f1=0.5876  contrast=0.6650  flow=0.6343
+
+Epoch 48: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9133 - contrast_loss: 0.6650 - contrast_temp: 0.6322 - flow_loss: 0.6343 - loss: 0.2207 - val_acc: 0.7855 - val_contrast_loss: 0.5173 - val_contrast_temp: 0.5173 - val_flow_loss: 0.5173 - val_loss: 0.2853 - val_auc: 0.8126 - val_aupr: 0.6591 - val_f1: 0.5876 - learning_rate: 1.2500e-04
+Epoch 49/150
+  [23:56:54] epoch  49 │ auc=0.8171  aupr=0.6600  acc=0.7815  f1=0.5975  contrast=0.6717  flow=0.6415
+
+Epoch 49: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9209 - contrast_loss: 0.6717 - contrast_temp: 0.6394 - flow_loss: 0.6415 - loss: 0.2184 - val_acc: 0.7815 - val_contrast_loss: 0.5124 - val_contrast_temp: 0.5124 - val_flow_loss: 0.5124 - val_loss: 0.2839 - val_auc: 0.8171 - val_aupr: 0.6600 - val_f1: 0.5975 - learning_rate: 1.2500e-04
+Epoch 50/150
+  [23:56:55] epoch  50 │ auc=0.8134  aupr=0.6572  acc=0.7788  f1=0.5844  contrast=0.6601  flow=0.6304
+
+Epoch 50: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9034 - contrast_loss: 0.6601 - contrast_temp: 0.6283 - flow_loss: 0.6304 - loss: 0.2199 - val_acc: 0.7788 - val_contrast_loss: 0.5117 - val_contrast_temp: 0.5117 - val_flow_loss: 0.5117 - val_loss: 0.2858 - val_auc: 0.8134 - val_aupr: 0.6572 - val_f1: 0.5844 - learning_rate: 1.2500e-04
+Epoch 51/150
+  [23:56:55] epoch  51 │ auc=0.8145  aupr=0.6598  acc=0.7895  f1=0.6045  contrast=0.6636  flow=0.6341
+
+Epoch 51: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9195 - contrast_loss: 0.6636 - contrast_temp: 0.6320 - flow_loss: 0.6341 - loss: 0.2168 - val_acc: 0.7895 - val_contrast_loss: 0.5178 - val_contrast_temp: 0.5178 - val_flow_loss: 0.5178 - val_loss: 0.2864 - val_auc: 0.8145 - val_aupr: 0.6598 - val_f1: 0.6045 - learning_rate: 1.2500e-04
+Epoch 52/150
+  [23:56:56] epoch  52 │ auc=0.8140  aupr=0.6620  acc=0.7869  f1=0.5954  contrast=0.6564  flow=0.6278
+
+Epoch 52: ReduceLROnPlateau reducing learning rate to 6.25000029685907e-05.
+
+Epoch 52: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9115 - contrast_loss: 0.6564 - contrast_temp: 0.6257 - flow_loss: 0.6278 - loss: 0.2183 - val_acc: 0.7869 - val_contrast_loss: 0.5179 - val_contrast_temp: 0.5179 - val_flow_loss: 0.5179 - val_loss: 0.2833 - val_auc: 0.8140 - val_aupr: 0.6620 - val_f1: 0.5954 - learning_rate: 1.2500e-04
+Epoch 53/150
+  [23:56:57] epoch  53 │ auc=0.8126  aupr=0.6613  acc=0.7842  f1=0.5945  contrast=0.6696  flow=0.6388
+
+Epoch 53: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9128 - contrast_loss: 0.6696 - contrast_temp: 0.6367 - flow_loss: 0.6388 - loss: 0.2172 - val_acc: 0.7842 - val_contrast_loss: 0.5151 - val_contrast_temp: 0.5151 - val_flow_loss: 0.5151 - val_loss: 0.2845 - val_auc: 0.8126 - val_aupr: 0.6613 - val_f1: 0.5945 - learning_rate: 6.2500e-05
+Epoch 54/150
+  [23:56:59] epoch  54 │ auc=0.8117  aupr=0.6595  acc=0.7869  f1=0.5913  contrast=0.6768  flow=0.6468
+
+Epoch 54: val_auc did not improve from 0.87403
+35/35 - 2s - 51ms/step - acc: 0.9213 - contrast_loss: 0.6768 - contrast_temp: 0.6447 - flow_loss: 0.6468 - loss: 0.2123 - val_acc: 0.7869 - val_contrast_loss: 0.5207 - val_contrast_temp: 0.5207 - val_flow_loss: 0.5207 - val_loss: 0.2898 - val_auc: 0.8117 - val_aupr: 0.6595 - val_f1: 0.5913 - learning_rate: 6.2500e-05
+Epoch 55/150
+  [23:56:59] epoch  55 │ auc=0.8128  aupr=0.6601  acc=0.7869  f1=0.5954  contrast=0.6748  flow=0.6454
+
+Epoch 55: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9169 - contrast_loss: 0.6748 - contrast_temp: 0.6433 - flow_loss: 0.6454 - loss: 0.2140 - val_acc: 0.7869 - val_contrast_loss: 0.5180 - val_contrast_temp: 0.5180 - val_flow_loss: 0.5180 - val_loss: 0.2902 - val_auc: 0.8128 - val_aupr: 0.6601 - val_f1: 0.5954 - learning_rate: 6.2500e-05
+Epoch 56/150
+  [23:57:00] epoch  56 │ auc=0.8079  aupr=0.6530  acc=0.7802  f1=0.5859  contrast=0.6787  flow=0.6486
+
+Epoch 56: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9204 - contrast_loss: 0.6787 - contrast_temp: 0.6465 - flow_loss: 0.6486 - loss: 0.2127 - val_acc: 0.7802 - val_contrast_loss: 0.5125 - val_contrast_temp: 0.5125 - val_flow_loss: 0.5125 - val_loss: 0.2923 - val_auc: 0.8079 - val_aupr: 0.6530 - val_f1: 0.5859 - learning_rate: 6.2500e-05
+Epoch 57/150
+  [23:57:01] epoch  57 │ auc=0.8073  aupr=0.6536  acc=0.7815  f1=0.5630  contrast=0.6626  flow=0.6320
+
+Epoch 57: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9075 - contrast_loss: 0.6626 - contrast_temp: 0.6299 - flow_loss: 0.6320 - loss: 0.2245 - val_acc: 0.7815 - val_contrast_loss: 0.5201 - val_contrast_temp: 0.5201 - val_flow_loss: 0.5201 - val_loss: 0.2916 - val_auc: 0.8073 - val_aupr: 0.6536 - val_f1: 0.5630 - learning_rate: 6.2500e-05
+Epoch 58/150
+  [23:57:01] epoch  58 │ auc=0.8088  aupr=0.6546  acc=0.7775  f1=0.5808  contrast=0.6637  flow=0.6347
+
+Epoch 58: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9195 - contrast_loss: 0.6637 - contrast_temp: 0.6327 - flow_loss: 0.6347 - loss: 0.2148 - val_acc: 0.7775 - val_contrast_loss: 0.5095 - val_contrast_temp: 0.5095 - val_flow_loss: 0.5095 - val_loss: 0.2895 - val_auc: 0.8088 - val_aupr: 0.6546 - val_f1: 0.5808 - learning_rate: 6.2500e-05
+Epoch 59/150
+  [23:57:02] epoch  59 │ auc=0.8076  aupr=0.6510  acc=0.7761  f1=0.5729  contrast=0.6611  flow=0.6320
+
+Epoch 59: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9128 - contrast_loss: 0.6611 - contrast_temp: 0.6300 - flow_loss: 0.6320 - loss: 0.2169 - val_acc: 0.7761 - val_contrast_loss: 0.5111 - val_contrast_temp: 0.5111 - val_flow_loss: 0.5111 - val_loss: 0.2909 - val_auc: 0.8076 - val_aupr: 0.6510 - val_f1: 0.5729 - learning_rate: 6.2500e-05
+Epoch 60/150
+  [23:57:03] epoch  60 │ auc=0.8125  aupr=0.6569  acc=0.7802  f1=0.5961  contrast=0.6745  flow=0.6443
+
+Epoch 60: ReduceLROnPlateau reducing learning rate to 3.125000148429535e-05.
+
+Epoch 60: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9200 - contrast_loss: 0.6745 - contrast_temp: 0.6422 - flow_loss: 0.6443 - loss: 0.2135 - val_acc: 0.7802 - val_contrast_loss: 0.5113 - val_contrast_temp: 0.5113 - val_flow_loss: 0.5113 - val_loss: 0.2898 - val_auc: 0.8125 - val_aupr: 0.6569 - val_f1: 0.5961 - learning_rate: 6.2500e-05
+Epoch 61/150
+  [23:57:03] epoch  61 │ auc=0.8106  aupr=0.6552  acc=0.7842  f1=0.5861  contrast=0.6695  flow=0.6406
+
+Epoch 61: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9155 - contrast_loss: 0.6695 - contrast_temp: 0.6385 - flow_loss: 0.6406 - loss: 0.2122 - val_acc: 0.7842 - val_contrast_loss: 0.5204 - val_contrast_temp: 0.5204 - val_flow_loss: 0.5204 - val_loss: 0.2922 - val_auc: 0.8106 - val_aupr: 0.6552 - val_f1: 0.5861 - learning_rate: 3.1250e-05
+Epoch 62/150
+  [23:57:04] epoch  62 │ auc=0.8107  aupr=0.6556  acc=0.7802  f1=0.5838  contrast=0.6752  flow=0.6457
+
+Epoch 62: val_auc did not improve from 0.87403
+35/35 - 1s - 23ms/step - acc: 0.9146 - contrast_loss: 0.6752 - contrast_temp: 0.6435 - flow_loss: 0.6457 - loss: 0.2131 - val_acc: 0.7802 - val_contrast_loss: 0.5186 - val_contrast_temp: 0.5186 - val_flow_loss: 0.5186 - val_loss: 0.2927 - val_auc: 0.8107 - val_aupr: 0.6556 - val_f1: 0.5838 - learning_rate: 3.1250e-05
+Epoch 63/150
+  [23:57:05] epoch  63 │ auc=0.8102  aupr=0.6552  acc=0.7775  f1=0.5829  contrast=0.6794  flow=0.6488
+
+Epoch 63: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9186 - contrast_loss: 0.6794 - contrast_temp: 0.6467 - flow_loss: 0.6488 - loss: 0.2139 - val_acc: 0.7775 - val_contrast_loss: 0.5144 - val_contrast_temp: 0.5144 - val_flow_loss: 0.5144 - val_loss: 0.2918 - val_auc: 0.8102 - val_aupr: 0.6552 - val_f1: 0.5829 - learning_rate: 3.1250e-05
+Epoch 64/150
+  [23:57:06] epoch  64 │ auc=0.8108  aupr=0.6548  acc=0.7802  f1=0.5816  contrast=0.6658  flow=0.6371
+
+Epoch 64: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9146 - contrast_loss: 0.6658 - contrast_temp: 0.6350 - flow_loss: 0.6371 - loss: 0.2144 - val_acc: 0.7802 - val_contrast_loss: 0.5156 - val_contrast_temp: 0.5156 - val_flow_loss: 0.5156 - val_loss: 0.2913 - val_auc: 0.8108 - val_aupr: 0.6548 - val_f1: 0.5816 - learning_rate: 3.1250e-05
+Epoch 65/150
+  [23:57:06] epoch  65 │ auc=0.8107  aupr=0.6542  acc=0.7815  f1=0.5894  contrast=0.6753  flow=0.6453
+
+Epoch 65: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9186 - contrast_loss: 0.6753 - contrast_temp: 0.6431 - flow_loss: 0.6453 - loss: 0.2167 - val_acc: 0.7815 - val_contrast_loss: 0.5129 - val_contrast_temp: 0.5129 - val_flow_loss: 0.5129 - val_loss: 0.2898 - val_auc: 0.8107 - val_aupr: 0.6542 - val_f1: 0.5894 - learning_rate: 3.1250e-05
+Epoch 66/150
+  [23:57:07] epoch  66 │ auc=0.8121  aupr=0.6559  acc=0.7855  f1=0.5980  contrast=0.6697  flow=0.6409
+
+Epoch 66: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9200 - contrast_loss: 0.6697 - contrast_temp: 0.6388 - flow_loss: 0.6409 - loss: 0.2105 - val_acc: 0.7855 - val_contrast_loss: 0.5128 - val_contrast_temp: 0.5128 - val_flow_loss: 0.5128 - val_loss: 0.2875 - val_auc: 0.8121 - val_aupr: 0.6559 - val_f1: 0.5980 - learning_rate: 3.1250e-05
+Epoch 67/150
+  [23:57:08] epoch  67 │ auc=0.8126  aupr=0.6570  acc=0.7802  f1=0.6000  contrast=0.6718  flow=0.6422
+
+Epoch 67: val_auc did not improve from 0.87403
+35/35 - 1s - 32ms/step - acc: 0.9182 - contrast_loss: 0.6718 - contrast_temp: 0.6401 - flow_loss: 0.6422 - loss: 0.2134 - val_acc: 0.7802 - val_contrast_loss: 0.5106 - val_contrast_temp: 0.5106 - val_flow_loss: 0.5106 - val_loss: 0.2884 - val_auc: 0.8126 - val_aupr: 0.6570 - val_f1: 0.6000 - learning_rate: 3.1250e-05
+Epoch 68/150
+  [23:57:10] epoch  68 │ auc=0.8103  aupr=0.6534  acc=0.7802  f1=0.5900  contrast=0.6691  flow=0.6407
+
+Epoch 68: ReduceLROnPlateau reducing learning rate to 1.5625000742147677e-05.
+
+Epoch 68: val_auc did not improve from 0.87403
+35/35 - 1s - 40ms/step - acc: 0.9119 - contrast_loss: 0.6691 - contrast_temp: 0.6386 - flow_loss: 0.6407 - loss: 0.2104 - val_acc: 0.7802 - val_contrast_loss: 0.5123 - val_contrast_temp: 0.5123 - val_flow_loss: 0.5123 - val_loss: 0.2905 - val_auc: 0.8103 - val_aupr: 0.6534 - val_f1: 0.5900 - learning_rate: 3.1250e-05
+Epoch 69/150
+  [23:57:11] epoch  69 │ auc=0.8092  aupr=0.6525  acc=0.7815  f1=0.5788  contrast=0.6751  flow=0.6461
+
+Epoch 69: val_auc did not improve from 0.87403
+35/35 - 1s - 36ms/step - acc: 0.9173 - contrast_loss: 0.6751 - contrast_temp: 0.6440 - flow_loss: 0.6461 - loss: 0.2129 - val_acc: 0.7815 - val_contrast_loss: 0.5152 - val_contrast_temp: 0.5152 - val_flow_loss: 0.5152 - val_loss: 0.2921 - val_auc: 0.8092 - val_aupr: 0.6525 - val_f1: 0.5788 - learning_rate: 1.5625e-05
+Epoch 70/150
+  [23:57:12] epoch  70 │ auc=0.8091  aupr=0.6522  acc=0.7828  f1=0.5930  contrast=0.6724  flow=0.6432
+
+Epoch 70: val_auc did not improve from 0.87403
+35/35 - 2s - 43ms/step - acc: 0.9160 - contrast_loss: 0.6724 - contrast_temp: 0.6411 - flow_loss: 0.6432 - loss: 0.2110 - val_acc: 0.7828 - val_contrast_loss: 0.5119 - val_contrast_temp: 0.5119 - val_flow_loss: 0.5119 - val_loss: 0.2911 - val_auc: 0.8091 - val_aupr: 0.6522 - val_f1: 0.5930 - learning_rate: 1.5625e-05
+Epoch 71/150
+  [23:57:14] epoch  71 │ auc=0.8097  aupr=0.6529  acc=0.7815  f1=0.5894  contrast=0.6647  flow=0.6347
+
+Epoch 71: val_auc did not improve from 0.87403
+35/35 - 1s - 35ms/step - acc: 0.9155 - contrast_loss: 0.6647 - contrast_temp: 0.6327 - flow_loss: 0.6347 - loss: 0.2168 - val_acc: 0.7815 - val_contrast_loss: 0.5124 - val_contrast_temp: 0.5124 - val_flow_loss: 0.5124 - val_loss: 0.2916 - val_auc: 0.8097 - val_aupr: 0.6529 - val_f1: 0.5894 - learning_rate: 1.5625e-05
+Epoch 72/150
+  [23:57:14] epoch  72 │ auc=0.8108  aupr=0.6546  acc=0.7815  f1=0.5915  contrast=0.6762  flow=0.6466
+
+Epoch 72: val_auc did not improve from 0.87403
+35/35 - 1s - 22ms/step - acc: 0.9191 - contrast_loss: 0.6762 - contrast_temp: 0.6445 - flow_loss: 0.6466 - loss: 0.2146 - val_acc: 0.7815 - val_contrast_loss: 0.5124 - val_contrast_temp: 0.5124 - val_flow_loss: 0.5124 - val_loss: 0.2912 - val_auc: 0.8108 - val_aupr: 0.6546 - val_f1: 0.5915 - learning_rate: 1.5625e-05
+Epoch 73/150
+  [23:57:15] epoch  73 │ auc=0.8095  aupr=0.6519  acc=0.7842  f1=0.5924  contrast=0.6758  flow=0.6466
+
+Epoch 73: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9200 - contrast_loss: 0.6758 - contrast_temp: 0.6445 - flow_loss: 0.6466 - loss: 0.2107 - val_acc: 0.7842 - val_contrast_loss: 0.5124 - val_contrast_temp: 0.5124 - val_flow_loss: 0.5124 - val_loss: 0.2926 - val_auc: 0.8095 - val_aupr: 0.6519 - val_f1: 0.5924 - learning_rate: 1.5625e-05
+Epoch 74/150
+  [23:57:16] epoch  74 │ auc=0.8098  aupr=0.6520  acc=0.7842  f1=0.5903  contrast=0.6837  flow=0.6531
+
+Epoch 74: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9204 - contrast_loss: 0.6837 - contrast_temp: 0.6510 - flow_loss: 0.6531 - loss: 0.2125 - val_acc: 0.7842 - val_contrast_loss: 0.5138 - val_contrast_temp: 0.5138 - val_flow_loss: 0.5138 - val_loss: 0.2934 - val_auc: 0.8098 - val_aupr: 0.6520 - val_f1: 0.5903 - learning_rate: 1.5625e-05
+Epoch 75/150
+  [23:57:16] epoch  75 │ auc=0.8091  aupr=0.6509  acc=0.7815  f1=0.5915  contrast=0.6753  flow=0.6455
+
+Epoch 75: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9209 - contrast_loss: 0.6753 - contrast_temp: 0.6434 - flow_loss: 0.6455 - loss: 0.2115 - val_acc: 0.7815 - val_contrast_loss: 0.5116 - val_contrast_temp: 0.5116 - val_flow_loss: 0.5116 - val_loss: 0.2938 - val_auc: 0.8091 - val_aupr: 0.6509 - val_f1: 0.5915 - learning_rate: 1.5625e-05
+Epoch 76/150
+  [23:57:17] epoch  76 │ auc=0.8085  aupr=0.6503  acc=0.7788  f1=0.5885  contrast=0.6715  flow=0.6420
+
+Epoch 76: ReduceLROnPlateau reducing learning rate to 7.812500371073838e-06.
+
+Epoch 76: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9200 - contrast_loss: 0.6715 - contrast_temp: 0.6399 - flow_loss: 0.6420 - loss: 0.2136 - val_acc: 0.7788 - val_contrast_loss: 0.5107 - val_contrast_temp: 0.5107 - val_flow_loss: 0.5107 - val_loss: 0.2940 - val_auc: 0.8085 - val_aupr: 0.6503 - val_f1: 0.5885 - learning_rate: 1.5625e-05
+Epoch 77/150
+  [23:57:18] epoch  77 │ auc=0.8090  aupr=0.6505  acc=0.7788  f1=0.5926  contrast=0.6756  flow=0.6458
+
+Epoch 77: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9186 - contrast_loss: 0.6756 - contrast_temp: 0.6437 - flow_loss: 0.6458 - loss: 0.2145 - val_acc: 0.7788 - val_contrast_loss: 0.5088 - val_contrast_temp: 0.5088 - val_flow_loss: 0.5088 - val_loss: 0.2932 - val_auc: 0.8090 - val_aupr: 0.6505 - val_f1: 0.5926 - learning_rate: 7.8125e-06
+Epoch 78/150
+  [23:57:18] epoch  78 │ auc=0.8089  aupr=0.6508  acc=0.7788  f1=0.5926  contrast=0.6739  flow=0.6452
+
+Epoch 78: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9200 - contrast_loss: 0.6739 - contrast_temp: 0.6431 - flow_loss: 0.6452 - loss: 0.2116 - val_acc: 0.7788 - val_contrast_loss: 0.5091 - val_contrast_temp: 0.5091 - val_flow_loss: 0.5091 - val_loss: 0.2928 - val_auc: 0.8089 - val_aupr: 0.6508 - val_f1: 0.5926 - learning_rate: 7.8125e-06
+Epoch 79/150
+  [23:57:19] epoch  79 │ auc=0.8085  aupr=0.6506  acc=0.7761  f1=0.5856  contrast=0.6758  flow=0.6460
+
+Epoch 79: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9249 - contrast_loss: 0.6758 - contrast_temp: 0.6438 - flow_loss: 0.6460 - loss: 0.2124 - val_acc: 0.7761 - val_contrast_loss: 0.5099 - val_contrast_temp: 0.5099 - val_flow_loss: 0.5099 - val_loss: 0.2935 - val_auc: 0.8085 - val_aupr: 0.6506 - val_f1: 0.5856 - learning_rate: 7.8125e-06
+Epoch 80/150
+  [23:57:20] epoch  80 │ auc=0.8085  aupr=0.6501  acc=0.7802  f1=0.5859  contrast=0.6746  flow=0.6452
+
+Epoch 80: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9231 - contrast_loss: 0.6746 - contrast_temp: 0.6432 - flow_loss: 0.6452 - loss: 0.2138 - val_acc: 0.7802 - val_contrast_loss: 0.5125 - val_contrast_temp: 0.5125 - val_flow_loss: 0.5125 - val_loss: 0.2940 - val_auc: 0.8085 - val_aupr: 0.6501 - val_f1: 0.5859 - learning_rate: 7.8125e-06
+Epoch 81/150
+  [23:57:21] epoch  81 │ auc=0.8092  aupr=0.6514  acc=0.7815  f1=0.5894  contrast=0.6765  flow=0.6472
+
+Epoch 81: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9186 - contrast_loss: 0.6765 - contrast_temp: 0.6451 - flow_loss: 0.6472 - loss: 0.2113 - val_acc: 0.7815 - val_contrast_loss: 0.5122 - val_contrast_temp: 0.5122 - val_flow_loss: 0.5122 - val_loss: 0.2933 - val_auc: 0.8092 - val_aupr: 0.6514 - val_f1: 0.5894 - learning_rate: 7.8125e-06
+Epoch 82/150
+  [23:57:21] epoch  82 │ auc=0.8101  aupr=0.6530  acc=0.7761  f1=0.5835  contrast=0.6794  flow=0.6505
+
+Epoch 82: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9222 - contrast_loss: 0.6794 - contrast_temp: 0.6484 - flow_loss: 0.6505 - loss: 0.2087 - val_acc: 0.7761 - val_contrast_loss: 0.5109 - val_contrast_temp: 0.5109 - val_flow_loss: 0.5109 - val_loss: 0.2924 - val_auc: 0.8101 - val_aupr: 0.6530 - val_f1: 0.5835 - learning_rate: 7.8125e-06
+Epoch 83/150
+  [23:57:22] epoch  83 │ auc=0.8101  aupr=0.6532  acc=0.7802  f1=0.5879  contrast=0.6792  flow=0.6497
+
+Epoch 83: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9249 - contrast_loss: 0.6792 - contrast_temp: 0.6476 - flow_loss: 0.6497 - loss: 0.2081 - val_acc: 0.7802 - val_contrast_loss: 0.5123 - val_contrast_temp: 0.5123 - val_flow_loss: 0.5123 - val_loss: 0.2925 - val_auc: 0.8101 - val_aupr: 0.6532 - val_f1: 0.5879 - learning_rate: 7.8125e-06
+Epoch 84/150
+  [23:57:23] epoch  84 │ auc=0.8097  aupr=0.6525  acc=0.7815  f1=0.5852  contrast=0.6759  flow=0.6456
+
+Epoch 84: ReduceLROnPlateau reducing learning rate to 3.906250185536919e-06.
+
+Epoch 84: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9160 - contrast_loss: 0.6759 - contrast_temp: 0.6434 - flow_loss: 0.6456 - loss: 0.2151 - val_acc: 0.7815 - val_contrast_loss: 0.5141 - val_contrast_temp: 0.5141 - val_flow_loss: 0.5141 - val_loss: 0.2934 - val_auc: 0.8097 - val_aupr: 0.6525 - val_f1: 0.5852 - learning_rate: 7.8125e-06
+Epoch 85/150
+  [23:57:23] epoch  85 │ auc=0.8103  aupr=0.6530  acc=0.7775  f1=0.5829  contrast=0.6768  flow=0.6461
+
+Epoch 85: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9124 - contrast_loss: 0.6768 - contrast_temp: 0.6440 - flow_loss: 0.6461 - loss: 0.2167 - val_acc: 0.7775 - val_contrast_loss: 0.5122 - val_contrast_temp: 0.5122 - val_flow_loss: 0.5122 - val_loss: 0.2924 - val_auc: 0.8103 - val_aupr: 0.6530 - val_f1: 0.5829 - learning_rate: 3.9063e-06
+Epoch 86/150
+  [23:57:24] epoch  86 │ auc=0.8102  aupr=0.6529  acc=0.7802  f1=0.5920  contrast=0.6781  flow=0.6477
+
+Epoch 86: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9245 - contrast_loss: 0.6781 - contrast_temp: 0.6456 - flow_loss: 0.6477 - loss: 0.2143 - val_acc: 0.7802 - val_contrast_loss: 0.5113 - val_contrast_temp: 0.5113 - val_flow_loss: 0.5113 - val_loss: 0.2923 - val_auc: 0.8102 - val_aupr: 0.6529 - val_f1: 0.5920 - learning_rate: 3.9063e-06
+Epoch 87/150
+  [23:57:25] epoch  87 │ auc=0.8098  aupr=0.6525  acc=0.7788  f1=0.5844  contrast=0.6779  flow=0.6481
+
+Epoch 87: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9204 - contrast_loss: 0.6779 - contrast_temp: 0.6461 - flow_loss: 0.6481 - loss: 0.2117 - val_acc: 0.7788 - val_contrast_loss: 0.5122 - val_contrast_temp: 0.5122 - val_flow_loss: 0.5122 - val_loss: 0.2930 - val_auc: 0.8098 - val_aupr: 0.6525 - val_f1: 0.5844 - learning_rate: 3.9063e-06
+Epoch 88/150
+  [23:57:25] epoch  88 │ auc=0.8098  aupr=0.6525  acc=0.7788  f1=0.5844  contrast=0.6761  flow=0.6466
+
+Epoch 88: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9191 - contrast_loss: 0.6761 - contrast_temp: 0.6446 - flow_loss: 0.6466 - loss: 0.2134 - val_acc: 0.7788 - val_contrast_loss: 0.5123 - val_contrast_temp: 0.5123 - val_flow_loss: 0.5123 - val_loss: 0.2932 - val_auc: 0.8098 - val_aupr: 0.6525 - val_f1: 0.5844 - learning_rate: 3.9063e-06
+Epoch 89/150
+  [23:57:26] epoch  89 │ auc=0.8097  aupr=0.6523  acc=0.7815  f1=0.5873  contrast=0.6775  flow=0.6489
+
+Epoch 89: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9231 - contrast_loss: 0.6775 - contrast_temp: 0.6468 - flow_loss: 0.6489 - loss: 0.2076 - val_acc: 0.7815 - val_contrast_loss: 0.5129 - val_contrast_temp: 0.5129 - val_flow_loss: 0.5129 - val_loss: 0.2935 - val_auc: 0.8097 - val_aupr: 0.6523 - val_f1: 0.5873 - learning_rate: 3.9063e-06
+Epoch 90/150
+  [23:57:27] epoch  90 │ auc=0.8097  aupr=0.6524  acc=0.7815  f1=0.5873  contrast=0.6754  flow=0.6456
+
+Epoch 90: val_auc did not improve from 0.87403
+35/35 - 1s - 23ms/step - acc: 0.9151 - contrast_loss: 0.6754 - contrast_temp: 0.6435 - flow_loss: 0.6456 - loss: 0.2137 - val_acc: 0.7815 - val_contrast_loss: 0.5134 - val_contrast_temp: 0.5134 - val_flow_loss: 0.5134 - val_loss: 0.2933 - val_auc: 0.8097 - val_aupr: 0.6524 - val_f1: 0.5873 - learning_rate: 3.9063e-06
+Epoch 91/150
+  [23:57:28] epoch  91 │ auc=0.8098  aupr=0.6527  acc=0.7828  f1=0.5888  contrast=0.6747  flow=0.6453
+
+Epoch 91: val_auc did not improve from 0.87403
+35/35 - 1s - 28ms/step - acc: 0.9155 - contrast_loss: 0.6747 - contrast_temp: 0.6432 - flow_loss: 0.6453 - loss: 0.2138 - val_acc: 0.7828 - val_contrast_loss: 0.5132 - val_contrast_temp: 0.5132 - val_flow_loss: 0.5132 - val_loss: 0.2931 - val_auc: 0.8098 - val_aupr: 0.6527 - val_f1: 0.5888 - learning_rate: 3.9063e-06
+Epoch 92/150
+  [23:57:29] epoch  92 │ auc=0.8099  aupr=0.6524  acc=0.7788  f1=0.5844  contrast=0.6809  flow=0.6515
+
+Epoch 92: ReduceLROnPlateau reducing learning rate to 1.9531250927684596e-06.
+
+Epoch 92: val_auc did not improve from 0.87403
+35/35 - 1s - 22ms/step - acc: 0.9222 - contrast_loss: 0.6809 - contrast_temp: 0.6495 - flow_loss: 0.6515 - loss: 0.2112 - val_acc: 0.7788 - val_contrast_loss: 0.5126 - val_contrast_temp: 0.5126 - val_flow_loss: 0.5126 - val_loss: 0.2930 - val_auc: 0.8099 - val_aupr: 0.6524 - val_f1: 0.5844 - learning_rate: 3.9063e-06
+Epoch 93/150
+  [23:57:29] epoch  93 │ auc=0.8098  aupr=0.6524  acc=0.7802  f1=0.5859  contrast=0.6728  flow=0.6439
+
+Epoch 93: val_auc did not improve from 0.87403
+35/35 - 1s - 23ms/step - acc: 0.9200 - contrast_loss: 0.6728 - contrast_temp: 0.6418 - flow_loss: 0.6439 - loss: 0.2117 - val_acc: 0.7802 - val_contrast_loss: 0.5127 - val_contrast_temp: 0.5127 - val_flow_loss: 0.5127 - val_loss: 0.2930 - val_auc: 0.8098 - val_aupr: 0.6524 - val_f1: 0.5859 - learning_rate: 1.9531e-06
+Epoch 94/150
+  [23:57:30] epoch  94 │ auc=0.8096  aupr=0.6523  acc=0.7802  f1=0.5859  contrast=0.6773  flow=0.6478
+
+Epoch 94: val_auc did not improve from 0.87403
+35/35 - 1s - 24ms/step - acc: 0.9227 - contrast_loss: 0.6773 - contrast_temp: 0.6458 - flow_loss: 0.6478 - loss: 0.2141 - val_acc: 0.7802 - val_contrast_loss: 0.5131 - val_contrast_temp: 0.5131 - val_flow_loss: 0.5131 - val_loss: 0.2932 - val_auc: 0.8096 - val_aupr: 0.6523 - val_f1: 0.5859 - learning_rate: 1.9531e-06
+Epoch 95/150
+  [23:57:31] epoch  95 │ auc=0.8095  aupr=0.6523  acc=0.7828  f1=0.5888  contrast=0.6802  flow=0.6496
+
+Epoch 95: val_auc did not improve from 0.87403
+35/35 - 1s - 23ms/step - acc: 0.9245 - contrast_loss: 0.6802 - contrast_temp: 0.6474 - flow_loss: 0.6496 - loss: 0.2124 - val_acc: 0.7828 - val_contrast_loss: 0.5134 - val_contrast_temp: 0.5134 - val_flow_loss: 0.5134 - val_loss: 0.2933 - val_auc: 0.8095 - val_aupr: 0.6523 - val_f1: 0.5888 - learning_rate: 1.9531e-06
+Epoch 96/150
+  [23:57:32] epoch  96 │ auc=0.8094  aupr=0.6522  acc=0.7802  f1=0.5859  contrast=0.6788  flow=0.6488
+
+Epoch 96: val_auc did not improve from 0.87403
+35/35 - 1s - 22ms/step - acc: 0.9177 - contrast_loss: 0.6788 - contrast_temp: 0.6466 - flow_loss: 0.6488 - loss: 0.2147 - val_acc: 0.7802 - val_contrast_loss: 0.5127 - val_contrast_temp: 0.5127 - val_flow_loss: 0.5127 - val_loss: 0.2932 - val_auc: 0.8094 - val_aupr: 0.6522 - val_f1: 0.5859 - learning_rate: 1.9531e-06
+Epoch 97/150
+  [23:57:33] epoch  97 │ auc=0.8092  aupr=0.6520  acc=0.7828  f1=0.5888  contrast=0.6723  flow=0.6429
+
+Epoch 97: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9182 - contrast_loss: 0.6723 - contrast_temp: 0.6409 - flow_loss: 0.6429 - loss: 0.2134 - val_acc: 0.7828 - val_contrast_loss: 0.5133 - val_contrast_temp: 0.5133 - val_flow_loss: 0.5133 - val_loss: 0.2933 - val_auc: 0.8092 - val_aupr: 0.6520 - val_f1: 0.5888 - learning_rate: 1.9531e-06
+Epoch 98/150
+  [23:57:33] epoch  98 │ auc=0.8092  aupr=0.6519  acc=0.7828  f1=0.5888  contrast=0.6812  flow=0.6521
+
+Epoch 98: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9191 - contrast_loss: 0.6812 - contrast_temp: 0.6500 - flow_loss: 0.6521 - loss: 0.2102 - val_acc: 0.7828 - val_contrast_loss: 0.5131 - val_contrast_temp: 0.5131 - val_flow_loss: 0.5131 - val_loss: 0.2933 - val_auc: 0.8092 - val_aupr: 0.6519 - val_f1: 0.5888 - learning_rate: 1.9531e-06
+Epoch 99/150
+  [23:57:34] epoch  99 │ auc=0.8096  aupr=0.6526  acc=0.7802  f1=0.5859  contrast=0.6785  flow=0.6495
+
+Epoch 99: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9227 - contrast_loss: 0.6785 - contrast_temp: 0.6474 - flow_loss: 0.6495 - loss: 0.2092 - val_acc: 0.7802 - val_contrast_loss: 0.5125 - val_contrast_temp: 0.5125 - val_flow_loss: 0.5125 - val_loss: 0.2930 - val_auc: 0.8096 - val_aupr: 0.6526 - val_f1: 0.5859 - learning_rate: 1.9531e-06
+Epoch 100/150
+  [23:57:35] epoch 100 │ auc=0.8096  aupr=0.6526  acc=0.7802  f1=0.5859  contrast=0.6733  flow=0.6434
+
+Epoch 100: ReduceLROnPlateau reducing learning rate to 1e-06.
+
+Epoch 100: val_auc did not improve from 0.87403
+35/35 - 1s - 22ms/step - acc: 0.9160 - contrast_loss: 0.6733 - contrast_temp: 0.6413 - flow_loss: 0.6434 - loss: 0.2149 - val_acc: 0.7802 - val_contrast_loss: 0.5121 - val_contrast_temp: 0.5121 - val_flow_loss: 0.5121 - val_loss: 0.2929 - val_auc: 0.8096 - val_aupr: 0.6526 - val_f1: 0.5859 - learning_rate: 1.9531e-06
+Epoch 101/150
+  [23:57:36] epoch 101 │ auc=0.8096  aupr=0.6525  acc=0.7802  f1=0.5859  contrast=0.6810  flow=0.6517
+
+Epoch 101: val_auc did not improve from 0.87403
+35/35 - 1s - 22ms/step - acc: 0.9209 - contrast_loss: 0.6810 - contrast_temp: 0.6496 - flow_loss: 0.6517 - loss: 0.2108 - val_acc: 0.7802 - val_contrast_loss: 0.5121 - val_contrast_temp: 0.5121 - val_flow_loss: 0.5121 - val_loss: 0.2929 - val_auc: 0.8096 - val_aupr: 0.6525 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 102/150
+  [23:57:36] epoch 102 │ auc=0.8096  aupr=0.6525  acc=0.7775  f1=0.5829  contrast=0.6798  flow=0.6504
+
+Epoch 102: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9280 - contrast_loss: 0.6798 - contrast_temp: 0.6483 - flow_loss: 0.6504 - loss: 0.2106 - val_acc: 0.7775 - val_contrast_loss: 0.5119 - val_contrast_temp: 0.5119 - val_flow_loss: 0.5119 - val_loss: 0.2929 - val_auc: 0.8096 - val_aupr: 0.6525 - val_f1: 0.5829 - learning_rate: 1.0000e-06
+Epoch 103/150
+  [23:57:37] epoch 103 │ auc=0.8096  aupr=0.6525  acc=0.7775  f1=0.5829  contrast=0.6717  flow=0.6423
+
+Epoch 103: val_auc did not improve from 0.87403
+35/35 - 1s - 22ms/step - acc: 0.9151 - contrast_loss: 0.6717 - contrast_temp: 0.6402 - flow_loss: 0.6423 - loss: 0.2135 - val_acc: 0.7775 - val_contrast_loss: 0.5117 - val_contrast_temp: 0.5117 - val_flow_loss: 0.5117 - val_loss: 0.2929 - val_auc: 0.8096 - val_aupr: 0.6525 - val_f1: 0.5829 - learning_rate: 1.0000e-06
+Epoch 104/150
+  [23:57:38] epoch 104 │ auc=0.8097  aupr=0.6526  acc=0.7775  f1=0.5829  contrast=0.6748  flow=0.6448
+
+Epoch 104: val_auc did not improve from 0.87403
+35/35 - 1s - 22ms/step - acc: 0.9186 - contrast_loss: 0.6748 - contrast_temp: 0.6427 - flow_loss: 0.6448 - loss: 0.2147 - val_acc: 0.7775 - val_contrast_loss: 0.5116 - val_contrast_temp: 0.5116 - val_flow_loss: 0.5116 - val_loss: 0.2928 - val_auc: 0.8097 - val_aupr: 0.6526 - val_f1: 0.5829 - learning_rate: 1.0000e-06
+Epoch 105/150
+  [23:57:39] epoch 105 │ auc=0.8096  aupr=0.6525  acc=0.7775  f1=0.5829  contrast=0.6767  flow=0.6471
+
+Epoch 105: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9200 - contrast_loss: 0.6767 - contrast_temp: 0.6450 - flow_loss: 0.6471 - loss: 0.2118 - val_acc: 0.7775 - val_contrast_loss: 0.5116 - val_contrast_temp: 0.5116 - val_flow_loss: 0.5116 - val_loss: 0.2928 - val_auc: 0.8096 - val_aupr: 0.6525 - val_f1: 0.5829 - learning_rate: 1.0000e-06
+Epoch 106/150
+  [23:57:39] epoch 106 │ auc=0.8097  aupr=0.6525  acc=0.7788  f1=0.5865  contrast=0.6832  flow=0.6528
+
+Epoch 106: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9231 - contrast_loss: 0.6832 - contrast_temp: 0.6507 - flow_loss: 0.6528 - loss: 0.2116 - val_acc: 0.7788 - val_contrast_loss: 0.5113 - val_contrast_temp: 0.5113 - val_flow_loss: 0.5113 - val_loss: 0.2927 - val_auc: 0.8097 - val_aupr: 0.6525 - val_f1: 0.5865 - learning_rate: 1.0000e-06
+Epoch 107/150
+  [23:57:40] epoch 107 │ auc=0.8096  aupr=0.6524  acc=0.7788  f1=0.5865  contrast=0.6707  flow=0.6406
+
+Epoch 107: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9173 - contrast_loss: 0.6707 - contrast_temp: 0.6385 - flow_loss: 0.6406 - loss: 0.2150 - val_acc: 0.7788 - val_contrast_loss: 0.5113 - val_contrast_temp: 0.5113 - val_flow_loss: 0.5113 - val_loss: 0.2927 - val_auc: 0.8096 - val_aupr: 0.6524 - val_f1: 0.5865 - learning_rate: 1.0000e-06
+Epoch 108/150
+  [23:57:41] epoch 108 │ auc=0.8096  aupr=0.6523  acc=0.7788  f1=0.5865  contrast=0.6684  flow=0.6392
+
+Epoch 108: val_auc did not improve from 0.87403
+35/35 - 1s - 22ms/step - acc: 0.9142 - contrast_loss: 0.6684 - contrast_temp: 0.6371 - flow_loss: 0.6392 - loss: 0.2147 - val_acc: 0.7788 - val_contrast_loss: 0.5113 - val_contrast_temp: 0.5113 - val_flow_loss: 0.5113 - val_loss: 0.2928 - val_auc: 0.8096 - val_aupr: 0.6523 - val_f1: 0.5865 - learning_rate: 1.0000e-06
+Epoch 109/150
+  [23:57:42] epoch 109 │ auc=0.8096  aupr=0.6526  acc=0.7775  f1=0.5829  contrast=0.6665  flow=0.6376
+
+Epoch 109: val_auc did not improve from 0.87403
+35/35 - 1s - 34ms/step - acc: 0.9151 - contrast_loss: 0.6665 - contrast_temp: 0.6355 - flow_loss: 0.6376 - loss: 0.2129 - val_acc: 0.7775 - val_contrast_loss: 0.5116 - val_contrast_temp: 0.5116 - val_flow_loss: 0.5116 - val_loss: 0.2929 - val_auc: 0.8096 - val_aupr: 0.6526 - val_f1: 0.5829 - learning_rate: 1.0000e-06
+Epoch 110/150
+  [23:57:43] epoch 110 │ auc=0.8094  aupr=0.6527  acc=0.7788  f1=0.5844  contrast=0.6736  flow=0.6450
+
+Epoch 110: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9209 - contrast_loss: 0.6736 - contrast_temp: 0.6429 - flow_loss: 0.6450 - loss: 0.2105 - val_acc: 0.7788 - val_contrast_loss: 0.5118 - val_contrast_temp: 0.5118 - val_flow_loss: 0.5118 - val_loss: 0.2930 - val_auc: 0.8094 - val_aupr: 0.6527 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 111/150
+  [23:57:43] epoch 111 │ auc=0.8094  aupr=0.6527  acc=0.7775  f1=0.5829  contrast=0.6727  flow=0.6427
+
+Epoch 111: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9142 - contrast_loss: 0.6727 - contrast_temp: 0.6406 - flow_loss: 0.6427 - loss: 0.2146 - val_acc: 0.7775 - val_contrast_loss: 0.5117 - val_contrast_temp: 0.5117 - val_flow_loss: 0.5117 - val_loss: 0.2930 - val_auc: 0.8094 - val_aupr: 0.6527 - val_f1: 0.5829 - learning_rate: 1.0000e-06
+Epoch 112/150
+  [23:57:44] epoch 112 │ auc=0.8094  aupr=0.6523  acc=0.7788  f1=0.5844  contrast=0.6750  flow=0.6456
+
+Epoch 112: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9191 - contrast_loss: 0.6750 - contrast_temp: 0.6436 - flow_loss: 0.6456 - loss: 0.2111 - val_acc: 0.7788 - val_contrast_loss: 0.5119 - val_contrast_temp: 0.5119 - val_flow_loss: 0.5119 - val_loss: 0.2930 - val_auc: 0.8094 - val_aupr: 0.6523 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 113/150
+  [23:57:45] epoch 113 │ auc=0.8094  aupr=0.6523  acc=0.7802  f1=0.5859  contrast=0.6803  flow=0.6507
+
+Epoch 113: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9262 - contrast_loss: 0.6803 - contrast_temp: 0.6486 - flow_loss: 0.6507 - loss: 0.2092 - val_acc: 0.7802 - val_contrast_loss: 0.5121 - val_contrast_temp: 0.5121 - val_flow_loss: 0.5121 - val_loss: 0.2931 - val_auc: 0.8094 - val_aupr: 0.6523 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 114/150
+  [23:57:46] epoch 114 │ auc=0.8094  aupr=0.6524  acc=0.7802  f1=0.5859  contrast=0.6733  flow=0.6433
+
+Epoch 114: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9155 - contrast_loss: 0.6733 - contrast_temp: 0.6413 - flow_loss: 0.6433 - loss: 0.2155 - val_acc: 0.7802 - val_contrast_loss: 0.5121 - val_contrast_temp: 0.5121 - val_flow_loss: 0.5121 - val_loss: 0.2930 - val_auc: 0.8094 - val_aupr: 0.6524 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 115/150
+  [23:57:46] epoch 115 │ auc=0.8093  aupr=0.6523  acc=0.7802  f1=0.5859  contrast=0.6735  flow=0.6442
+
+Epoch 115: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9200 - contrast_loss: 0.6735 - contrast_temp: 0.6420 - flow_loss: 0.6442 - loss: 0.2132 - val_acc: 0.7802 - val_contrast_loss: 0.5120 - val_contrast_temp: 0.5120 - val_flow_loss: 0.5120 - val_loss: 0.2931 - val_auc: 0.8093 - val_aupr: 0.6523 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 116/150
+  [23:57:47] epoch 116 │ auc=0.8093  aupr=0.6524  acc=0.7802  f1=0.5859  contrast=0.6767  flow=0.6479
+
+Epoch 116: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9209 - contrast_loss: 0.6767 - contrast_temp: 0.6458 - flow_loss: 0.6479 - loss: 0.2088 - val_acc: 0.7802 - val_contrast_loss: 0.5121 - val_contrast_temp: 0.5121 - val_flow_loss: 0.5121 - val_loss: 0.2931 - val_auc: 0.8093 - val_aupr: 0.6524 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 117/150
+  [23:57:48] epoch 117 │ auc=0.8092  aupr=0.6522  acc=0.7802  f1=0.5859  contrast=0.6772  flow=0.6478
+
+Epoch 117: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9218 - contrast_loss: 0.6772 - contrast_temp: 0.6457 - flow_loss: 0.6478 - loss: 0.2104 - val_acc: 0.7802 - val_contrast_loss: 0.5124 - val_contrast_temp: 0.5124 - val_flow_loss: 0.5124 - val_loss: 0.2932 - val_auc: 0.8092 - val_aupr: 0.6522 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 118/150
+  [23:57:48] epoch 118 │ auc=0.8092  aupr=0.6522  acc=0.7802  f1=0.5859  contrast=0.6754  flow=0.6463
+
+Epoch 118: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9262 - contrast_loss: 0.6754 - contrast_temp: 0.6443 - flow_loss: 0.6463 - loss: 0.2081 - val_acc: 0.7802 - val_contrast_loss: 0.5126 - val_contrast_temp: 0.5126 - val_flow_loss: 0.5126 - val_loss: 0.2934 - val_auc: 0.8092 - val_aupr: 0.6522 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 119/150
+  [23:57:49] epoch 119 │ auc=0.8091  aupr=0.6520  acc=0.7802  f1=0.5859  contrast=0.6758  flow=0.6457
+
+Epoch 119: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9222 - contrast_loss: 0.6758 - contrast_temp: 0.6436 - flow_loss: 0.6457 - loss: 0.2130 - val_acc: 0.7802 - val_contrast_loss: 0.5127 - val_contrast_temp: 0.5127 - val_flow_loss: 0.5127 - val_loss: 0.2935 - val_auc: 0.8091 - val_aupr: 0.6520 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 120/150
+  [23:57:50] epoch 120 │ auc=0.8090  aupr=0.6519  acc=0.7802  f1=0.5859  contrast=0.6710  flow=0.6422
+
+Epoch 120: val_auc did not improve from 0.87403
+35/35 - 1s - 24ms/step - acc: 0.9177 - contrast_loss: 0.6710 - contrast_temp: 0.6401 - flow_loss: 0.6422 - loss: 0.2107 - val_acc: 0.7802 - val_contrast_loss: 0.5129 - val_contrast_temp: 0.5129 - val_flow_loss: 0.5129 - val_loss: 0.2936 - val_auc: 0.8090 - val_aupr: 0.6519 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 121/150
+  [23:57:51] epoch 121 │ auc=0.8089  aupr=0.6519  acc=0.7828  f1=0.5888  contrast=0.6822  flow=0.6521
+
+Epoch 121: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9240 - contrast_loss: 0.6822 - contrast_temp: 0.6499 - flow_loss: 0.6521 - loss: 0.2096 - val_acc: 0.7828 - val_contrast_loss: 0.5130 - val_contrast_temp: 0.5130 - val_flow_loss: 0.5130 - val_loss: 0.2937 - val_auc: 0.8089 - val_aupr: 0.6519 - val_f1: 0.5888 - learning_rate: 1.0000e-06
+Epoch 122/150
+  [23:57:51] epoch 122 │ auc=0.8089  aupr=0.6517  acc=0.7802  f1=0.5859  contrast=0.6791  flow=0.6480
+
+Epoch 122: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9186 - contrast_loss: 0.6791 - contrast_temp: 0.6458 - flow_loss: 0.6480 - loss: 0.2161 - val_acc: 0.7802 - val_contrast_loss: 0.5127 - val_contrast_temp: 0.5127 - val_flow_loss: 0.5127 - val_loss: 0.2937 - val_auc: 0.8089 - val_aupr: 0.6517 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 123/150
+  [23:57:52] epoch 123 │ auc=0.8089  aupr=0.6516  acc=0.7802  f1=0.5859  contrast=0.6806  flow=0.6506
+
+Epoch 123: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9213 - contrast_loss: 0.6806 - contrast_temp: 0.6485 - flow_loss: 0.6506 - loss: 0.2152 - val_acc: 0.7802 - val_contrast_loss: 0.5126 - val_contrast_temp: 0.5126 - val_flow_loss: 0.5126 - val_loss: 0.2937 - val_auc: 0.8089 - val_aupr: 0.6516 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 124/150
+  [23:57:53] epoch 124 │ auc=0.8090  aupr=0.6517  acc=0.7802  f1=0.5859  contrast=0.6770  flow=0.6471
+
+Epoch 124: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9182 - contrast_loss: 0.6770 - contrast_temp: 0.6450 - flow_loss: 0.6471 - loss: 0.2134 - val_acc: 0.7802 - val_contrast_loss: 0.5123 - val_contrast_temp: 0.5123 - val_flow_loss: 0.5123 - val_loss: 0.2936 - val_auc: 0.8090 - val_aupr: 0.6517 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 125/150
+  [23:57:53] epoch 125 │ auc=0.8090  aupr=0.6517  acc=0.7802  f1=0.5859  contrast=0.6762  flow=0.6469
+
+Epoch 125: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9195 - contrast_loss: 0.6762 - contrast_temp: 0.6448 - flow_loss: 0.6469 - loss: 0.2128 - val_acc: 0.7802 - val_contrast_loss: 0.5126 - val_contrast_temp: 0.5126 - val_flow_loss: 0.5126 - val_loss: 0.2936 - val_auc: 0.8090 - val_aupr: 0.6517 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 126/150
+  [23:57:54] epoch 126 │ auc=0.8090  aupr=0.6516  acc=0.7802  f1=0.5859  contrast=0.6710  flow=0.6418
+
+Epoch 126: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9191 - contrast_loss: 0.6710 - contrast_temp: 0.6397 - flow_loss: 0.6418 - loss: 0.2159 - val_acc: 0.7802 - val_contrast_loss: 0.5126 - val_contrast_temp: 0.5126 - val_flow_loss: 0.5126 - val_loss: 0.2936 - val_auc: 0.8090 - val_aupr: 0.6516 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 127/150
+  [23:57:55] epoch 127 │ auc=0.8091  aupr=0.6518  acc=0.7802  f1=0.5859  contrast=0.6752  flow=0.6461
+
+Epoch 127: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9213 - contrast_loss: 0.6752 - contrast_temp: 0.6439 - flow_loss: 0.6461 - loss: 0.2112 - val_acc: 0.7802 - val_contrast_loss: 0.5122 - val_contrast_temp: 0.5122 - val_flow_loss: 0.5122 - val_loss: 0.2934 - val_auc: 0.8091 - val_aupr: 0.6518 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 128/150
+  [23:57:56] epoch 128 │ auc=0.8091  aupr=0.6518  acc=0.7802  f1=0.5859  contrast=0.6791  flow=0.6499
+
+Epoch 128: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9240 - contrast_loss: 0.6791 - contrast_temp: 0.6478 - flow_loss: 0.6499 - loss: 0.2100 - val_acc: 0.7802 - val_contrast_loss: 0.5121 - val_contrast_temp: 0.5121 - val_flow_loss: 0.5121 - val_loss: 0.2934 - val_auc: 0.8091 - val_aupr: 0.6518 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 129/150
+  [23:57:56] epoch 129 │ auc=0.8091  aupr=0.6517  acc=0.7802  f1=0.5859  contrast=0.6757  flow=0.6461
+
+Epoch 129: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9218 - contrast_loss: 0.6757 - contrast_temp: 0.6440 - flow_loss: 0.6461 - loss: 0.2137 - val_acc: 0.7802 - val_contrast_loss: 0.5123 - val_contrast_temp: 0.5123 - val_flow_loss: 0.5123 - val_loss: 0.2935 - val_auc: 0.8091 - val_aupr: 0.6517 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 130/150
+  [23:57:57] epoch 130 │ auc=0.8092  aupr=0.6517  acc=0.7788  f1=0.5844  contrast=0.6812  flow=0.6513
+
+Epoch 130: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9249 - contrast_loss: 0.6812 - contrast_temp: 0.6491 - flow_loss: 0.6513 - loss: 0.2120 - val_acc: 0.7788 - val_contrast_loss: 0.5119 - val_contrast_temp: 0.5119 - val_flow_loss: 0.5119 - val_loss: 0.2934 - val_auc: 0.8092 - val_aupr: 0.6517 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 131/150
+  [23:57:58] epoch 131 │ auc=0.8092  aupr=0.6517  acc=0.7788  f1=0.5844  contrast=0.6761  flow=0.6466
+
+Epoch 131: val_auc did not improve from 0.87403
+35/35 - 1s - 18ms/step - acc: 0.9218 - contrast_loss: 0.6761 - contrast_temp: 0.6446 - flow_loss: 0.6466 - loss: 0.2119 - val_acc: 0.7788 - val_contrast_loss: 0.5120 - val_contrast_temp: 0.5120 - val_flow_loss: 0.5120 - val_loss: 0.2934 - val_auc: 0.8092 - val_aupr: 0.6517 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 132/150
+  [23:57:58] epoch 132 │ auc=0.8092  aupr=0.6517  acc=0.7788  f1=0.5844  contrast=0.6821  flow=0.6526
+
+Epoch 132: val_auc did not improve from 0.87403
+35/35 - 1s - 18ms/step - acc: 0.9258 - contrast_loss: 0.6821 - contrast_temp: 0.6506 - flow_loss: 0.6526 - loss: 0.2099 - val_acc: 0.7788 - val_contrast_loss: 0.5119 - val_contrast_temp: 0.5119 - val_flow_loss: 0.5119 - val_loss: 0.2933 - val_auc: 0.8092 - val_aupr: 0.6517 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 133/150
+  [23:57:59] epoch 133 │ auc=0.8092  aupr=0.6518  acc=0.7788  f1=0.5844  contrast=0.6762  flow=0.6477
+
+Epoch 133: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9236 - contrast_loss: 0.6762 - contrast_temp: 0.6457 - flow_loss: 0.6477 - loss: 0.2071 - val_acc: 0.7788 - val_contrast_loss: 0.5121 - val_contrast_temp: 0.5121 - val_flow_loss: 0.5121 - val_loss: 0.2934 - val_auc: 0.8092 - val_aupr: 0.6518 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 134/150
+  [23:58:00] epoch 134 │ auc=0.8091  aupr=0.6517  acc=0.7802  f1=0.5859  contrast=0.6745  flow=0.6453
+
+Epoch 134: val_auc did not improve from 0.87403
+35/35 - 1s - 22ms/step - acc: 0.9209 - contrast_loss: 0.6745 - contrast_temp: 0.6432 - flow_loss: 0.6453 - loss: 0.2096 - val_acc: 0.7802 - val_contrast_loss: 0.5125 - val_contrast_temp: 0.5125 - val_flow_loss: 0.5125 - val_loss: 0.2936 - val_auc: 0.8091 - val_aupr: 0.6517 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 135/150
+  [23:58:00] epoch 135 │ auc=0.8091  aupr=0.6517  acc=0.7802  f1=0.5859  contrast=0.6827  flow=0.6532
+
+Epoch 135: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9218 - contrast_loss: 0.6827 - contrast_temp: 0.6511 - flow_loss: 0.6532 - loss: 0.2105 - val_acc: 0.7802 - val_contrast_loss: 0.5123 - val_contrast_temp: 0.5123 - val_flow_loss: 0.5123 - val_loss: 0.2936 - val_auc: 0.8091 - val_aupr: 0.6517 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 136/150
+  [23:58:01] epoch 136 │ auc=0.8091  aupr=0.6517  acc=0.7788  f1=0.5844  contrast=0.6796  flow=0.6509
+
+Epoch 136: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9204 - contrast_loss: 0.6796 - contrast_temp: 0.6487 - flow_loss: 0.6509 - loss: 0.2091 - val_acc: 0.7788 - val_contrast_loss: 0.5120 - val_contrast_temp: 0.5120 - val_flow_loss: 0.5120 - val_loss: 0.2935 - val_auc: 0.8091 - val_aupr: 0.6517 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 137/150
+  [23:58:02] epoch 137 │ auc=0.8091  aupr=0.6517  acc=0.7788  f1=0.5844  contrast=0.6765  flow=0.6480
+
+Epoch 137: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9209 - contrast_loss: 0.6765 - contrast_temp: 0.6459 - flow_loss: 0.6480 - loss: 0.2098 - val_acc: 0.7788 - val_contrast_loss: 0.5119 - val_contrast_temp: 0.5119 - val_flow_loss: 0.5119 - val_loss: 0.2935 - val_auc: 0.8091 - val_aupr: 0.6517 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 138/150
+  [23:58:02] epoch 138 │ auc=0.8090  aupr=0.6515  acc=0.7802  f1=0.5859  contrast=0.6819  flow=0.6532
+
+Epoch 138: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9213 - contrast_loss: 0.6819 - contrast_temp: 0.6511 - flow_loss: 0.6532 - loss: 0.2068 - val_acc: 0.7802 - val_contrast_loss: 0.5123 - val_contrast_temp: 0.5123 - val_flow_loss: 0.5123 - val_loss: 0.2936 - val_auc: 0.8090 - val_aupr: 0.6515 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 139/150
+  [23:58:03] epoch 139 │ auc=0.8091  aupr=0.6518  acc=0.7788  f1=0.5844  contrast=0.6787  flow=0.6480
+
+Epoch 139: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9240 - contrast_loss: 0.6787 - contrast_temp: 0.6459 - flow_loss: 0.6480 - loss: 0.2127 - val_acc: 0.7788 - val_contrast_loss: 0.5123 - val_contrast_temp: 0.5123 - val_flow_loss: 0.5123 - val_loss: 0.2936 - val_auc: 0.8091 - val_aupr: 0.6518 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 140/150
+  [23:58:04] epoch 140 │ auc=0.8092  aupr=0.6518  acc=0.7802  f1=0.5859  contrast=0.6773  flow=0.6476
+
+Epoch 140: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9177 - contrast_loss: 0.6773 - contrast_temp: 0.6455 - flow_loss: 0.6476 - loss: 0.2145 - val_acc: 0.7802 - val_contrast_loss: 0.5126 - val_contrast_temp: 0.5126 - val_flow_loss: 0.5126 - val_loss: 0.2937 - val_auc: 0.8092 - val_aupr: 0.6518 - val_f1: 0.5859 - learning_rate: 1.0000e-06
+Epoch 141/150
+  [23:58:05] epoch 141 │ auc=0.8092  aupr=0.6518  acc=0.7788  f1=0.5844  contrast=0.6822  flow=0.6520
+
+Epoch 141: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9191 - contrast_loss: 0.6822 - contrast_temp: 0.6499 - flow_loss: 0.6520 - loss: 0.2104 - val_acc: 0.7788 - val_contrast_loss: 0.5122 - val_contrast_temp: 0.5122 - val_flow_loss: 0.5122 - val_loss: 0.2936 - val_auc: 0.8092 - val_aupr: 0.6518 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 142/150
+  [23:58:05] epoch 142 │ auc=0.8092  aupr=0.6518  acc=0.7788  f1=0.5844  contrast=0.6720  flow=0.6432
+
+Epoch 142: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9191 - contrast_loss: 0.6720 - contrast_temp: 0.6411 - flow_loss: 0.6432 - loss: 0.2129 - val_acc: 0.7788 - val_contrast_loss: 0.5124 - val_contrast_temp: 0.5124 - val_flow_loss: 0.5124 - val_loss: 0.2936 - val_auc: 0.8092 - val_aupr: 0.6518 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 143/150
+  [23:58:06] epoch 143 │ auc=0.8092  aupr=0.6520  acc=0.7788  f1=0.5844  contrast=0.6712  flow=0.6418
+
+Epoch 143: val_auc did not improve from 0.87403
+35/35 - 1s - 21ms/step - acc: 0.9075 - contrast_loss: 0.6712 - contrast_temp: 0.6396 - flow_loss: 0.6418 - loss: 0.2181 - val_acc: 0.7788 - val_contrast_loss: 0.5122 - val_contrast_temp: 0.5122 - val_flow_loss: 0.5122 - val_loss: 0.2935 - val_auc: 0.8092 - val_aupr: 0.6520 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 144/150
+  [23:58:07] epoch 144 │ auc=0.8092  aupr=0.6518  acc=0.7788  f1=0.5844  contrast=0.6775  flow=0.6486
+
+Epoch 144: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9218 - contrast_loss: 0.6775 - contrast_temp: 0.6465 - flow_loss: 0.6486 - loss: 0.2088 - val_acc: 0.7788 - val_contrast_loss: 0.5121 - val_contrast_temp: 0.5121 - val_flow_loss: 0.5121 - val_loss: 0.2935 - val_auc: 0.8092 - val_aupr: 0.6518 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 145/150
+  [23:58:07] epoch 145 │ auc=0.8092  aupr=0.6518  acc=0.7788  f1=0.5844  contrast=0.6711  flow=0.6411
+
+Epoch 145: val_auc did not improve from 0.87403
+35/35 - 1s - 20ms/step - acc: 0.9146 - contrast_loss: 0.6711 - contrast_temp: 0.6390 - flow_loss: 0.6411 - loss: 0.2170 - val_acc: 0.7788 - val_contrast_loss: 0.5121 - val_contrast_temp: 0.5121 - val_flow_loss: 0.5121 - val_loss: 0.2935 - val_auc: 0.8092 - val_aupr: 0.6518 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 146/150
+  [23:58:08] epoch 146 │ auc=0.8091  aupr=0.6517  acc=0.7788  f1=0.5844  contrast=0.6748  flow=0.6458
+
+Epoch 146: val_auc did not improve from 0.87403
+35/35 - 1s - 19ms/step - acc: 0.9200 - contrast_loss: 0.6748 - contrast_temp: 0.6437 - flow_loss: 0.6458 - loss: 0.2121 - val_acc: 0.7788 - val_contrast_loss: 0.5119 - val_contrast_temp: 0.5119 - val_flow_loss: 0.5119 - val_loss: 0.2935 - val_auc: 0.8091 - val_aupr: 0.6517 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 147/150
+  [23:58:09] epoch 147 │ auc=0.8091  aupr=0.6517  acc=0.7788  f1=0.5844  contrast=0.6793  flow=0.6496
+
+Epoch 147: val_auc did not improve from 0.87403
+35/35 - 1s - 22ms/step - acc: 0.9245 - contrast_loss: 0.6793 - contrast_temp: 0.6476 - flow_loss: 0.6496 - loss: 0.2110 - val_acc: 0.7788 - val_contrast_loss: 0.5118 - val_contrast_temp: 0.5118 - val_flow_loss: 0.5118 - val_loss: 0.2935 - val_auc: 0.8091 - val_aupr: 0.6517 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 148/150
+  [23:58:10] epoch 148 │ auc=0.8091  aupr=0.6518  acc=0.7788  f1=0.5844  contrast=0.6711  flow=0.6419
+
+Epoch 148: val_auc did not improve from 0.87403
+35/35 - 1s - 27ms/step - acc: 0.9115 - contrast_loss: 0.6711 - contrast_temp: 0.6398 - flow_loss: 0.6419 - loss: 0.2147 - val_acc: 0.7788 - val_contrast_loss: 0.5119 - val_contrast_temp: 0.5119 - val_flow_loss: 0.5119 - val_loss: 0.2934 - val_auc: 0.8091 - val_aupr: 0.6518 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 149/150
+  [23:58:11] epoch 149 │ auc=0.8090  aupr=0.6515  acc=0.7788  f1=0.5844  contrast=0.6810  flow=0.6516
+
+Epoch 149: val_auc did not improve from 0.87403
+35/35 - 1s - 22ms/step - acc: 0.9271 - contrast_loss: 0.6810 - contrast_temp: 0.6495 - flow_loss: 0.6516 - loss: 0.2064 - val_acc: 0.7788 - val_contrast_loss: 0.5118 - val_contrast_temp: 0.5118 - val_flow_loss: 0.5118 - val_loss: 0.2935 - val_auc: 0.8090 - val_aupr: 0.6515 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+Epoch 150/150
+  [23:58:11] epoch 150 │ auc=0.8090  aupr=0.6515  acc=0.7788  f1=0.5844  contrast=0.6768  flow=0.6475
+
+Epoch 150: val_auc did not improve from 0.87403
+35/35 - 1s - 27ms/step - acc: 0.9227 - contrast_loss: 0.6768 - contrast_temp: 0.6454 - flow_loss: 0.6475 - loss: 0.2125 - val_acc: 0.7788 - val_contrast_loss: 0.5118 - val_contrast_temp: 0.5118 - val_flow_loss: 0.5118 - val_loss: 0.2936 - val_auc: 0.8090 - val_aupr: 0.6515 - val_f1: 0.5844 - learning_rate: 1.0000e-06
+  [23:58:12] Inference on all 13627 genes...
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_0' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_1' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/root/miniconda3/lib/python3.12/site-packages/keras/src/layers/layer.py:1039: UserWarning: Layer 'gps_block_2' (of type GPSBlock) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m38s[0m 3s/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m3s[0m 3ms/step
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 22ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 22ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 21ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 22ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 21ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 22ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 22ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 22ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 21ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 21ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 21ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 21ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 21ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 21ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 6ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m1s[0m 84ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 22ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 5ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 22ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 24ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 4ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 27ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 22ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 21ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/16[0m [32m━[0m[37m━━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 21ms/step[1m16/16[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 3ms/step 
+[1m 1/10[0m [32m━━[0m[37m━━━━━━━━━━━━━━━━━━[0m [1m0s[0m 23ms/step[1m10/10[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m0s[0m 570ms/step[1m10/10[0m [32m━━━━━━━━━━━━━━━━━━━━[0m[37m[0m [1m5s[0m 573ms/step
+  [23:58:23] Saved to /root/crossgene/gps_predictions_CPDB.json

@@ -1,0 +1,9 @@
+# 敏感信息 / 本地环境
+.env
+
+# IDE 配置
+.idea/
+
+# Python 缓存
+__pycache__/
+*.py[cod]

@@ -1,0 +1,224 @@
+{
+  "CPDB": {
+    "dataset": "CPDB",
+    "gps": {
+      "gps_auc": 0.8080071288802331,
+      "gps_aupr": 0.6492466825319273,
+      "gps_f1": 0.567287784679089,
+      "gps_acc": 0.7198391420911529,
+      "train_time_s": 101,
+      "n_nodes": 13627,
+      "n_train": 2013,
+      "n_test": 746
+    },
+    "agent": {
+      "n_predicted": 766,
+      "n_ensemble": 766,
+      "baseline": {
+        "auc": 0.95,
+        "aupr": 0.8972,
+        "acc": 0.8995,
+        "precision": 0.7743,
+        "recall": 0.8794,
+        "f1": 0.8235
+      },
+      "proposed": {
+        "auc": 0.957,
+        "aupr": 0.9165,
+        "acc": 0.9075,
+        "precision": 0.7955,
+        "recall": 0.8794,
+        "f1": 0.8353
+      },
+      "pubmed_concordance": 1.0,
+      "n_concordant": 20,
+      "n_discordant": 0,
+      "n_disagreements": 20
+    }
+  },
+  "LTG": {
+    "dataset": "LTG",
+    "gps": {
+      "gps_auc": 0.8553463951850429,
+      "gps_aupr": 0.6032684027824551,
+      "gps_f1": 0.5485436893203883,
+      "gps_acc": 0.7827102803738317,
+      "train_time_s": 50,
+      "n_nodes": 18358,
+      "n_train": 2311,
+      "n_test": 856
+    },
+    "agent": {
+      "n_predicted": 876,
+      "n_ensemble": 0,
+      "baseline": {
+        "auc": 0.9678,
+        "aupr": 0.9031,
+        "acc": 0.9171,
+        "precision": 0.7273,
+        "recall": 0.9357,
+        "f1": 0.8184
+      },
+      "proposed": {
+        "auc": 0.9678,
+        "aupr": 0.9031,
+        "acc": 0.9171,
+        "precision": 0.7273,
+        "recall": 0.9357,
+        "f1": 0.8184
+      },
+      "pubmed_concordance": 1.0,
+      "n_concordant": 20,
+      "n_discordant": 0,
+      "n_disagreements": 0
+    }
+  },
+  "STRINGdb": {
+    "dataset": "STRINGdb",
+    "gps": {
+      "gps_auc": 0.8513650493309907,
+      "gps_aupr": 0.6586360639112283,
+      "gps_f1": 0.6061705989110708,
+      "gps_acc": 0.72875,
+      "train_time_s": 45,
+      "n_nodes": 13179,
+      "n_train": 2158,
+      "n_test": 800
+    },
+    "agent": {
+      "n_predicted": 820,
+      "n_ensemble": 820,
+      "baseline": {
+        "auc": 0.9655,
+        "aupr": 0.9022,
+        "acc": 0.9175,
+        "precision": 0.7902,
+        "recall": 0.9031,
+        "f1": 0.8429
+      },
+      "proposed": {
+        "auc": 0.968,
+        "aupr": 0.928,
+        "acc": 0.9137,
+        "precision": 0.7702,
+        "recall": 0.9235,
+        "f1": 0.8399
+      },
+      "pubmed_concordance": 1.0,
+      "n_concordant": 20,
+      "n_discordant": 0,
+      "n_disagreements": 17
+    }
+  },
+  "PCNET": {
+    "dataset": "PCNET",
+    "gps": {
+      "gps_auc": 0.8758841789221924,
+      "gps_aupr": 0.597586042944751,
+      "gps_f1": 0.5515789473684211,
+      "gps_acc": 0.8656998738965952,
+      "train_time_s": 49,
+      "n_nodes": 19781,
+      "n_train": 4280,
+      "n_test": 1586
+    },
+    "agent": {
+      "n_predicted": 1606,
+      "n_ensemble": 1606,
+      "baseline": {
+        "auc": 0.9604,
+        "aupr": 0.8425,
+        "acc": 0.9237,
+        "precision": 0.6703,
+        "recall": 0.8605,
+        "f1": 0.7536
+      },
+      "proposed": {
+        "auc": 0.9671,
+        "aupr": 0.8875,
+        "acc": 0.9433,
+        "precision": 0.7729,
+        "recall": 0.8233,
+        "f1": 0.7973
+      },
+      "pubmed_concordance": 1.0,
+      "n_concordant": 20,
+      "n_discordant": 0,
+      "n_disagreements": 17
+    }
+  },
+  "MTG": {
+    "dataset": "MTG",
+    "gps": {
+      "gps_auc": 0.8561398015223046,
+      "gps_aupr": 0.5920019961704597,
+      "gps_f1": 0.5349301397205589,
+      "gps_acc": 0.8309143686502177,
+      "train_time_s": 62,
+      "n_nodes": 26363,
+      "n_train": 3717,
+      "n_test": 1378
+    },
+    "agent": {
+      "n_predicted": 1398,
+      "n_ensemble": 1398,
+      "baseline": {
+        "auc": 0.9583,
+        "aupr": 0.8599,
+        "acc": 0.9158,
+        "precision": 0.6725,
+        "recall": 0.8925,
+        "f1": 0.767
+      },
+      "proposed": {
+        "auc": 0.9657,
+        "aupr": 0.8996,
+        "acc": 0.9318,
+        "precision": 0.7256,
+        "recall": 0.9019,
+        "f1": 0.8042
+      },
+      "pubmed_concordance": 1.0,
+      "n_concordant": 20,
+      "n_discordant": 0,
+      "n_disagreements": 19
+    }
+  },
+  "MULTINET": {
+    "dataset": "MULTINET",
+    "gps": {
+      "gps_auc": 0.863821603303804,
+      "gps_aupr": 0.6086784730906535,
+      "gps_f1": 0.54510556621881,
+      "gps_acc": 0.7893333333333333,
+      "train_time_s": 51,
+      "n_nodes": 14398,
+      "n_train": 3036,
+      "n_test": 1125
+    },
+    "agent": {
+      "n_predicted": 1145,
+      "n_ensemble": 1145,
+      "baseline": {
+        "auc": 0.974,
+        "aupr": 0.8979,
+        "acc": 0.9182,
+        "precision": 0.7103,
+        "recall": 0.904,
+        "f1": 0.7955
+      },
+      "proposed": {
+        "auc": 0.9782,
+        "aupr": 0.9321,
+        "acc": 0.9227,
+        "precision": 0.7284,
+        "recall": 0.8939,
+        "f1": 0.8027
+      },
+      "pubmed_concordance": 1.0,
+      "n_concordant": 20,
+      "n_discordant": 0,
+      "n_disagreements": 18
+    }
+  }
+}
